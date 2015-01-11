@@ -14,3 +14,6 @@ node_modules
 
 dump.rdb
 .DS_Store
+
+.dist
+.tmp
