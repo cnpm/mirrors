@@ -1,0 +1,57 @@
+{
+  "name": "mirrors",
+  "version": "1.0.0",
+  "description": "mirrors everything",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+
+  ],
+  "author": {
+    "name": "dead-horse",
+    "email": "dead_horse@qq.com",
+    "url": "http://deadhorse.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cnpm/mirrors"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bytes": "~1.0.0",
+    "cfork": "~1.2.2",
+    "co": "~3.1.0",
+    "copy-to": "~2.0.1",
+    "debug": "~2.1.0",
+    "fs-cnpm": "~1.1.0",
+    "graceful": "~1.0.0",
+    "humanize-ms": "~1.0.0",
+    "koa": "~0.13.0",
+    "koa-middlewares": "~1.5.0",
+    "mini-logger": "~1.0.0",
+    "mkdirp": "~0.5.0",
+    "mysql": "~2.5.3",
+    "only": "~0.0.2",
+    "sequelize": "~2.0.0-rc2",
+    "thunkify-wrap": "~1.0.4",
+    "urllib": "~2.1.0",
+    "utility": "~1.2.1"
+  },
+  "devDependencies": {
+    "autod": "1",
+    "co-mocha": "~1.0.3",
+    "istanbul-harmony": "~0.3.0",
+    "mm": "~1.0.1",
+    "mocha": "~2.0.1",
+    "pedding": "~1.0.0",
+    "should": "~4.3.0",
+    "should-http": "~0.0.2",
+    "sqlite3": "~3.0.4",
+    "supertest": "~0.15.0"
+  },
+  "engine": {
+    "node": ">=0.10"
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%- locals.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="//dn-staticfile.qbox.me/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      #fork{position:fixed;top:0;right:0;_position:absolute;z-index: 10000;}
+      .bottom{margin: 20px auto; width: 100%; text-align: center;}
+    </style>
+  <head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Mirrors</a>
+        </div>
+        <div class="navbar-collapse collapse">
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <a href="https://github.com/cnpm/cnpmjs.org" id="fork" target="_blank">
+        <img alt="Fork me on GitHub" src="//s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    </a>
+    <%- body %>
+
+      <hr/>
+      <div class="bottom">
+        Copyright 2013 - 2014 &copy; <a href="https://github.com/cnpm" target="_blank">cnpm</a>
+        |
+        <a href="/">Home</a>
+    </div>
+  </body>
+</html>
