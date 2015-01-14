@@ -1,13 +1,17 @@
 {
   "name": "mirrors",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "mirrors everything",
   "main": "index.js",
   "scripts": {
     "test": "make test"
   },
   "keywords": [
-
+    "mirror",
+    "mirrors",
+    "nodejs dist",
+    "dist",
+    "iojs dist"
   ],
   "author": {
     "name": "dead-horse",
@@ -16,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:cnpm/mirrors"
+    "url": "git@github.com:cnpm/mirrors.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -24,34 +28,35 @@
     "cfork": "~1.2.2",
     "co": "~3.1.0",
     "copy-to": "~2.0.1",
-    "debug": "~2.1.0",
+    "debug": "~2.1.1",
     "fs-cnpm": "~1.1.0",
     "graceful": "~1.0.0",
-    "humanize-ms": "~1.0.0",
+    "humanize-ms": "~1.0.1",
     "koa": "~0.13.0",
-    "koa-middlewares": "~1.5.0",
+    "koa-middlewares": "~2.1.0",
     "mini-logger": "~1.0.0",
     "mkdirp": "~0.5.0",
-    "mysql": "~2.5.3",
+    "mysql": "~2.5.4",
     "only": "~0.0.2",
-    "sequelize": "~2.0.0-rc2",
+    "sequelize": "~2.0.0-rc7",
     "thunkify-wrap": "~1.0.4",
-    "urllib": "~2.1.0",
+    "urllib": "~2.2.1",
     "utility": "~1.2.1"
   },
   "devDependencies": {
-    "autod": "1",
-    "co-mocha": "~1.0.3",
-    "istanbul-harmony": "~0.3.0",
+    "autod": "*",
+    "co-mocha": "~1.1.0",
+    "istanbul-harmony": "~0.3.1",
     "mm": "~1.0.1",
-    "mocha": "~2.0.1",
+    "mocha": "~2.1.0",
+    "node-dev": "~2.6.0",
     "pedding": "~1.0.0",
-    "should": "~4.3.0",
+    "should": "~4.5.1",
     "should-http": "~0.0.2",
     "sqlite3": "~3.0.4",
     "supertest": "~0.15.0"
   },
   "engine": {
-    "node": ">=0.10"
+    "node": ">=0.11.14"
   }
 }

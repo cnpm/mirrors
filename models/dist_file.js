@@ -12,7 +12,6 @@
  * Module dependencies.
  */
 
-
 /*
 CREATE TABLE IF NOT EXISTS `dist_file` (
  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'primary key',
@@ -48,7 +47,7 @@ module.exports = function (sequelize, DataTypes) {
     category: {
       type: DataTypes.STRING(200),
       allowNull: false,
-      comment: 'dist category',
+      comment: 'dist category, like node, iojs and so on',
     },
     date: {
       type: DataTypes.STRING(20),

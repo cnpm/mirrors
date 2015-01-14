@@ -91,9 +91,12 @@ contributors: install
 autod: install
 	@node_modules/.bin/autod -w \
 		--prefix "~" \
-		--exclude public,view,docs,backup,coverage \
+		--exclude public,views,coverage \
 		--dep mysql \
 		--devdep should,supertest,should-http,mm,pedding,mocha,istanbul-harmony,sqlite3,co-mocha
 	@$(MAKE) install
+
+dev:
+	@node_modules/.bin/node-dev --harmony dispatch.js
 
 .PHONY: test

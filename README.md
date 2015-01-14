@@ -16,7 +16,7 @@ mirrors
 [coveralls-url]: https://coveralls.io/r/cnpm/mirrors?branch=master
 [david-image]: https://img.shields.io/david/cnpm/mirrors.svg?style=flat-square
 [david-url]: https://david-dm.org/cnpm/mirrors
-[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
+[node-image]: https://img.shields.io/badge/node.js-%3E=_0.11.14-blue.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [gittip-image]: https://img.shields.io/gittip/dead-horse.svg?style=flat-square
 [gittip-url]: https://www.gittip.com/dead-horse/

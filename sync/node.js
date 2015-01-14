@@ -12,10 +12,9 @@
  */
 
 var debug = require('debug')('mirrors:sync:node');
-var config = require('../config');
-var Syncer = require('./syncer');
 var urllib = require('urllib');
 var util = require('util');
+var Syncer = require('./syncer');
 
 /**
  * Module exports.
@@ -30,11 +29,12 @@ module.exports = NodeSyncer;
  */
 
 function NodeSyncer(options) {
+  options.category = 'node';
   if (!(this instanceof NodeSyncer)) {
     return new NodeSyncer(options);
   }
   Syncer.call(this, options);
-};
+}
 
 util.inherits(NodeSyncer, Syncer);
 
@@ -42,10 +42,10 @@ var proto = NodeSyncer.prototype;
 
 // <a href="latest/">latest/</a>                             02-May-2014 14:45                   -
 // <a href="node-v0.4.10.tar.gz">node-v0.4.10.tar.gz</a>     26-Aug-2011 16:22            12410018
-var FILE_RE = /^<a[^>]+>([^<]+)<\/a>\s+(\d+\-\w+\-\d+ \d+\:\d+)\s+([\-\d]+)/;
+proto.FILE_RE = /^<a[^>]+>([^<]+)<\/a>\s+(\d+\-\w+\-\d+ \d+\:\d+)\s+([\-\d]+)/;
 
 // */docs/api/
-var DOC_API_RE = /\/docs\/api\/$/;
+proto.DOC_API_RE = /\/docs\/api\/$/;
 
 // <li><a href="documentation.html">About these Docs</a></li>
 // <li><a href="synopsis.html">Synopsis</a></li>
@@ -60,8 +60,8 @@ var DOC_API_RE = /\/docs\/api\/$/;
 //     <a href="index.json">View as JSON</a>
 //   </p>
 // </div>
-var DOC_API_FILE_ALL_RE = /<a[^"]+\"(\w+\.(?:html|json))\"[^>]*>[^<]+<\/a>/gm;
-var DOC_API_FILE_RE = /<a[^"]+\"(\w+\.(?:html|json))\"[^>]*>[^<]+<\/a>/;
+proto.DOC_API_FILE_ALL_RE = /<a[^"]+\"(\w+\.(?:html|json))\"[^>]*>[^<]+<\/a>/gm;
+proto.DOC_API_FILE_RE = /<a[^"]+\"(\w+\.(?:html|json))\"[^>]*>[^<]+<\/a>/;
 
 /**
  * list all dirs and files in a specific dir
@@ -73,7 +73,7 @@ proto.listdir = function* (fullname) {
   var url = this.disturl + fullname;
 
   // if is doc path
-  var isDocPath = DOC_API_RE.test(fullname);
+  var isDocPath = this.DOC_API_RE.test(fullname);
   if (isDocPath) {
     url += 'index.html';
   }
@@ -85,8 +85,8 @@ proto.listdir = function* (fullname) {
   debug('listdir %s got %s, %j', url, res.status, res.headers);
 
   return isDocPath
-    ? parseDocHtml(res, fullname)
-    : parseDistHtml(res, fullname);
+    ? this.parseDocHtml(res, fullname)
+    : this.parseDistHtml(res, fullname);
 };
 
 /**
@@ -108,12 +108,12 @@ proto.check = function* (checksums, info) {
  * @api private
  */
 
-function parseDistHtml(res, parent) {
+proto.parseDistHtml = function (res, parent) {
   var html = res.data || '';
   var items = [];
-
+  var that = this;
   html.split('\n').forEach(function (line) {
-    var m = FILE_RE.exec(line.trim());
+    var m = that.FILE_RE.exec(line.trim());
     if (!m) {
       return;
     }
@@ -137,9 +137,9 @@ function parseDistHtml(res, parent) {
   });
   items = items.slice(0, 2);
   return items;
-}
+};
 
-function parseDocHtml(res, parent) {
+proto.parseDocHtml = function (res, parent) {
   var html = res.data || '';
   var items = [];
   // "last-modified":"Tue, 11 Mar 2014 22:44:36 GMT"
@@ -156,9 +156,9 @@ function parseDocHtml(res, parent) {
 
   var needJSON = false;
   var htmlfileNames = [];
-  var lines = html.match(DOC_API_FILE_ALL_RE) || [];
+  var lines = html.match(this.DOC_API_FILE_ALL_RE) || [];
   for (var i = 0; i < lines.length; i++) {
-    var m = DOC_API_FILE_RE.exec(lines[i].trim());
+    var m = this.DOC_API_FILE_RE.exec(lines[i].trim());
     if (!m) {
       continue;
     }
@@ -192,4 +192,4 @@ function parseDocHtml(res, parent) {
   }
 
   return items;
-}
+};
