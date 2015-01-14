@@ -20,7 +20,6 @@ var NodeSyncer = require('./node');
 module.exports = IojsSyncer;
 
 function IojsSyncer(options) {
-  options.category = 'iojs';
   if (!(this instanceof IojsSyncer)) {
     return new IojsSyncer(options);
   }

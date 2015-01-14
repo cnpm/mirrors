@@ -29,7 +29,6 @@ module.exports = NodeSyncer;
  */
 
 function NodeSyncer(options) {
-  options.category = 'node';
   if (!(this instanceof NodeSyncer)) {
     return new NodeSyncer(options);
   }

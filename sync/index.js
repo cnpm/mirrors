@@ -17,22 +17,12 @@ var IojsSyncer = require('./iojs');
 var config = require('../config');
 var co = require('co');
 
-var syncers = {
-  'NodeDist': {
-    Syncer: NodeSyncer,
-    syncing: false,
-    enable: config.syncNodeDist,
-    disturl: config.nodeDistUrl,
-    syncInterval: config.syncNodeDistInterval,
-  },
-  'IojsDist': {
-    Syncer: IojsSyncer,
-    syncing: false,
-    enable: config.syncIojsDist,
-    disturl: config.iojsDistUrl,
-    syncInterval: config.syncIojsDistInterval,
-  },
-};
+var syncers = config.categories;
+
+for (var name in syncers) {
+  syncers[name].Syncer = require('./' + name);
+  syncers[name].syncing = false;
+}
 
 Object.keys(syncers).forEach(function (name) {
   var item = syncers[name];
@@ -49,7 +39,7 @@ Object.keys(syncers).forEach(function (name) {
 
     var syncer = new item.Syncer({
       disturl: item.disturl,
-      category: 'node'
+      category: item.category
     });
 
     try {
@@ -62,7 +52,7 @@ Object.keys(syncers).forEach(function (name) {
     }
   });
 
-  var syncInterval = item.syncInterval || config.syncInterval;
+  var syncInterval = item.interval || config.syncInterval;
   logger.syncInfo('enable sync %s from %s every %dms',
     item.Syncer.name, item.disturl, syncInterval);
 
@@ -71,3 +61,7 @@ Object.keys(syncers).forEach(function (name) {
     syncDist.catch(onerror);
   }, syncInterval);
 });
+
+function onerror(err) {
+  logger.error(err);
+}

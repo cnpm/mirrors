@@ -116,7 +116,8 @@ var config = {
     node: {
       name: 'Node.js',
       category: 'node',
-      sync: true,
+      enable: true,
+      interval: ms('1h'),
       disturl: 'http://nodejs.org/dist',
       url: 'http://nodejs.org',
       description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.'
@@ -124,7 +125,8 @@ var config = {
     iojs: {
       name: 'io.js',
       category: 'iojs',
-      sync: true,
+      enable: true,
+      interval: ms('1h'),
       disturl: 'https://iojs.org/dist',
       url: 'https://iojs.org',
       description: ' is an npm compatible platform originally based on node.js™.'
