@@ -51,7 +51,6 @@ test-cov cov: install init-database
 		--require should \
 		--require should-http \
 		--require co-mocha \
-		--require ./test/init.js \
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
@@ -73,7 +72,6 @@ test-travis: install init-database
 		--require should \
 		--require should-http \
 		--require co-mocha \
-		--require ./test/init.js \
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
@@ -92,7 +90,7 @@ autod: install
 	@node_modules/.bin/autod -w \
 		--prefix "~" \
 		--exclude public,views,coverage \
-		--dep mysql \
+		--dep mysql,bluebird \
 		--devdep should,supertest,should-http,mm,pedding,mocha,istanbul-harmony,sqlite3,co-mocha
 	@$(MAKE) install
 

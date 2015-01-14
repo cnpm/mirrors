@@ -12,6 +12,7 @@
  */
 
 var middlewares = require('koa-middlewares');
+var logger = require('./common/logger');
 var config = require('./config');
 var routes = require('./routes');
 var http = require('http');
@@ -31,7 +32,7 @@ app.use(middlewares.etag());
 
 middlewares.ejs(app, {
   root: path.join(__dirname, 'views'),
-  cache: config.debug,
+  cache: !config.debug,
   debug: config.debug,
   locals: {
     config: config
@@ -39,5 +40,10 @@ middlewares.ejs(app, {
 });
 
 routes(app);
+
+app.on('error', function (err) {
+  console.log(err.stack);
+  logger.error(err);
+})
 
 module.exports = http.createServer(app.callback());

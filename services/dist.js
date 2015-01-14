@@ -77,9 +77,13 @@ exports.listdir = function* (category, name) {
 exports.getfile = function* (category, fullname) {
   var name = path.basename(fullname);
   var parent = path.dirname(fullname);
+  if (parent === '.') {
+    parent = '';
+  }
   if (parent !== '/') {
     parent += '/';
   }
+
   return yield File.find({
     attributrs: KEYS.concat(FILE_ADDITIONS),
     where: {

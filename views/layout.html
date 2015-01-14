@@ -9,30 +9,16 @@
     <style>
       #fork{position:fixed;top:0;right:0;_position:absolute;z-index: 10000;}
       .bottom{margin: 20px auto; width: 100%; text-align: center;}
+      .container{width: 1080px; margin: 50px auto;}
     </style>
   <head>
   <body>
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Mirrors</a>
-        </div>
-        <div class="navbar-collapse collapse">
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
     <a href="https://github.com/cnpm/cnpmjs.org" id="fork" target="_blank">
         <img alt="Fork me on GitHub" src="//s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
     </a>
-    <%- body %>
+    <div class="container">
+      <%- body %>
+    </div>
 
       <hr/>
       <div class="bottom">

@@ -47,16 +47,7 @@ var config = {
   // log dir name
   logdir: path.join(root, '.tmp', 'logs'),
   // upload template file dir name
-  uploadDir: path.join(root, '.tmp', 'downloads'),
-  // web page viewCache
-  viewCache: false,
-
-  // default system admins
-  admins: {
-    // name: email
-    fengmk2: 'fengmk2@gmail.com',
-    dead_horse: 'dead_horse@qq.com',
-  },
+  uploadDir: path.join(root, '.tmp', 'upload'),
 
   /**
    * database config
@@ -92,10 +83,6 @@ var config = {
     logging: !!process.env.SQL_DEBUG,
   },
 
-  // redis config
-  // use for koa-limit module as storage
-  redis: null,
-
   // package tarball store in local filesystem by default
   nfs: require('fs-cnpm')({
     dir: path.join(root, '.tmp', 'nfs')
@@ -104,13 +91,28 @@ var config = {
   ua: 'github.com/cnpm/mirrors.robot@' + version,
 
   syncInterval: ms('1h'),
-  // node.js dist
-  syncNodeDist: false,
-  nodeDistUrl: 'https://nodejs.org/dist',
 
-  // io.js dist
-  syncIojsDist: true,
-  iojsDistUrl: 'https://iojs.org/dist',
+  // sync categories
+  categories: {
+    node: {
+      name: 'Node.js',
+      category: 'node',
+      enable: true,
+      interval: ms('1h'),
+      disturl: 'http://nodejs.org/dist',
+      url: 'http://nodejs.org',
+      description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.'
+    },
+    iojs: {
+      name: 'io.js',
+      category: 'iojs',
+      enable: true,
+      interval: ms('1h'),
+      disturl: 'https://iojs.org/dist',
+      url: 'https://iojs.org',
+      description: ' is an npm compatible platform originally based on node.js™.'
+    },
+  },
 };
 
 // load config/config.js, everything in config.js will cover the same key in index.js

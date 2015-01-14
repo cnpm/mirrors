@@ -29,7 +29,6 @@ module.exports = NodeSyncer;
  */
 
 function NodeSyncer(options) {
-  options.category = 'node';
   if (!(this instanceof NodeSyncer)) {
     return new NodeSyncer(options);
   }
@@ -135,7 +134,6 @@ proto.parseDistHtml = function (res, parent) {
       parent: parent
     });
   });
-  items = items.slice(0, 2);
   return items;
 };
 

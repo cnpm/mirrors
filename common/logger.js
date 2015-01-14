@@ -26,7 +26,7 @@ var categories = ['dist_sync_info', 'dist_sync_error'];
 var logger = module.exports = Logger({
   categories: categories,
   dir: config.logdir,
-  duration: '1d',
+  duration: '1h',
   format: '[{category}.]YYYY-MM-DD[.log]',
   stdout: config.debug && !isTEST
 });
