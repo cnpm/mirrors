@@ -73,7 +73,7 @@ function* download(category, name) {
     return this.status = 404;
   }
 
-  if (/\.(html|js|css|json|txt|tab)$/.test(name)) {
+  if (/\.(html|js|css|json|txt|tab|txt\.asc|txt\.gpg)$/.test(name)) {
     if (info.url.indexOf('http') === 0) {
       info.url = urlparse(info.url).path;
     }
