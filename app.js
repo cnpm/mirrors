@@ -12,7 +12,6 @@
  */
 
 var middlewares = require('koa-middlewares');
-var Dist = require('./services/dist');
 var config = require('./config');
 var routes = require('./routes');
 var http = require('http');

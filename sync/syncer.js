@@ -130,16 +130,18 @@ proto.syncFile = function* (info) {
 
   try {
     logger.syncInfo('downloading %s %s to %s',
-      bytes(info.size), downurl, filepath);
+      info.size ? bytes(info.size) : '', downurl, filepath);
     // get tarball
     var r = yield urllib.requestThunk(downurl, options);
     var statusCode = r.status || -1;
     logger.syncInfo('download %s got status %s, headers: %j',
       downurl, statusCode, r.headers);
     if (statusCode !== 200) {
-      var err = new Error(fmt('Download %s fail, status: %s', downurl, statusCode));
-      err.name = 'DownloadDistFileError';
-      throw err;
+      logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
+      return;
+      // var err = new Error(fmt('Download %s fail, status: %s', downurl, statusCode));
+      // err.name = 'DownloadDistFileError';
+      // throw err;
     }
 
     var sha1sum = crypto.createHash('sha1');
@@ -189,7 +191,7 @@ proto.syncFile = function* (info) {
     info.category = this.category;
 
     logger.syncInfo('upload %s to nfs:%s with size:%d, sha1:%s, md5: %s',
-      args.key, info.url, info.size, info.sha1, info.md5);
+      args.key, info.url, bytes(info.size), info.sha1, info.md5);
   } finally {
     // remove tmp file whatever
     fs.unlink(filepath, utility.noop);

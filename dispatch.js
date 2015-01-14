@@ -13,10 +13,10 @@
  */
 
 var childProcess = require('child_process');
-var config = require('./config');
 var cfork = require('cfork');
 var path = require('path');
 var util = require('util');
+var config = require('./config');
 
 var workerPath = path.join(__dirname, 'worker.js');
 var syncPath = path.join(__dirname, 'sync');

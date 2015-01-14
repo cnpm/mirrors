@@ -11,36 +11,61 @@
  * Module dependencies.
  */
 
-var debug = require('debug')('mirrors:sync:index.js');
 var logger = require('../common/logger');
 var NodeSyncer = require('./node');
+var IojsSyncer = require('./iojs');
 var config = require('../config');
 var co = require('co');
 
-var syncingNodeDist = false;
-var syncNodeDist = co(function* () {
-  if (syncingNodeDist) {
+var syncers = {
+  'NodeDist': {
+    Syncer: NodeSyncer,
+    syncing: false,
+    enable: config.syncNodeDist,
+    disturl: config.nodeDistUrl,
+    syncInterval: config.syncNodeDistInterval,
+  },
+  'IojsDist': {
+    Syncer: IojsSyncer,
+    syncing: false,
+    enable: config.syncIojsDist,
+    disturl: config.iojsDistUrl,
+    syncInterval: config.syncIojsDistInterval,
+  },
+};
+
+Object.keys(syncers).forEach(function (name) {
+  var item = syncers[name];
+  if (!item.enable) {
     return;
   }
-  syncingNodeDist = true;
 
-  var nodeSyncer = NodeSyncer({
-    disturl: config.nodeDistUrl,
-    category: 'node'
+  item.syncing = false;
+  var syncDist = co(function* () {
+    if (item.syncing) {
+      return;
+    }
+    item.syncing = true;
+
+    var syncer = new item.Syncer({
+      disturl: item.disturl,
+      category: 'node'
+    });
+
+    try {
+      yield* syncer.start();
+    } catch (err) {
+      err.message += ' (sync node dist error)';
+      logger.syncError(err);
+    } finally {
+      item.syncing = false;
+    }
   });
 
-  try {
-    yield* nodeSyncer.start();
-  } catch (err) {
-    err.message += ' (sync node dist error)';
-    logger.syncError(err);
-  } finally {
-    syncingNodeDist = false;
-  }
-});
+  var syncInterval = item.syncInterval || config.syncInterval;
+  logger.syncInfo('enable sync %s from %s every %dms',
+    item.Syncer.name, item.disturl, syncInterval);
 
-if (config.syncNodeDist) {
-  debug('enable sync node dist from %s', config.nodeDistUrl);
-  syncNodeDist();
-  setInterval(syncNodeDist, config.syncNodeDistInterval || config.syncInterval);
-}
+  syncDist();
+  setInterval(syncDist, syncInterval);
+});

@@ -29,12 +29,14 @@ var config = {
   /**
    * Cluster mode
    */
+
   enableCluster: false,
   numCPUs: os.cpus().length,
 
   /*
    * server configure
    */
+
   port: 7001,
   bindingHost: '127.0.0.1', // only binding on 127.0.0.1 for local access
 
@@ -45,23 +47,9 @@ var config = {
   // log dir name
   logdir: path.join(root, '.tmp', 'logs'),
   // upload template file dir name
-  uploadDir: path.join(root, '.dist'),
+  uploadDir: path.join(root, '.tmp', 'downloads'),
   // web page viewCache
   viewCache: false,
-
-  // config for koa-limit middleware
-  // for limit download rates
-  limit: {
-    enable: false,
-    token: 'koa-limit:download',
-    limit: 1000,
-    interval: ms('1d'),
-    whiteList: [],
-    blackList: [],
-    message: 'request frequency limited, any question, please contact fengmk2@gmail.com',
-  },
-
-  enableCompress: false, // enable gzip response or not
 
   // default system admins
   admins: {
@@ -110,15 +98,19 @@ var config = {
 
   // package tarball store in local filesystem by default
   nfs: require('fs-cnpm')({
-    dir: path.join(root, '.tmp/dist')
+    dir: path.join(root, '.tmp', 'nfs')
   }),
 
-  ua: 'mirrors.robot@' + version,
+  ua: 'github.com/cnpm/mirrors.robot@' + version,
 
   syncInterval: ms('1h'),
-  // node dist
-  syncNodeDist: true,
-  nodeDistUrl: 'http://nodejs.org/dist',
+  // node.js dist
+  syncNodeDist: false,
+  nodeDistUrl: 'https://nodejs.org/dist',
+
+  // io.js dist
+  syncIojsDist: true,
+  iojsDistUrl: 'https://iojs.org/dist',
 };
 
 // load config/config.js, everything in config.js will cover the same key in index.js
