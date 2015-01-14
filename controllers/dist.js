@@ -60,47 +60,55 @@ module.exports = function* () {
     return;
   }
 
+  yield* download.call(this, category, name);
+};
+
+function* download(category, name) {
   // download file
   var info = yield Dist.getfile(category, name);
   if (!info || !info.url) {
     debug('file %s:%s not exist', category, name);
-    return this.status = 404;
+    return this.redirect(this.path + '/');
+  }
+
+  if (/\.(html|js|css|json|txt)$/.test(name)) {
+    if (info.url.indexOf('http') === 0) {
+      info.url = urlparse(info.url).path;
+    }
+    return yield* pipe.call(this, info, false);
   }
 
   if (info.url.indexOf('http') === 0) {
     return this.redirect(info.url);
   }
+
+  return yield* pipe.call(this, info, false);
+}
+
+function* pipe(info, attachment) {
+  debug('pipe %j, attachment: %s', info, attachment);
   this.type = mime.lookup(info.url);
 
   if (typeof info.size === 'number' && info.size > 0) {
     this.length = info.size;
   }
+
   var type = mime.lookup(info.url);
   if (type) {
     this.type = type;
   }
+
   var etag = info.md5 || info.sha1;
   if (etag) {
     this.etag = etag;
   }
 
-  this.attachment(info.name);
+  if (attachment) {
+    this.attachment(info.name);
+  }
 
   return this.body = yield* downloadAsReadStream(info.url);
-};
-
-function padding(max, current, pad) {
-  pad = pad || ' ';
-  var left = max - current;
-  var str = '';
-  for (var i = 0; i < left; i++) {
-    str += pad;
-  }
-  return str;
 }
-
-
-var DOWNLOAD_TIMEOUT = ms('10m');
 
 function* downloadAsReadStream (key) {
   var tmpPath = path.join(config.uploadDir,
@@ -111,7 +119,7 @@ function* downloadAsReadStream (key) {
   }
   debug('downloadAsReadStream() %s to %s', key, tmpPath);
   try {
-    yield nfs.download(key, tmpPath, {timeout: DOWNLOAD_TIMEOUT});
+    yield nfs.download(key, tmpPath, {timeout: ms('10m')});
   } catch (err) {
     debug('downloadAsReadStream() %s to %s error: %s', key, tmpPath, err.stack);
     cleanup();
@@ -121,4 +129,14 @@ function* downloadAsReadStream (key) {
   tarball.once('error', cleanup);
   tarball.once('end', cleanup);
   return tarball;
+}
+
+function padding(max, current, pad) {
+  pad = pad || ' ';
+  var left = max - current;
+  var str = '';
+  for (var i = 0; i < left; i++) {
+    str += pad;
+  }
+  return str;
 }
