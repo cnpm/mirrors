@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `dist_file` (
  `md5` varchar(40) COMMENT 'md5 hex value',
  `url` varchar(2048),
  PRIMARY KEY (`id`),
- UNIQUE KEY `dist_file_parent_name` (`parent`, `name`),
+ UNIQUE KEY `dist_file_category_parent_name` (`category`, `parent`, `name`),
  KEY `dist_file_gmt_modified` (`gmt_modified`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='dist file info';
  */

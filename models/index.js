@@ -21,12 +21,12 @@ module.exports = {
   sequelize: sequelize
 };
 
-module.exports.query  =function* (sql, args) {
-  return yield sequelize.query(sql, args);
+module.exports.query = function* (sql, args) {
+  return yield sequelize.query(sql, null, {raw: true}, args);
 };
 
 module.exports.queryOone = function* (sql, args) {
-  var rows = yield* sequelize.query(sql, args);
+  var rows = yield sequelize.query(sql, null, {raw: true}, args);
   return rows && rows[0];
 };
 

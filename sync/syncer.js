@@ -176,7 +176,8 @@ proto.syncFile = function* (info) {
     }
 
     var args = {
-      key: '/dist' + info.parent + info.name,
+      // /dist/node/lastest/x64/node-v0.10.35-x64.msi
+      key: '/dist/' + this.category + info.parent + info.name,
       size: info.size,
       sha1sum: sha1sum,
     };

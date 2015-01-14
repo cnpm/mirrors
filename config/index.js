@@ -63,13 +63,13 @@ var config = {
    */
 
   database: {
-    db: 'mirros_test',
+    db: 'cnpmjs_test',
     username: 'root',
     password: '',
 
     // the sql dialect of the database
     // - currently supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
-    dialect: 'sqlite',
+    dialect: 'mysql',
 
     // custom host; default: 127.0.0.1
     host: '127.0.0.1',
