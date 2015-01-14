@@ -21,6 +21,7 @@ var ms = require('humanize-ms');
 var bytes = require('bytes');
 var path = require('path');
 var fs = require('fs');
+var urlparse = require('url').parse;
 
 module.exports = function* () {
   //TODO will error in windows
@@ -72,7 +73,7 @@ function* download(category, name) {
     return this.status = 404;
   }
 
-  if (/\.(html|js|css|json|txt)$/.test(name)) {
+  if (/\.(html|js|css|json|txt|tab)$/.test(name)) {
     if (info.url.indexOf('http') === 0) {
       info.url = urlparse(info.url).path;
     }
