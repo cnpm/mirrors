@@ -29,7 +29,8 @@ module.exports = function* () {
   paths.shift();
 
   var category = paths.shift();
-  var name = paths.join('/') || '/';
+  var name = paths.join('/').replace(/^\/?/, '/');
+
   debug('request %s, normalize to %s, got category: %s, name: %s', this.path, p, category, name);
 
   if (!config.categories[category]) {
@@ -68,7 +69,7 @@ function* download(category, name) {
   var info = yield Dist.getfile(category, name);
   if (!info || !info.url) {
     debug('file %s:%s not exist', category, name);
-    return this.redirect(this.path + '/');
+    return this.status = 404;
   }
 
   if (/\.(html|js|css|json|txt)$/.test(name)) {
