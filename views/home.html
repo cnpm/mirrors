@@ -1,1 +1,23 @@
+<style>
+  .category {
+    margin: 20px;
+    border-bottom: 1px #ccc solid;
+  }
+  .category-name {
+    font-size: 30px;
+    margin: 0 10px 0 0;
+  }
+  .category-description {
+    font-size: 18px;
+    color: #666;
+  }
+</style>
 <h1>All Mirrors</h1>
+
+<% for (var name in categories) {
+  var category = categories[name];
+%>
+  <div class="category">
+    <a class="category-name" href="<%= name %>"><%= category.name %></a><span class="category-description"><%= category.description %></span>
+  </div>
+<% } %>

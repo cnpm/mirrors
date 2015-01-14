@@ -15,13 +15,7 @@ var debug = require('debug')('mirrors:controllers:home');
 var config = require('../config');
 
 module.exports = function* () {
-  var categories = {};
-
-  if (config.syncNodeDist) {
-    categories.node = config.nodeDistUrl;
-  }
-
   yield this.render('home', {
-    categories: categories
+    categories: config.categories
   });
 };

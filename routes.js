@@ -20,5 +20,5 @@ module.exports = function (app) {
   app.use(router(app));
 
   app.get('/', Home);
-  app.get(/\/dist\/(.*?)\/(\/.*)?/, Dist);
+  app.get(/^\/.*/, Dist);
 };

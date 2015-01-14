@@ -135,7 +135,6 @@ proto.parseDistHtml = function (res, parent) {
       parent: parent
     });
   });
-  items = items.slice(0, 2);
   return items;
 };
 

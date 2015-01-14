@@ -47,7 +47,7 @@ var config = {
   // log dir name
   logdir: path.join(root, '.tmp', 'logs'),
   // upload template file dir name
-  uploadDir: path.join(root, '.tmp', 'downloads'),
+  uploadDir: path.join(root, '.tmp', 'upload'),
   // web page viewCache
   viewCache: false,
 
@@ -111,6 +111,25 @@ var config = {
   // io.js dist
   syncIojsDist: true,
   iojsDistUrl: 'https://iojs.org/dist',
+
+  categories: {
+    node: {
+      name: 'Node.js',
+      category: 'node',
+      sync: true,
+      disturl: 'http://nodejs.org/dist',
+      url: 'http://nodejs.org',
+      description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.'
+    },
+    iojs: {
+      name: 'io.js',
+      category: 'iojs',
+      sync: true,
+      disturl: 'https://iojs.org/dist',
+      url: 'https://iojs.org',
+      description: ' is an npm compatible platform originally based on node.js™.'
+    },
+  },
 };
 
 // load config/config.js, everything in config.js will cover the same key in index.js

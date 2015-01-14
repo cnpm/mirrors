@@ -66,6 +66,8 @@ Object.keys(syncers).forEach(function (name) {
   logger.syncInfo('enable sync %s from %s every %dms',
     item.Syncer.name, item.disturl, syncInterval);
 
-  syncDist();
-  setInterval(syncDist, syncInterval);
+  syncDist.catch(onerror);
+  setInterval(function () {
+    syncDist.catch(onerror);
+  }, syncInterval);
 });

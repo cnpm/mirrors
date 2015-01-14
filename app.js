@@ -31,7 +31,7 @@ app.use(middlewares.etag());
 
 middlewares.ejs(app, {
   root: path.join(__dirname, 'views'),
-  cache: config.debug,
+  cache: !config.debug,
   debug: config.debug,
   locals: {
     config: config
