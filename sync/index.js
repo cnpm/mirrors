@@ -12,8 +12,6 @@
  */
 
 var logger = require('../common/logger');
-var NodeSyncer = require('./node');
-var IojsSyncer = require('./iojs');
 var config = require('../config');
 var co = require('co');
 
@@ -33,35 +31,36 @@ Object.keys(syncers).forEach(function (name) {
     return;
   }
 
-  item.syncing = false;
-  var syncDist = co(function* () {
-    if (item.syncing) {
-      return;
-    }
-    item.syncing = true;
+  function startSync() {
+    return co(function* () {
+      if (item.syncing) {
+        return;
+      }
+      item.syncing = true;
 
-    var syncer = new item.Syncer({
-      disturl: item.disturl,
-      category: item.category
+      var syncer = new item.Syncer({
+        disturl: item.disturl,
+        category: item.category
+      });
+
+      try {
+        yield* syncer.start();
+      } catch (err) {
+        err.message += ' (sync node dist error)';
+        logger.syncError(err);
+      } finally {
+        item.syncing = false;
+      }
     });
-
-    try {
-      yield* syncer.start();
-    } catch (err) {
-      err.message += ' (sync node dist error)';
-      logger.syncError(err);
-    } finally {
-      item.syncing = false;
-    }
-  });
+  }
 
   var syncInterval = item.interval || config.syncInterval;
   logger.syncInfo('enable sync %s from %s every %dms',
     item.Syncer.name, item.disturl, syncInterval);
 
-  syncDist.catch(onerror);
+  startSync().catch(onerror);
   setInterval(function () {
-    syncDist.catch(onerror);
+    startSync().catch(onerror);
   }, syncInterval);
 });
 

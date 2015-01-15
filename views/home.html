@@ -18,6 +18,7 @@
   var category = categories[name];
 %>
   <div class="category">
-    <a class="category-name" href="<%= name %>"><%= category.name %></a><span class="category-description"><%= category.description %></span>
+    <a class="category-name" href="<%= config.mount %><%= name %>/"><%= category.name %></a>
+    <span class="category-description"><%= category.description %></span>
   </div>
 <% } %>
