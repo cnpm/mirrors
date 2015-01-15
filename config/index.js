@@ -110,8 +110,24 @@ var config = {
       interval: ms('1h'),
       disturl: 'https://iojs.org/dist',
       url: 'https://iojs.org',
-      description: ' is an npm compatible platform originally based on node.js™.'
+      description: 'is an npm compatible platform originally based on node.js™.'
     },
+    python: {
+      name: 'python',
+      category: 'python',
+      enable: false,
+      disturl: 'https://www.python.org/downloads',
+      description: 'is a programming language that lets you work quickly and integrate systems more effectively.',
+      url: 'https://www.python.org'
+    },
+    phantomjs: {
+      name: 'PhantomJS',
+      category: 'phantomjs',
+      enable: false,
+      description: 'is a headless WebKit scriptable with a JavaScript API.',
+      disturl: 'https://bitbucket.org/ariya/phantomjs/downloads',
+      url: 'http://phantomjs.org'
+    }
   },
 };
 
