@@ -127,7 +127,7 @@ var config = {
     phantomjs: {
       name: 'PhantomJS',
       category: 'phantomjs',
-      enable: false,
+      enable: true,
       // interval: ms('5m'),
       description: 'is a headless WebKit scriptable with a JavaScript API.',
       disturl: 'https://bitbucket.org/ariya/phantomjs/downloads',
