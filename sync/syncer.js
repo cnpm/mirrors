@@ -191,7 +191,7 @@ proto.syncFile = function* (info) {
     info.md5 = md5sum;
     info.category = this.category;
 
-    logger.syncInfo('upload %s to nfs:%s with size:%d, sha1:%s, md5: %s',
+    logger.syncInfo('upload %s to nfs:%s with size:%s, sha1:%s, md5: %s',
       args.key, info.url, bytes(info.size), info.sha1, info.md5);
   } finally {
     // remove tmp file whatever
