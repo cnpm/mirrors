@@ -3,6 +3,6 @@
 <pre><a href="../">../</a><% for (var i = 0; i < items.length; i++) {
   var item = items[i];
 %>
-<a href="/<%= category %><%= item.parent || '' %><%= item.name || '' %>"><%= item.name %></a><%- padding(50, item.name.length, " ") %><%= item.date %><%- padding(50, item.size.length, " ") %><%= item.size %><% } %>
+<a href="<%= config.mount %><%= category %><%= item.parent || '' %><%= item.name || '' %>"><%= item.name %></a><%- padding(50, item.name.length, " ") %><%= item.date %><%- padding(50, item.size.length, " ") %><%= item.size %><% } %>
 </pre>
 <hr>

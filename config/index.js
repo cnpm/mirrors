@@ -39,6 +39,9 @@ var config = {
 
   port: 7001,
   bindingHost: '127.0.0.1', // only binding on 127.0.0.1 for local access
+  // you can change it to support subpath as an app
+  // like set `mount = "/mirrors"` => cnpmjs.org/mirrors
+  mount: '/',
 
   // debug mode
   // if in debug mode, some middleware like limit wont load

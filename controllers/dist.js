@@ -88,7 +88,6 @@ function* download(category, name) {
 }
 
 function* pipe(info, attachment) {
-  debug('pipe %j, attachment: %s', info, attachment);
   this.type = mime.lookup(info.url);
 
   if (typeof info.size === 'number' && info.size > 0) {
@@ -96,6 +95,10 @@ function* pipe(info, attachment) {
   }
 
   var type = mime.lookup(info.url);
+  if (/\.(txt\.asc|txt\.gpg|tab)$/.test(info.name)) {
+    type = 'text/plain';
+  }
+  debug('pipe %j, attachment: %s, type: %s', info, attachment, type);
   if (type) {
     this.type = type;
   }

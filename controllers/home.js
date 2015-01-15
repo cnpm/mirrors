@@ -11,7 +11,6 @@
  * Module dependencies.
  */
 
-var debug = require('debug')('mirrors:controllers:home');
 var config = require('../config');
 
 module.exports = function* () {

@@ -44,6 +44,6 @@ routes(app);
 app.on('error', function (err) {
   console.log(err.stack);
   logger.error(err);
-})
+});
 
 module.exports = http.createServer(app.callback());
