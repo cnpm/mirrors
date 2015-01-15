@@ -136,12 +136,16 @@ proto.syncFile = function* (info) {
     var statusCode = r.status || -1;
     logger.syncInfo('download %s got status %s, headers: %j',
       downurl, statusCode, r.headers);
-    if (statusCode !== 200) {
+
+    if (statusCode === 404) {
       logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
       return;
-      // var err = new Error(fmt('Download %s fail, status: %s', downurl, statusCode));
-      // err.name = 'DownloadDistFileError';
-      // throw err;
+    }
+
+    if (statusCode !== 200) {
+      var err = new Error(fmt('Download %s fail, status: %s', downurl, statusCode));
+      err.name = 'DownloadDistFileError';
+      throw err;
     }
 
     var sha1sum = crypto.createHash('sha1');
@@ -191,7 +195,7 @@ proto.syncFile = function* (info) {
     info.md5 = md5sum;
     info.category = this.category;
 
-    logger.syncInfo('upload %s to nfs:%s with size:%d, sha1:%s, md5: %s',
+    logger.syncInfo('upload %s to nfs:%s with size:%s, sha1:%s, md5: %s',
       args.key, info.url, bytes(info.size), info.sha1, info.md5);
   } finally {
     // remove tmp file whatever
