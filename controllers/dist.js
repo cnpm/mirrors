@@ -17,6 +17,7 @@ var nfs = require('../common/nfs');
 var config = require('../config');
 var utility = require('utility');
 var mime = require('mime-types');
+var fmt = require('util').format;
 var ms = require('humanize-ms');
 var bytes = require('bytes');
 var path = require('path');
@@ -46,7 +47,7 @@ module.exports = function* () {
       if (!item.size) {
         item.size = '-';
       } else {
-        item.size = bytes(item.size);
+        item.size = fmt('%s(%s)', item.size, bytes(item.size))
       }
       return item;
     });
