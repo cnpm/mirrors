@@ -93,7 +93,7 @@ var config = {
 
   ua: 'github.com/cnpm/mirrors.robot@' + version,
 
-  syncInterval: ms('1h'),
+  syncInterval: ms('5m'),
 
   // sync categories
   categories: {
@@ -101,7 +101,7 @@ var config = {
       name: 'Node.js',
       category: 'node',
       enable: true,
-      interval: ms('1h'),
+      // interval: ms('5m'),
       disturl: 'http://nodejs.org/dist',
       url: 'http://nodejs.org',
       description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.'
@@ -110,7 +110,7 @@ var config = {
       name: 'io.js',
       category: 'iojs',
       enable: true,
-      interval: ms('1h'),
+      // interval: ms('5m'),
       disturl: 'https://iojs.org/dist',
       url: 'https://iojs.org',
       description: 'is an npm compatible platform originally based on node.js™.'
@@ -119,6 +119,7 @@ var config = {
       name: 'python',
       category: 'python',
       enable: false,
+      // interval: ms('5m'),
       disturl: 'https://www.python.org/downloads',
       description: 'is a programming language that lets you work quickly and integrate systems more effectively.',
       url: 'https://www.python.org'
@@ -127,6 +128,7 @@ var config = {
       name: 'PhantomJS',
       category: 'phantomjs',
       enable: false,
+      // interval: ms('5m'),
       description: 'is a headless WebKit scriptable with a JavaScript API.',
       disturl: 'https://bitbucket.org/ariya/phantomjs/downloads',
       url: 'http://phantomjs.org'
