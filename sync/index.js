@@ -20,6 +20,9 @@ var co = require('co');
 var syncers = config.categories;
 
 for (var name in syncers) {
+  if (!syncers[name].enable) {
+    continue;
+  }
   syncers[name].Syncer = require('./' + name);
   syncers[name].syncing = false;
 }
