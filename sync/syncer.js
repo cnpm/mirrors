@@ -217,8 +217,7 @@ proto.listdiff = function* (fullname) {
   if (!items || items.length === 0) {
     return [];
   }
-  var exists = yield* distService.listdir(this.category, fullname);
-  debug('listdiff %s got %s exists items', fullname, exists.length);
+  var exists = yield* this.listExists(fullname);
   var map = {};
   for (var i = 0; i < exists.length; i++) {
     var item = exists[i];
@@ -243,4 +242,10 @@ proto.listdiff = function* (fullname) {
     debug('skip %s', item.name);
   }
   return news;
+};
+
+proto.listExists = function* (fullname) {
+  var exists = yield* distService.listdir(this.category, fullname);
+  debug('listdiff %s %s got %s exists items', this.category, fullname, exists.length);
+  return exists;
 };
