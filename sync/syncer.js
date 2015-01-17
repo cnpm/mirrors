@@ -193,7 +193,12 @@ proto.syncFile = function* (info) {
     }, info);
 
     if (!equivalent) {
-      throw new Error(fmt('Download %s file check not valid', downurl));
+      var err = new Error(fmt('Download %s file check not valid', downurl));
+      err.data = {
+        checksums: checksums,
+        info: info
+      };
+      throw err;
     }
 
     var args = {
