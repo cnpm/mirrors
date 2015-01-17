@@ -23,7 +23,7 @@ for (var name in syncers) {
     continue;
   }
   // sync from github
-  if (syncers.githubRepo) {
+  if (syncers[name].githubRepo) {
     GithubSyncer = GithubSyncer || require('./github');
     syncers[name].Syncer = GithubSyncer;
     syncers[name].syncing = false;

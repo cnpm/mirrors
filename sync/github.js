@@ -46,50 +46,50 @@ proto.listdir = function* (fullname) {
   });
   var releases = result.data || [];
   debug('listdir %s got %s, %j, releases: %s',
-    url, result.status, result.headers, releases.length);
+    this.url, result.status, result.headers, releases.length);
 
   return releases.map(parseRelease).reduce(function (prev, curr) {
     return prev.concat(curr);
   });
-};
 
-function parseRelease(release, fullname) {
-  var items = [];
-  if (release.tarball_url) {
-    items.push({
-      name: release.tag_name + '.tgz',
-      date: release.created_at,
-      size: null,
-      type: 'file',
-      downloadURL: release.tarball_url,
-      parent.fullname
-    });
-  }
-
-  if (release.zipball_url) {
-    items.push({
-      name: release.tag_name + '.zip',
-      date: release.created_at,
-      size: null,
-      type: 'file',
-      downloadURL: release.zipball_url,
-      parent: fullname
-    });
-  }
-
-  if (release.assets) {
-    assets.forEach(function (asset) {
+  function parseRelease(release) {
+    var items = [];
+    if (release.tarball_url) {
       items.push({
-        name: asset.name,
-        date: asset.updated_at || asset.created_at,
-        size: asset.size,
+        name: release.tag_name + '.tgz',
+        date: release.created_at,
+        size: null,
         type: 'file',
-        downloadURL: asset.browser_download_url,
+        downloadURL: release.tarball_url,
         parent: fullname
       });
-      browser_download_url
-    });
+    }
+
+    if (release.zipball_url) {
+      items.push({
+        name: release.tag_name + '.zip',
+        date: release.created_at,
+        size: null,
+        type: 'file',
+        downloadURL: release.zipball_url,
+        parent: fullname
+      });
+    }
+
+    if (release.assets) {
+      release.assets.forEach(function (asset) {
+        items.push({
+          name: asset.name,
+          date: asset.updated_at || asset.created_at,
+          size: asset.size,
+          type: 'file',
+          downloadURL: asset.browser_download_url,
+          parent: fullname
+        });
+      });
+    }
+
+    return items;
   }
 
-  return items;
-}
+};
