@@ -244,9 +244,8 @@ proto.listdiff = function* (fullname) {
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
     var exist = map[item.name];
-    var equivalent = this.check(exist, item);
 
-    if (!exist || exist.date !== item.date || !equivalent) {
+    if (!exist || exist.date !== item.date || !this.check(exist, item)) {
       news.push(item);
       continue;
     }
