@@ -95,7 +95,7 @@ proto.listdir = function* (fullname) {
  * @param {Object} info
  */
 
-proto.check = function* (checksums, info) {
+proto.check = function (checksums, info) {
   return checksums.size === info.size;
 };
 

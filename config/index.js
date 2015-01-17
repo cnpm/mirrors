@@ -96,6 +96,10 @@ var config = {
 
   ua: 'github.com/cnpm/mirrors.robot@' + version,
 
+  // put your github token here
+  // to avoid github rate limit
+  githubToken: '',
+
   syncInterval: ms('5m'),
 
   // sync categories
@@ -118,15 +122,6 @@ var config = {
       url: 'https://iojs.org',
       description: 'is an npm compatible platform originally based on node.js™.'
     },
-    npm: {
-      name: 'NPM',
-      category: 'npm',
-      enable: true,
-      // interval: ms('5m'),
-      disturl: 'https://github.com/npm/npm/releases',
-      url: 'https://npmjs.com',
-      description: 'a JavaScript package manager.'
-    },
     python: {
       name: 'python',
       category: 'python',
@@ -144,6 +139,27 @@ var config = {
       description: 'is a headless WebKit scriptable with a JavaScript API.',
       disturl: 'https://bitbucket.org/ariya/phantomjs/downloads',
       url: 'http://phantomjs.org'
+    },
+    // from github released
+    npm: {
+      name: 'NPM',
+      category: 'npm',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/npm/npm/releases',
+      githubRepo: 'npm/npm',
+      url: 'https://npmjs.com',
+      description: 'a JavaScript package manager.'
+    },
+    'atom-shell': {
+      name: 'atom-shell',
+      category: 'atom-shell',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/atom/atom-shell/releases',
+      githubRepo: 'atom/atom-shell',
+      url: 'https://github.com/atom/atom-shell',
+      description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.'
     }
   },
 };
