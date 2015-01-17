@@ -96,6 +96,10 @@ var config = {
 
   ua: 'github.com/cnpm/mirrors.robot@' + version,
 
+  // put your github token here
+  // to avoid github rate limit
+  githubToken: '',
+
   syncInterval: ms('5m'),
 
   // sync categories

@@ -17,6 +17,7 @@ var distService = require('../services/dist');
 var logger = require('../common/logger');
 var thunkify = require('thunkify-wrap');
 var utils = require('../lib/utils');
+var urlParse = require('url').parse;
 var nfs = require('../common/nfs');
 var config = require('../config');
 var fmt = require('util').format;
@@ -25,6 +26,7 @@ var crypto = require('crypto');
 var urllib = require('urllib');
 var bytes = require('bytes');
 var fs = require('fs');
+
 
 /**
  * Module Exports.
@@ -128,6 +130,10 @@ proto.syncFile = function* (info) {
       'user-agent': config.ua
     }
   };
+
+  if (urlParse(downurl).host === 'api.github.com') {
+    options.headers.authorization = utils.getGithubBasicAuth();
+  }
 
   try {
     logger.syncInfo('downloading %s %s to %s',

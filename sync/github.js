@@ -1,5 +1,5 @@
 /**!
- * mirrors - sync/npm.js
+ * mirrors - sync/github.js
  *
  * Copyright(c) fengmk2 and other contributors.
  * MIT Licensed
@@ -18,7 +18,9 @@
 var debug = require('debug')('mirrors:sync:github');
 var util = require('util');
 var urllib = require('urllib');
+var utils = require('../lib/utils');
 var Syncer = require('./syncer');
+var config = require('../config');
 
 module.exports = GithubSyncer;
 
@@ -28,6 +30,7 @@ function GithubSyncer(options) {
   }
   Syncer.call(this, options);
   this.url = util.format('https://api.github.com/repos/%s/releases', options.repo);
+  this.authorization = utils.getGithubBasicAuth();
 }
 
 util.inherits(GithubSyncer, Syncer);
@@ -43,12 +46,16 @@ proto.listdir = function* (fullname) {
     timeout: 60000,
     dataType: 'json',
     gzip: true,
+    headers: { authorization: this.authorization }
   });
-  var releases = result.data || [];
   debug('listdir %s got %s, %j, releases: %s',
-    this.url, result.status, result.headers, releases.length);
+    this.url, result.status, result.headers, result.data.length || '-');
 
-  return releases.map(parseRelease).reduce(function (prev, curr) {
+  if (result.status !== 200) {
+    throw new Error(util.format('get %s resposne %s', this.url, result.status));
+  }
+
+  return result.data.map(parseRelease).reduce(function (prev, curr) {
     return prev.concat(curr);
   });
 
