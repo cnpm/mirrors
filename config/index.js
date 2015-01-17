@@ -91,6 +91,9 @@ var config = {
     dir: path.join(root, '.tmp', 'nfs')
   }),
 
+  // pipe all file instead 302 redirect
+  pipeAll: false,
+
   ua: 'github.com/cnpm/mirrors.robot@' + version,
 
   syncInterval: ms('5m'),

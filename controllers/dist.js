@@ -74,6 +74,13 @@ function* download(category, name) {
     return this.status = 404;
   }
 
+  if (config.pipeAll) {
+    if (info.url.indexOf('http') === 0) {
+      info.url = urlparse(info.url).path;
+    }
+    return yield* pipe.call(this, info, false);
+  }
+
   if (/\.(html|js|css|json|txt|tab|txt\.asc|txt\.gpg)$/.test(name)) {
     if (info.url.indexOf('http') === 0) {
       info.url = urlparse(info.url).path;
@@ -116,7 +123,7 @@ function* pipe(info, attachment) {
   return this.body = yield* downloadAsReadStream(info.url);
 }
 
-function* downloadAsReadStream (key) {
+function* downloadAsReadStream(key) {
   var tmpPath = path.join(config.uploadDir,
     utility.randomString() + key.replace(/\//g, '-'));
   function cleanup() {
