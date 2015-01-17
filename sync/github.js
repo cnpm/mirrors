@@ -37,8 +37,11 @@ util.inherits(GithubSyncer, Syncer);
 
 var proto = GithubSyncer.prototype;
 
-proto.check = function () {
-  return true;
+proto.check = function (checksums, info) {
+  if (!info.size) {
+    return true;
+  }
+  return checksums.size === info.size;
 };
 
 proto.listdir = function* (fullname) {
