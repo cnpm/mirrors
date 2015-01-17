@@ -96,6 +96,9 @@ proto.listdir = function* (fullname) {
  */
 
 proto.check = function (checksums, info) {
+  if (!info.size) {
+    return true;
+  }
   return checksums.size === info.size;
 };
 
