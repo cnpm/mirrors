@@ -65,5 +65,6 @@ Object.keys(syncers).forEach(function (name) {
 });
 
 function onerror(err) {
+  delete err.data;
   logger.error(err);
 }

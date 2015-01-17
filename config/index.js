@@ -118,6 +118,15 @@ var config = {
       url: 'https://iojs.org',
       description: 'is an npm compatible platform originally based on node.js™.'
     },
+    npm: {
+      name: 'NPM',
+      category: 'npm',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/npm/npm/releases',
+      url: 'https://npmjs.com',
+      description: 'a JavaScript package manager.'
+    },
     python: {
       name: 'python',
       category: 'python',

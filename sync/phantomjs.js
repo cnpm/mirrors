@@ -112,7 +112,7 @@ proto.listdir = function* (fullname) {
   var result = yield urllib.request(url, {
     timeout: 60000,
   });
-  debug('listPhantomjsDir %s got %s, %j', url, result.status, result.headers);
+  debug('listdir %s got %s, %j', url, result.status, result.headers);
   var html = result.data && result.data.toString() || '';
   var items = this._findItems(html);
   items.forEach(function (item) {

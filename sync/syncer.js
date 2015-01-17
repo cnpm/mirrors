@@ -110,6 +110,7 @@ proto.syncDir = function* (fullname) {
  */
 
 proto.syncFile = function* (info) {
+  debug('start sync file %j', info);
   var name = '/' + this.category + info.parent + info.name;
   name = process.pid + name.replace(/\//g, '_'); // make sure no parent dir
   var downurl = this.disturl + info.parent + info.name;
@@ -244,7 +245,7 @@ proto.listdiff = function* (fullname) {
       continue;
     }
 
-    if (item.size !== '-' && item.size !== exist.size) {
+    if (item.size && item.size !== '-' && item.size !== exist.size) {
       news.push(item);
       continue;
     }
