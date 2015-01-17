@@ -103,7 +103,7 @@ var config = {
     node: {
       name: 'Node.js',
       category: 'node',
-      enable: false,
+      enable: true,
       // interval: ms('5m'),
       disturl: 'http://nodejs.org/dist',
       url: 'http://nodejs.org',
@@ -112,7 +112,7 @@ var config = {
     iojs: {
       name: 'io.js',
       category: 'iojs',
-      enable: false,
+      enable: true,
       // interval: ms('5m'),
       disturl: 'https://iojs.org/dist',
       url: 'https://iojs.org',
@@ -130,7 +130,7 @@ var config = {
     phantomjs: {
       name: 'PhantomJS',
       category: 'phantomjs',
-      enable: false,
+      enable: true,
       // interval: ms('5m'),
       description: 'is a headless WebKit scriptable with a JavaScript API.',
       disturl: 'https://bitbucket.org/ariya/phantomjs/downloads',
@@ -147,6 +147,16 @@ var config = {
       url: 'https://npmjs.com',
       description: 'a JavaScript package manager.'
     },
+    'atom-shell': {
+      name: 'atom-shell',
+      category: 'atom-shell',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/atom/atom-shell/releases',
+      githubRepo: 'atom/atom-shell',
+      url: 'https://github.com/atom/atom-shell',
+      description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.'
+    }
   },
 };
 
