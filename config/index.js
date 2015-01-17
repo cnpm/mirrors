@@ -103,7 +103,7 @@ var config = {
     node: {
       name: 'Node.js',
       category: 'node',
-      enable: true,
+      enable: false,
       // interval: ms('5m'),
       disturl: 'http://nodejs.org/dist',
       url: 'http://nodejs.org',
@@ -112,20 +112,11 @@ var config = {
     iojs: {
       name: 'io.js',
       category: 'iojs',
-      enable: true,
+      enable: false,
       // interval: ms('5m'),
       disturl: 'https://iojs.org/dist',
       url: 'https://iojs.org',
       description: 'is an npm compatible platform originally based on node.js™.'
-    },
-    npm: {
-      name: 'NPM',
-      category: 'npm',
-      enable: true,
-      // interval: ms('5m'),
-      disturl: 'https://github.com/npm/npm/releases',
-      url: 'https://npmjs.com',
-      description: 'a JavaScript package manager.'
     },
     python: {
       name: 'python',
@@ -139,12 +130,23 @@ var config = {
     phantomjs: {
       name: 'PhantomJS',
       category: 'phantomjs',
-      enable: true,
+      enable: false,
       // interval: ms('5m'),
       description: 'is a headless WebKit scriptable with a JavaScript API.',
       disturl: 'https://bitbucket.org/ariya/phantomjs/downloads',
       url: 'http://phantomjs.org'
-    }
+    },
+    // from github released
+    npm: {
+      name: 'NPM',
+      category: 'npm',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/npm/npm/releases',
+      githubRepo: 'npm/npm',
+      url: 'https://npmjs.com',
+      description: 'a JavaScript package manager.'
+    },
   },
 };
 

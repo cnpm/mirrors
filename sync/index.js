@@ -14,6 +14,7 @@
 var logger = require('../common/logger');
 var config = require('../config');
 var co = require('co');
+var GithubSyncer;
 
 var syncers = config.categories;
 
@@ -21,6 +22,14 @@ for (var name in syncers) {
   if (!syncers[name].enable) {
     continue;
   }
+  // sync from github
+  if (syncers.githubRepo) {
+    GithubSyncer = GithubSyncer || require('./github');
+    syncers[name].Syncer = GithubSyncer;
+    syncers[name].syncing = false;
+    continue;
+  }
+
   syncers[name].Syncer = require('./' + name);
   syncers[name].syncing = false;
 }
@@ -40,7 +49,8 @@ Object.keys(syncers).forEach(function (name) {
 
       var syncer = new item.Syncer({
         disturl: item.disturl,
-        category: item.category
+        category: item.category,
+        repo: item.githubRepo
       });
 
       try {
