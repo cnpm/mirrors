@@ -166,6 +166,16 @@ proto.syncFile = function* (info) {
       throw err;
     }
 
+    if (r.headers['Content-Length']) {
+      var contentLength = parseInt(r.headers['Content-Length']);
+      if (dataSize !== contentLength) {
+        var err = new Error(fmt('Download %s file real size: %s, not match Content-Length: %s',
+          downurl, dataSize, contentLength));
+        err.name = 'DownloadDistFileInvalidSizeError';
+        throw err;
+      }
+    }
+
     sha1sum = sha1sum.digest('hex');
     md5sum = md5sum.digest('hex');
 

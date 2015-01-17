@@ -17,7 +17,6 @@
 var debug = require('debug')('mirrors:sync:phantomjs');
 var util = require('util');
 var urllib = require('urllib');
-var cheerio = require('cheerio');
 var bytes = require('bytes');
 var urlResolve = require('url').resolve;
 var Syncer = require('./syncer');
@@ -54,25 +53,41 @@ proto.check = function () {
 //   </td>
 // </tr>
 
-proto.listdir = function* (fullname) {
-  var url = 'https://bitbucket.org/ariya/phantomjs/downloads';
-  var result = yield urllib.request(url, {
-    timeout: 60000,
+// <tr class="iterable-item" id="download-468654">
+//   <td class="name"><a class="execute" href="/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2">phantomjs-1.9.8-linux-x86_64.tar.bz2</a></td>
+//   <td class="size">12.6&nbsp;MB</td>
+//   <td class="uploaded-by"><a href="/ariya">ariya</a></td>
+//   <td class="count">1507662</td>
+//   <td class="date">
+//   <div>
+//   <time datetime="2014-10-25T01:45:09.810443" data-title="true" title="25 October 2014 09:45">2014-10-25</time>
+//   </div>
+//   </td>
+//   <td class="delete">
+//
+//   </td>
+// </tr>
+
+proto.FILE_RE = /<aclass="execute"href="([^"]+)">([^<]+)<\/a>.+?<tdclass="size">([^<]+).+?<timedatetime="([^"]+)"/;
+
+proto._findItems = function (html) {
+  var splits = html.split(/<tr class="iterable\-item" id="download\-\d+">/).map(function (s) {
+    // <tdclass="name"><aclass="execute"href="/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2">phantomjs-1.9.8-linux-i686.tar.bz2</a></td><tdclass="size">12.9MB</td><tdclass="uploaded-by"><ahref="/ariya">ariya</a></td><tdclass="count">33384</td><tdclass="date"><div><timedatetime="2014-10-24T03:15:51.534299"data-title="true">2014-10-24</time></div></td><tdclass="delete"></td></tr>
+    return s.replace(/\s+/g, '');
   });
-  debug('listPhantomjsDir %s got %s, %j', url, result.status, result.headers);
-  var html = result.data && result.data.toString() || '';
-  var $ = cheerio.load(html);
   var items = [];
-  $('tr.iterable-item').each(function (_, el) {
-    var $el = $(this);
-    var $link = $el.find('.name a');
-    var name = $link.text();
-    var downloadURL = $link.attr('href');
+  for (var i = 1; i < splits.length; i++) {
+    var m = this.FILE_RE.exec(splits[i]);
+    if (!m) {
+      continue;
+    }
+    var downloadURL = m[1].trim();
+    var name = m[2].trim();
     if (!name || !downloadURL || !/\.(zip|bz2|gz)$/.test(downloadURL)) {
       return;
     }
-    downloadURL = urlResolve(url, downloadURL);
-    var size = parseInt(bytes($el.find('.size').text().toLowerCase().replace(/\s/g, '')));
+    downloadURL = urlResolve(this.disturl, downloadURL);
+    var size = parseInt(bytes(m[3].toLowerCase()));
     if (size > 1024 * 1024) {
       size -= 1024 * 1024;
     } else if (size > 1024) {
@@ -80,15 +95,28 @@ proto.listdir = function* (fullname) {
     } else {
       size -= 10;
     }
-    var date = $el.find('.date time').text();
+    var date = m[4].trim();
     items.push({
       name: name, // 'SHASUMS.txt', 'x64/'
       date: date,
       size: size,
       type: 'file',
-      parent: fullname,
       downloadURL: downloadURL,
     });
+  }
+  return items;
+};
+
+proto.listdir = function* (fullname) {
+  var url = this.disturl;
+  var result = yield urllib.request(url, {
+    timeout: 60000,
+  });
+  debug('listPhantomjsDir %s got %s, %j', url, result.status, result.headers);
+  var html = result.data && result.data.toString() || '';
+  var items = this._findItems(html);
+  items.forEach(function (item) {
+    item.parent = fullname;
   });
   return items;
 };
