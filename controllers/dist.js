@@ -47,7 +47,7 @@ module.exports = function* () {
       if (!item.size) {
         item.size = '-';
       } else {
-        item.size = fmt('%s(%s)', item.size, bytes(item.size))
+        item.size = fmt('%s(%s)', item.size, bytes(item.size));
       }
       return item;
     });
