@@ -20,7 +20,6 @@ var util = require('util');
 var urllib = require('urllib');
 var utils = require('../lib/utils');
 var Syncer = require('./syncer');
-var config = require('../config');
 
 module.exports = GithubSyncer;
 
@@ -30,6 +29,7 @@ function GithubSyncer(options) {
   }
   Syncer.call(this, options);
   this.url = util.format('https://api.github.com/repos/%s/releases', options.repo);
+  this.archiveUrl = util.format('https://github.com/%s/archive/', options.repo);
   this.authorization = utils.getGithubBasicAuth();
 }
 
@@ -58,30 +58,34 @@ proto.listdir = function* (fullname) {
     throw new Error(util.format('get %s resposne %s', this.url, result.status));
   }
 
+  var archiveUrl = this.archiveUrl;
   return result.data.map(parseRelease).reduce(function (prev, curr) {
     return prev.concat(curr);
   });
 
   function parseRelease(release) {
     var items = [];
+    var name;
     if (release.tarball_url) {
+      name = release.tag_name + '.tgz';
       items.push({
-        name: release.tag_name + '.tgz',
+        name: name,
         date: release.created_at,
         size: null,
         type: 'file',
-        downloadURL: release.tarball_url,
+        downloadURL: archiveUrl + name,
         parent: fullname
       });
     }
 
     if (release.zipball_url) {
+      name = release.tag_name + '.zip';
       items.push({
-        name: release.tag_name + '.zip',
+        name: name,
         date: release.created_at,
         size: null,
         type: 'file',
-        downloadURL: release.zipball_url,
+        downloadURL: archiveUrl + name,
         parent: fullname
       });
     }

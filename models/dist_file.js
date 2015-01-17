@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `dist_file` (
  `name` varchar(200) NOT NULL COMMENT 'file name',
  `parent` varchar(200) NOT NULL COMMENT 'parent dir' DEFAULT '/',
  `category` varchar(200) NOT NULL COMMENT 'dist category',
- `date` varchar(20) COMMENT '02-May-2014 01:06',
+ `date` varchar(40) COMMENT '02-May-2014 01:06',
  `size` int(10) unsigned NOT NULL COMMENT 'file size' DEFAULT '0',
  `sha1` varchar(40) COMMENT 'sha1 hex value',
  `md5` varchar(40) COMMENT 'md5 hex value',
@@ -50,7 +50,7 @@ module.exports = function (sequelize, DataTypes) {
       comment: 'dist category, like node, iojs and so on',
     },
     date: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(40),
       allowNull: false,
       comment: '02-May-2014 01:06'
     },
