@@ -67,7 +67,7 @@ proto.listdir = function* (fullname) {
     var items = [];
     var name;
     if (release.tarball_url) {
-      name = release.tag_name + '.tgz';
+      name = release.tag_name + '.tar.gz';
       items.push({
         name: name,
         date: release.created_at,
