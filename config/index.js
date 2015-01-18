@@ -100,6 +100,9 @@ var config = {
   // to avoid github rate limit
   githubToken: '',
 
+  // global switch
+  enableSync: true,
+  // global sync interval
   syncInterval: ms('5m'),
 
   // sync categories
