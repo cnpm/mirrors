@@ -41,6 +41,7 @@ describe('services/dist.test.js', function () {
       infos.forEach(function (info) {
         info.parent.should.equal('/');
         info.category.should.equal(category);
+        info.type.should.be.a.String;
       });
     });
 

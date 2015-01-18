@@ -96,6 +96,7 @@ proto.listdir = function* (fullname) {
  */
 
 proto.check = function (checksums, info) {
+  // file: detect date and size
   if (!info.size) {
     return true;
   }
@@ -129,11 +130,17 @@ proto.parseDistHtml = function (res, parent) {
       return;
     }
 
+    var type = m[3] === '-' ? 'dir' : 'file';
+    var size = Number(m[3]) || '-';
+    if (type === 'dir') {
+      size = '-';
+    }
+
     items.push({
       name: itemName,
       date: m[2],
-      size: Number(m[3]) || '-',
-      type: m[3] === '-' ? 'dir' : 'file',
+      size: size,
+      type: type,
       parent: parent
     });
   });

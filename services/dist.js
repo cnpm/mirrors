@@ -71,7 +71,15 @@ exports.listdir = function* (category, name) {
       }
     })
   ];
-  return rs[0].concat(rs[1]);
+  return rs[0].map(function (dir) {
+    var obj = dir.toJSON();
+    obj.type = 'dir';
+    return obj;
+  }).concat(rs[1].map(function (file) {
+    var obj = file.toJSON();
+    obj.type = 'file';
+    return obj;
+  }));
 };
 
 exports.getfile = function* (category, fullname) {
