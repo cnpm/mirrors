@@ -168,6 +168,14 @@ var config = {
       url: 'https://github.com/atom/atom-shell',
       description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.',
       max: 5, // sync the latest 5 releases
+    },
+    chromedriver: {
+      name: 'ChromeDriver',
+      category: 'chromedriver',
+      enable: true,
+      disturl: 'http://chromedriver.storage.googleapis.com',
+      url: 'https://sites.google.com/a/chromium.org/chromedriver/',
+      description: 'ChromeDriver is a standalone server which implements WebDriver\'s wire protocol for Chromium, which is then available for Chrome on Android and Chrome on Desktop (Mac, Linux, Windows and ChromeOS).'
     }
   },
 };
