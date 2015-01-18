@@ -186,11 +186,12 @@ proto.syncFile = function* (info) {
     sha1sum = sha1sum.digest('hex');
     md5sum = md5sum.digest('hex');
 
-    var equivalent = this.check({
+    var checksums = {
       sha1: sha1sum,
       md5: md5sum,
-      size: dataSize
-    }, info);
+      size: dataSize,
+    };
+    var equivalent = this.check(checksums, info);
 
     if (!equivalent) {
       var err = new Error(fmt('Download %s file check not valid', downurl));
@@ -250,7 +251,12 @@ proto.listdiff = function* (fullname) {
     var item = items[i];
     var exist = map[item.name];
 
-    if (!exist || exist.date !== item.date || !this.check(exist, item)) {
+    if (!exist || exist.date !== item.date) {
+      news.push(item);
+      continue;
+    }
+
+    if (exist.type === 'file' && !this.check(exist, item)) {
       news.push(item);
       continue;
     }
