@@ -52,12 +52,12 @@ describe('test/controllers/apis/dist.test.js', function () {
       .expect(200)
       .end(function (err, res) {
         res.body.should.have.length(2);
-        res.body[0].type.should.equal('folder');
+        res.body[0].type.should.equal('dir');
         res.body[0].url.should.containEql('/apis/node/latest/');
         res.body[1].type.should.equal('file');
         res.body[1].url.should.containEql('/node/node-0.0.1.tar.gz');
         done(err);
-      })
+      });
     });
   });
 });
