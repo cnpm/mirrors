@@ -49,6 +49,7 @@ module.exports = function* () {
       } else {
         item.size = fmt('%s(%s)', item.size, bytes(item.size));
       }
+      item.date = item.date || '';
       return item;
     });
 

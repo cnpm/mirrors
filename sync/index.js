@@ -15,27 +15,39 @@ var logger = require('../common/logger');
 var config = require('../config');
 var co = require('co');
 var GithubSyncer;
+var MirrorsSyncer;
 
 var syncers = config.categories;
 
 for (var name in syncers) {
+  var syncer = syncers[name];
   if (!config.enableSync) {
-    syncers[name].enable = false;
+    syncer.enable = false;
   }
 
-  if (!syncers[name].enable) {
+  if (!syncer.enable) {
     continue;
   }
+
+  if (config.cloneMode) {
+    var baseUrl = config.cloneUrl.replace(/\/?$/, '/');
+    MirrorsSyncer = MirrorsSyncer || require('./mirrors');
+    syncer.Syncer = MirrorsSyncer;
+    syncer.syncing = false;
+    syncer.disturl = baseUrl + syncer.category;
+    continue;
+  }
+
   // sync from github
-  if (syncers[name].githubRepo) {
+  if (syncer.githubRepo) {
     GithubSyncer = GithubSyncer || require('./github');
-    syncers[name].Syncer = GithubSyncer;
-    syncers[name].syncing = false;
+    syncer.Syncer = GithubSyncer;
+    syncer.syncing = false;
     continue;
   }
 
-  syncers[name].Syncer = require('./' + name);
-  syncers[name].syncing = false;
+  syncer.Syncer = require('./' + name);
+  syncer.syncing = false;
 }
 
 Object.keys(syncers).forEach(function (name) {
