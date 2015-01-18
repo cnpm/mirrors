@@ -38,11 +38,11 @@ module.exports = function* () {
   this.body = items.map(function (item) {
     item = only(item, ['id', 'name', 'date', 'category', 'size']);
     item.type = item.name[item.name.length - 1] === '/'
-      ? 'folder'
+      ? 'dir'
       : 'file';
-    item.url = item.type === 'folder'
+    item.url = item.type === 'dir'
       ? ctx.protocol + '://' + ctx.host + path.join(config.mount, ctx.path, item.name)
       : ctx.protocol + '://' + ctx.host + path.join(config.mount, category, name, item.name);
     return item;
   });
-}
+};
