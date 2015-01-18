@@ -23,10 +23,14 @@ var syncPath = path.join(__dirname, 'sync');
 
 if (config.enableCluster) {
   forkWorker();
-  forkSyncer();
+  if (config.enableSync) {
+    forkSyncer();
+  }
 } else {
   require(workerPath);
-  require(syncPath);
+  if (config.enableSync) {
+    require(syncPath);
+  }
 }
 
 function forkWorker() {

@@ -19,7 +19,11 @@ var GithubSyncer;
 var syncers = config.categories;
 
 for (var name in syncers) {
-  if (!config.enableSync || !syncers[name].enable) {
+  if (!config.enableSync) {
+    syncers[name].enable = false;
+  }
+
+  if (!syncers[name].enable) {
     continue;
   }
   // sync from github
