@@ -44,5 +44,9 @@ logger.syncError =function () {
   if (typeof args[0] === 'string') {
     args[0] = util.format('[%s][%s] ', utility.logDate(), process.pid) + args[0];
   }
+  // remove err.data when data is buffer
+  if (args[0] instanceof Error && Buffer.isBuffer(args[0].data)) {
+    delete args[0].data;
+  }
   logger.dist_sync_error.apply(logger, arguments);
 };
