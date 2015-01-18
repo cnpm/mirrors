@@ -62,7 +62,7 @@ proto.listdir = function* (fullname) {
   var archiveUrl = this.archiveUrl;
   var releases = this.max
     ? result.data.slice(0, this.max)
-    : releases;
+    : result.data;
 
   return releases.map(parseRelease).reduce(function (prev, curr) {
     return prev.concat(curr);
