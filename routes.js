@@ -15,6 +15,7 @@ var mount = require('koa-mount');
 var router = require('koa-middlewares').router;
 var Home = require('./controllers/home');
 var Dist = require('./controllers/dist');
+var APIDist = require('./controllers/apis/dist');
 var config = require('./config');
 
 module.exports = function (app) {
@@ -28,5 +29,6 @@ module.exports = function (app) {
   }
 
   app.get('/', Home);
+  app.get(/^\/apis\/.*/, APIDist);
   app.get(/^\/.*/, Dist);
 };
