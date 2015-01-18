@@ -31,6 +31,7 @@ function GithubSyncer(options) {
   this.url = util.format('https://api.github.com/repos/%s/releases', options.repo);
   this.archiveUrl = util.format('https://github.com/%s/archive/', options.repo);
   this.authorization = utils.getGithubBasicAuth();
+  this.max = options.max;
 }
 
 util.inherits(GithubSyncer, Syncer);
@@ -59,7 +60,11 @@ proto.listdir = function* (fullname) {
   }
 
   var archiveUrl = this.archiveUrl;
-  return result.data.map(parseRelease).reduce(function (prev, curr) {
+  var releases = this.max
+    ? result.data.slice(0, this.max)
+    : releases;
+
+  return releases.map(parseRelease).reduce(function (prev, curr) {
     return prev.concat(curr);
   });
 

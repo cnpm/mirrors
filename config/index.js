@@ -162,7 +162,8 @@ var config = {
       disturl: 'https://github.com/atom/atom-shell/releases',
       githubRepo: 'atom/atom-shell',
       url: 'https://github.com/atom/atom-shell',
-      description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.'
+      description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.',
+      max: 5, // sync the latest 5 releases
     }
   },
 };

@@ -50,7 +50,8 @@ Object.keys(syncers).forEach(function (name) {
       var syncer = new item.Syncer({
         disturl: item.disturl,
         category: item.category,
-        repo: item.githubRepo
+        repo: item.githubRepo,
+        max: item.max
       });
 
       try {
