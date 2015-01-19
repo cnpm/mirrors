@@ -29,6 +29,37 @@ util.inherits(ChromeDriverSyncer, Syncer);
 
 var proto = ChromeDriverSyncer.prototype;
 
+proto.syncDir = function* (fullname) {
+  var news = yield* this.listdiff(fullname);
+  var files = [];
+  var dirs = [];
+
+  news.forEach(function (item) {
+    if (item.type === 'dir') {
+      dirs.push(item);
+    } else if (item.type === 'file') {
+      files.push(item);
+    }
+  });
+
+  this.logger.syncInfo('sync %s:%s got %d new items, %d dirs, %d files to sync',
+    this.disturl, fullname, news.length, dirs.length, files.length);
+
+  for (var i = 0; i < files.length; i++) {
+    yield* this.syncFile(files[i]);
+  }
+
+  // save new dirs
+  for (var i = 0; i < dirs.length; i++) {
+    var dir = dirs[i];
+    dir.category = this.category;
+    yield* this.distService.savedir(dir);
+  }
+
+  this.logger.syncInfo('Sync %s finished, %d dirs, %d files',
+    fullname, dirs.length, files.length);
+};
+
 proto.check = function (checksums, info) {
   if (!info.size) {
     return true;
@@ -105,18 +136,13 @@ proto.listdiff = function* () {
     var exist = exists[i];
     map[exist.parent + exist.name] = exist;
   }
-  var newDirs = [];
   var news = [];
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
     var exist = map[item.parent + item.name];
 
     if (!exist) {
-      if (item.type === 'dir') {
-        newDirs.push(item);
-      } else {
-        news.push(item);
-      }
+      news.push(item);
       continue;
     }
 
@@ -136,14 +162,6 @@ proto.listdiff = function* () {
 
     debug('skip %s', item.name);
   }
-  // save new dirs
-  for (var i = 0; i < newDirs.length; i++) {
-    var dir = newDirs[i];
-    dir.category = this.category;
-    yield* this.distService.savedir(dir);
-    this.logger.syncInfo('Save dir:%s %j to database', dir.name, dir);
-  }
-
   return news;
 };
 
