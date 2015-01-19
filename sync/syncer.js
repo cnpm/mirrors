@@ -55,6 +55,8 @@ function Syncer(options) {
   disturl = disturl.replace(/(\/+)$/, '');
   this.disturl = disturl;
   this.category = options.category;
+  this.distService = distService;
+  this.logger = logger;
 }
 
 var proto = Syncer.prototype;
@@ -97,7 +99,7 @@ proto.syncDir = function* (fullname) {
 
     // save to database
     dir.category = this.category;
-    yield* distService.savedir(dir);
+    yield* this.distService.savedir(dir);
     logger.syncInfo('Save dir:%s %j to database', fullname, dir);
   }
 
@@ -272,7 +274,7 @@ proto.listdiff = function* (fullname) {
 };
 
 proto.listExists = function* (fullname) {
-  var exists = yield* distService.listdir(this.category, fullname);
+  var exists = yield* this.distService.listdir(this.category, fullname);
   debug('listdiff %s %s got %s exists items', this.category, fullname, exists.length);
   return exists;
 };

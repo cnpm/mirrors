@@ -1,5 +1,5 @@
 /**!
- * mirrors - services/mirrors.js
+ * mirrors - sync/mirrors.js
  *
  * Authors:
  *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)

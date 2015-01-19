@@ -54,21 +54,21 @@ exports.savedir = function* (info) {
   return yield row.save();
 };
 
-exports.listdir = function* (category, name) {
+exports.listdir = function* (category, parent) {
+  var where = {
+    category: category
+  };
+  if (parent) {
+    where.parent = parent;
+  }
   var rs = yield [
     Dir.findAll({
       attributrs: KEYS.concat(DIR_ADDITIONS),
-      where: {
-        category: category,
-        parent: name,
-      }
+      where: where
     }),
     File.findAll({
       attributrs: KEYS.concat(FILE_ADDITIONS),
-      where: {
-        category: category,
-        parent: name,
-      }
+      where: where
     })
   ];
   return rs[0].map(function (dir) {
