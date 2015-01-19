@@ -22,3 +22,27 @@
     <span class="category-description"><%= category.description %></span>
   </div>
 <% } %>
+
+<h1>Usage</h1>
+
+<h2><a href="https://github.com/creationix/nvm" target="_blank">nvm</a></h2>
+<textarea rows="2" style="width: 80%; overflow:hidden" readonly>
+NVM_NODEJS_ORG_MIRROR=<%= baseUrl %>/node nvm install node/latest
+NVM_IOJS_ORG_MIRROR=<%= baseUrl %>/iojs nvm install iojs/latest
+</textarea>
+
+<h2><a href="https://github.com/hakobera/nvmw" target="_blank">nvmw</a></h2>
+<textarea rows="6" style="width: 80%; overflow:hidden" readonly>
+set "NVMW_NODEJS_ORG_MIRROR=<%= baseUrl %>/node"
+set "NVMW_IOJS_ORG_MIRROR=<%= baseUrl %>/iojs"
+set "NVMW_NPM_MIRROR=<%= baseUrl %>/npm"
+
+nvmw install node/0.11.14
+nvmw install iojs/1.0.2
+</textarea>
+
+<h2><a href="https://npmjs.com" target="_blank">npm</a></h2>
+<textarea rows="2" style="width: 80%; overflow:hidden" readonly>
+CHROMEDRIVER_CDNURL=<%= baseUrl %>/chromedriver npm install chromedriver
+PHANTOMJS_CDNURL=<%= baseUrl %>/phantomjs npm install phantomjs
+</textarea>
