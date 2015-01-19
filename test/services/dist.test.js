@@ -136,6 +136,9 @@ describe('services/dist.test.js', function () {
 
       var infos = yield* Dist.listdir('test-listdir');
       infos.should.length(6);
+
+      infos = yield* Dist.listdir('test-listdir', 'dir1/');
+      infos.should.length(2);
     });
   });
 });

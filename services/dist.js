@@ -54,12 +54,12 @@ exports.savedir = function* (info) {
   return yield row.save();
 };
 
-exports.listdir = function* (category, name) {
+exports.listdir = function* (category, parent) {
   var where = {
     category: category
   };
-  if (name) {
-    where.name = name;
+  if (parent) {
+    where.parent = parent;
   }
   var rs = yield [
     Dir.findAll({
