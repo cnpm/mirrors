@@ -106,7 +106,7 @@ var config = {
   syncInterval: ms('5m'),
 
   // sync by clone from other mirrors
-  cloneMode: true,
+  cloneMode: false,
   cloneUrl: 'http://cnpmjs.org/mirrors/apis',
 
   // sync categories
