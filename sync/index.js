@@ -1,15 +1,15 @@
 /**!
-* mirrors - sync/index.js
-*
-* Authors:
-*   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
-*/
+ * mirrors - sync/index.js
+ *
+ * Authors:
+ *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
+ */
 
 'use strict';
 
 /**
-* Module dependencies.
-*/
+ * Module dependencies.
+ */
 
 var logger = require('../common/logger');
 var config = require('../config');

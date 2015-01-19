@@ -107,7 +107,7 @@ var config = {
 
   // sync by clone from other mirrors
   cloneMode: false,
-  cloneUrl: 'http://cnpmjs.org/mirrors/apis',
+  cloneUrl: 'http://npm.taobao.org/mirrors/apis',
 
   // sync categories
   categories: {
