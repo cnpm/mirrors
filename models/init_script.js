@@ -13,7 +13,6 @@
  */
 
 var config = require('../config');
-var models = require('./');
 
 config.database.logging = console.log;
 
@@ -24,6 +23,7 @@ if (dialect) {
   config.database.dialect = dialect;
 }
 
+var models = require('./');
 models.sequelize.sync({ force: force })
 .then(function () {
   console.log('[models/init_script.js] `%s` sequelize sync and init success',

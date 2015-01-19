@@ -57,7 +57,7 @@ var config = {
    */
 
   database: {
-    db: 'mirros_test',
+    db: 'mirrors_test',
     username: 'root',
     password: '',
 

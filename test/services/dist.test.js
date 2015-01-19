@@ -71,4 +71,71 @@ describe('services/dist.test.js', function () {
       });
     });
   });
+
+  describe('listdir()', function () {
+    it('should listdir(category) return all items', function* () {
+      var info = {
+        name: 'name1.txt',
+        category: 'test-listdir',
+        parent: 'dir1/',
+        date: '15-Sep-2011 23:48',
+        size: 1676,
+        url: 'v1.0.0/name1.txt',
+        sha1: '104731881047318810473188',
+        md5: '1klsd803284934',
+      };
+      yield* Dist.savefile(info);
+
+      info = {
+        name: 'name1.txt',
+        category: 'test-listdir',
+        parent: 'dir2/',
+        date: '15-Sep-2011 23:48',
+        size: 1676,
+        url: 'v1.0.0/name1.txt',
+        sha1: '104731881047318810473188',
+        md5: '1klsd803284934',
+      };
+      yield* Dist.savefile(info);
+
+      info = {
+        name: 'name1.txt',
+        category: 'test-listdir',
+        parent: '/',
+        date: '15-Sep-2011 23:48',
+        size: 1676,
+        url: 'v1.0.0/name1.txt',
+        sha1: '104731881047318810473188',
+        md5: '1klsd803284934',
+      };
+      yield* Dist.savefile(info);
+
+      var dir = {
+        name: 'dir1/',
+        category: 'test-listdir',
+        parent: '/',
+        date: '15-Sep-2011 23:48',
+      };
+      yield* Dist.savedir(dir);
+
+      dir = {
+        name: 'dir2/',
+        category: 'test-listdir',
+        parent: '/',
+        date: '15-Sep-2011 23:48',
+      };
+      yield* Dist.savedir(dir);
+
+      dir = {
+        name: 'dir3/',
+        category: 'test-listdir',
+        parent: 'dir1/',
+        date: '15-Sep-2011 23:48',
+      };
+      yield* Dist.savedir(dir);
+
+      var infos = yield* Dist.listdir('test-listdir');
+      infos.should.length(6);
+    });
+  });
 });
