@@ -104,7 +104,7 @@ proto.listdir = function* () {
       size: size,
       date: date,
       type: 'file',
-      parent: parent,
+      parent: '/' + parent,
       downloadURL: downloadURL
     });
 
