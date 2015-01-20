@@ -130,7 +130,7 @@ var config = {
       description: 'is an npm compatible platform originally based on node.js™.'
     },
     python: {
-      name: 'python',
+      name: 'Python',
       category: 'python',
       enable: false,
       // interval: ms('5m'),
@@ -174,8 +174,18 @@ var config = {
       category: 'chromedriver',
       enable: true,
       disturl: 'http://chromedriver.storage.googleapis.com',
+      syncerClass: 'ListBucketResult',
       url: 'https://sites.google.com/a/chromium.org/chromedriver/',
       description: 'ChromeDriver is a standalone server which implements WebDriver\'s wire protocol for Chromium, which is then available for Chrome on Android and Chrome on Desktop (Mac, Linux, Windows and ChromeOS).'
+    },
+    selenium: {
+      name: 'selenium',
+      category: 'selenium',
+      enable: true,
+      disturl: 'http://selenium-release.storage.googleapis.com',
+      syncerClass: 'ListBucketResult',
+      url: 'http://www.seleniumhq.org/download/',
+      description: 'Selenium automates browsers. That\'s it! What you do with that power is entirely up to you. Primarily, it is for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can (and should!) also be automated as well.'
     }
   },
 };

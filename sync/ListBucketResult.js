@@ -1,5 +1,5 @@
 /**!
-* mirrors - sync/chromedriver.js
+* mirrors - sync/ListBucketResult.js
 *
 * Authors:
 *   fengmk2 <fengmk2@gmail.com> (https://github.com/fengmk2)
@@ -11,23 +11,26 @@
 * Module dependencies.
 */
 
-var debug = require('debug')('mirrors:sync:chromedriver');
+var debug = require('debug')('mirrors:sync:ListBucketResult');
 var util = require('util');
 var urllib = require('urllib');
 var Syncer = require('./syncer');
 
-module.exports = ChromeDriverSyncer;
+module.exports = ListBucketResult;
 
-function ChromeDriverSyncer(options) {
-  if (!(this instanceof ChromeDriverSyncer)) {
-    return new ChromeDriverSyncer(options);
+// http://selenium-release.storage.googleapis.com/
+// http://chromedriver.storage.googleapis.com/
+
+function ListBucketResult(options) {
+  if (!(this instanceof ListBucketResult)) {
+    return new ListBucketResult(options);
   }
   Syncer.call(this, options);
 }
 
-util.inherits(ChromeDriverSyncer, Syncer);
+util.inherits(ListBucketResult, Syncer);
 
-var proto = ChromeDriverSyncer.prototype;
+var proto = ListBucketResult.prototype;
 
 proto.syncDir = function* (fullname) {
   var news = yield* this.listdiff(fullname);
@@ -57,7 +60,7 @@ proto.syncDir = function* (fullname) {
   }
 
   this.logger.syncInfo('Sync %s finished, %d dirs, %d files',
-    fullname, dirs.length, files.length);
+  fullname, dirs.length, files.length);
 };
 
 proto.check = function (checksums, info) {
@@ -88,7 +91,7 @@ proto.listdir = function* () {
     if (!m) {
       continue;
     }
-    var name = m[1];
+    var name = m[1].trim();
     var date = m[2];
     var size = parseInt(m[3]);
     var downloadURL = this.disturl + '/' + name;
@@ -96,7 +99,10 @@ proto.listdir = function* () {
     if (name.indexOf('/') > 0) {
       var names = name.split('/');
       parent = names[0] + '/';
-      name = names[1];
+      name = names[1].trim();
+    }
+    if (!name) {
+      continue;
     }
     // file
     items.push({
