@@ -17,10 +17,8 @@ var co = require('co');
 var GithubSyncer;
 var MirrorsSyncer;
 
-var syncers = config.categories;
-
-for (var name in syncers) {
-  var syncer = syncers[name];
+for (var category in config.categories) {
+  var syncer = config.categories[category];
   if (!config.enableSync) {
     syncer.enable = false;
   }
@@ -51,45 +49,47 @@ for (var name in syncers) {
     continue;
   }
 
-  syncer.Syncer = require('./' + name);
+  syncer.Syncer = require('./' + syncer.category);
 }
 
-Object.keys(syncers).forEach(function (name) {
-  var item = syncers[name];
+var syncers = [];
+for (var category in config.categories) {
+  var item = config.categories[category];
   if (!item.enable) {
-    return;
+    continue;
   }
-
-  var syncInterval = item.interval || config.syncInterval;
+  // var syncInterval = item.interval || config.syncInterval;
   logger.syncInfo('enable sync %s from %s every %dms',
-  item.Syncer.name, item.disturl, syncInterval);
+    item.Syncer.name, item.disturl, config.syncInterval);
+  var syncer = new item.Syncer({
+    disturl: item.disturl,
+    category: item.category,
+    repo: item.githubRepo,
+    max: item.max
+  });
+  syncers.push(syncer);
+}
 
-  co(function* () {
-    while (true) {
-      var syncer = new item.Syncer({
-        disturl: item.disturl,
-        category: item.category,
-        repo: item.githubRepo,
-        max: item.max
-      });
-
+co(function* () {
+  while (true) {
+    for (var i = 0; i < syncers.length; i++) {
+      var syncer = syncers[i];
       try {
-        yield* syncer.start();
+        yield syncer.start();
       } catch (err) {
         err.message += ' (sync node dist error)';
         logger.syncError(err);
       }
-
-      yield sleep(syncInterval);
     }
-  })(function (err) {
-    throw err;
-  });
-  // }).catch(function (err) {
-  //   throw err;
-  // });
 
+    yield sleep(config.syncInterval);
+  }
+})(function (err) {
+  throw err;
 });
+// }).catch(function (err) {
+//   throw err;
+// });
 
 
 function sleep(ms) {
