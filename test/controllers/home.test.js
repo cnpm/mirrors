@@ -20,6 +20,7 @@ describe('test/controllers/home.test.js', function () {
       request(app.listen())
       .get('/')
       .expect(200)
+      .expect(/ Mirrors<\/title>/)
       .expect(/Node\.js/)
       .expect(/io\.js/, done);
     });

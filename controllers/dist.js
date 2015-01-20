@@ -35,7 +35,8 @@ module.exports = function* () {
 
   debug('request %s, normalize to %s, got category: %s, name: %s', this.path, p, category, name);
 
-  if (!config.categories[category]) {
+  var categoryInfo = config.categories[category];
+  if (!categoryInfo) {
     debug('requiest %s, category %s not exist', this.path, category);
     return this.status = 404;
   }
@@ -56,6 +57,7 @@ module.exports = function* () {
     debug('list dir %s:%s, got %j', category, name, items);
     var disturl = config.categories[category].disturl.replace(/\/$/, '') + name.replace(/^\/?/, '/');
     yield this.render('dist', {
+      title: categoryInfo.name + ' Mirror',
       disturl: disturl,
       category: category,
       items: items,

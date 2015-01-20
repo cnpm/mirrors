@@ -30,6 +30,7 @@ describe('test/controllers/dist.test.js', function () {
       request(app.listen())
       .get('/node')
       .expect(200)
+      .expect(/<title>Node.js Mirror<\/title>/)
       .expect(/Mirror index of/)
       .expect(/\.\./)
       .expect(/http:\/\/nodejs\.org\/dist\//, done);

@@ -130,7 +130,7 @@ var config = {
       description: 'is an npm compatible platform originally based on node.js™.'
     },
     python: {
-      name: 'python',
+      name: 'Python',
       category: 'python',
       enable: false,
       // interval: ms('5m'),
