@@ -91,7 +91,7 @@ proto.listdir = function* () {
     if (!m) {
       continue;
     }
-    var name = m[1];
+    var name = m[1].trim();
     var date = m[2];
     var size = parseInt(m[3]);
     var downloadURL = this.disturl + '/' + name;
@@ -99,7 +99,10 @@ proto.listdir = function* () {
     if (name.indexOf('/') > 0) {
       var names = name.split('/');
       parent = names[0] + '/';
-      name = names[1];
+      name = names[1].trim();
+    }
+    if (!name) {
+      continue;
     }
     // file
     items.push({
