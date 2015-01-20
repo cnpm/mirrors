@@ -56,13 +56,12 @@ Object.keys(syncers).forEach(function (name) {
     return;
   }
 
-  function startSync() {
-    return co(function* () {
-      if (item.syncing) {
-        return;
-      }
-      item.syncing = true;
+  var syncInterval = item.interval || config.syncInterval;
+  logger.syncInfo('enable sync %s from %s every %dms',
+  item.Syncer.name, item.disturl, syncInterval);
 
+  co(function* () {
+    while (true) {
       var syncer = new item.Syncer({
         disturl: item.disturl,
         category: item.category,
@@ -75,23 +74,19 @@ Object.keys(syncers).forEach(function (name) {
       } catch (err) {
         err.message += ' (sync node dist error)';
         logger.syncError(err);
-      } finally {
-        item.syncing = false;
       }
-    });
-  }
 
-  var syncInterval = item.interval || config.syncInterval;
-  logger.syncInfo('enable sync %s from %s every %dms',
-    item.Syncer.name, item.disturl, syncInterval);
+      yield sleep(syncInterval);
+    }
+  }).catch(function (err) {
+    throw err;
+  });
 
-  startSync().catch(onerror);
-  setInterval(function () {
-    startSync().catch(onerror);
-  }, syncInterval);
 });
 
-function onerror(err) {
-  delete err.data;
-  logger.error(err);
+
+function sleep(ms) {
+  return function (callback) {
+    setTimeout(callback, ms);
+  };
 }

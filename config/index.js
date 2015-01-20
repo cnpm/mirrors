@@ -106,8 +106,8 @@ var config = {
   syncInterval: ms('5m'),
 
   // sync by clone from other mirrors
-  cloneMode: true,
-  cloneUrl: 'http://cnpmjs.org/mirrors/apis',
+  cloneMode: false,
+  cloneUrl: 'http://npm.taobao.org/mirrors/apis',
 
   // sync categories
   categories: {
