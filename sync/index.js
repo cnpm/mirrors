@@ -29,11 +29,12 @@ for (var name in syncers) {
     continue;
   }
 
+  syncer.syncing = false;
+
   if (config.cloneMode) {
     var baseUrl = config.cloneUrl.replace(/\/?$/, '/');
     MirrorsSyncer = MirrorsSyncer || require('./mirrors');
     syncer.Syncer = MirrorsSyncer;
-    syncer.syncing = false;
     syncer.disturl = baseUrl + syncer.category;
     continue;
   }
@@ -42,12 +43,15 @@ for (var name in syncers) {
   if (syncer.githubRepo) {
     GithubSyncer = GithubSyncer || require('./github');
     syncer.Syncer = GithubSyncer;
-    syncer.syncing = false;
+    continue;
+  }
+
+  if (syncer.syncerClass) {
+    syncer.Syncer = require('./' + syncer.syncerClass);
     continue;
   }
 
   syncer.Syncer = require('./' + name);
-  syncer.syncing = false;
 }
 
 Object.keys(syncers).forEach(function (name) {
