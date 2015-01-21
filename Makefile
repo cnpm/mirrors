@@ -90,7 +90,7 @@ autod: install
 	@node_modules/.bin/autod -w \
 		--prefix "~" \
 		--exclude public,views,coverage \
-		--dep mysql,bluebird \
+		--dep mysql \
 		--devdep should,supertest,should-http,mm,pedding,mocha,istanbul-harmony,sqlite3,co-mocha
 	@$(MAKE) install
 

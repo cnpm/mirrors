@@ -82,9 +82,12 @@ Object.keys(syncers).forEach(function (name) {
 
       yield sleep(syncInterval);
     }
-  }).catch(function (err) {
+  })(function (err) {
     throw err;
   });
+  // }).catch(function (err) {
+  //   throw err;
+  // });
 
 });
 
