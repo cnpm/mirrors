@@ -64,36 +64,29 @@ Object.keys(syncers).forEach(function (name) {
   logger.syncInfo('enable sync %s from %s every %dms',
   item.Syncer.name, item.disturl, syncInterval);
 
-  co(function* () {
-    while (true) {
-      var syncer = new item.Syncer({
-        disturl: item.disturl,
-        category: item.category,
-        repo: item.githubRepo,
-        max: item.max
-      });
+  var fn = co.wrap(function* () {
+    logger.syncInfo('Start sync task for %s', item.category);
+    var syncer = new item.Syncer({
+      disturl: item.disturl,
+      category: item.category,
+      repo: item.githubRepo,
+      max: item.max
+    });
 
-      try {
-        yield* syncer.start();
-      } catch (err) {
-        err.message += ' (sync node dist error)';
-        logger.syncError(err);
-      }
-
-      yield sleep(syncInterval);
+    try {
+      yield* syncer.start();
+    } catch (err) {
+      err.message += ' (sync node dist error)';
+      logger.syncError(err);
     }
-  })(function (err) {
-    throw err;
   });
-  // }).catch(function (err) {
-  //   throw err;
-  // });
 
+  fn().catch(onerror);
+  setInterval(function () {
+    fn().catch(onerror);
+  }, syncInterval);
 });
 
-
-function sleep(ms) {
-  return function (callback) {
-    setTimeout(callback, ms);
-  };
+function onerror(err) {
+  logger.error(err);
 }
