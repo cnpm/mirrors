@@ -11,6 +11,7 @@
  * Module dependencies.
  */
 
+global.Promise = require('bluebird');
 var logger = require('../common/logger');
 var config = require('../config');
 var co = require('co');
@@ -64,7 +65,12 @@ Object.keys(syncers).forEach(function (name) {
   logger.syncInfo('enable sync %s from %s every %dms',
   item.Syncer.name, item.disturl, syncInterval);
 
+  var running = false;
   var fn = co.wrap(function* () {
+    if (running) {
+      return;
+    }
+    running = true;
     logger.syncInfo('Start sync task for %s', item.category);
     var syncer = new item.Syncer({
       disturl: item.disturl,
@@ -79,6 +85,7 @@ Object.keys(syncers).forEach(function (name) {
       err.message += ' (sync node dist error)';
       logger.syncError(err);
     }
+    running = false;
   });
 
   fn().catch(onerror);

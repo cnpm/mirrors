@@ -27,6 +27,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^2.8.2",
     "bytes": "~1.0.0",
     "cfork": "~1.2.2",
     "co": "~4.2.0",

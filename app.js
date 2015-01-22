@@ -11,6 +11,7 @@
  * Module dependencies.
  */
 
+global.Promise = require('bluebird');
 var middlewares = require('koa-middlewares');
 var logger = require('./common/logger');
 var config = require('./config');
