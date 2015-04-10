@@ -19,7 +19,7 @@ var util = require('util');
 var config = require('./config');
 
 var workerPath = path.join(__dirname, 'worker.js');
-var syncPath = path.join(__dirname, 'sync');
+var syncPath = path.join(__dirname, 'sync', 'index.js');
 
 if (config.enableCluster) {
   forkWorker();

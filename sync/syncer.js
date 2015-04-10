@@ -64,7 +64,7 @@ var proto = Syncer.prototype;
 proto.start = function* (name) {
   name = name || '/';
   name.replace(/\/?$/, '/');
-  yield* this.syncDir(name);
+  yield* this.syncDir(name, 0);
 };
 
 /**
@@ -73,8 +73,8 @@ proto.start = function* (name) {
  * @param {String} fullname
  */
 
-proto.syncDir = function* (fullname) {
-  var news = yield* this.listdiff(fullname);
+proto.syncDir = function* (fullname, dirIndex) {
+  var news = yield* this.listdiff(fullname, dirIndex);
   var files = [];
   var dirs = [];
 
@@ -85,8 +85,8 @@ proto.syncDir = function* (fullname) {
     files.push(item);
   });
 
-  logger.syncInfo('sync %s:%s got %d new items, %d dirs, %d files to sync',
-    this.disturl, fullname, news.length, dirs.length, files.length);
+  logger.syncInfo('[%s] sync %s:%s#%s got %d new items, %d dirs, %d files to sync',
+    this.category, this.disturl, fullname, dirIndex, news.length, dirs.length, files.length);
 
   for (var i = 0; i < files.length; i++) {
     yield* this.syncFile(files[i]);
@@ -95,16 +95,16 @@ proto.syncDir = function* (fullname) {
   for (var i = 0; i < dirs.length; i++) {
     var dir = dirs[i];
     // recursive sync dir
-    yield* this.syncDir(dir.parent + dir.name);
+    yield* this.syncDir(dir.parent + dir.name, dirIndex + 1);
 
     // save to database
     dir.category = this.category;
     yield* this.distService.savedir(dir);
-    logger.syncInfo('Save dir:%s %j to database', fullname, dir);
+    logger.syncInfo('[%s] Save dir:%s#%s %j to database', this.category, fullname, dirIndex, dir);
   }
 
-  logger.syncInfo('Sync %s finished, %d dirs, %d files',
-    fullname, dirs.length, files.length);
+  logger.syncInfo('[%s] Sync %s#%s finished, %d dirs, %d files',
+    this.category, fullname, dirIndex, dirs.length, files.length);
 };
 
 /**
@@ -138,13 +138,13 @@ proto.syncFile = function* (info) {
   }
 
   try {
-    logger.syncInfo('downloading %s %s to %s',
-      info.size ? bytes(info.size) : '', downurl, filepath);
+    logger.syncInfo('[%s] downloading %s %s to %s',
+      this.category, info.size ? bytes(info.size) : '', downurl, filepath);
     // get tarball
     var r = yield urllib.requestThunk(downurl, options);
     var statusCode = r.status || -1;
-    logger.syncInfo('download %s got status %s, headers: %j',
-      downurl, statusCode, r.headers);
+    logger.syncInfo('[%s] download %s got status %s, headers: %j',
+      this.category, downurl, statusCode, r.headers);
 
     if (statusCode === 404) {
       logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
@@ -212,7 +212,7 @@ proto.syncFile = function* (info) {
     };
 
     // upload to NFS
-    logger.syncInfo('uploading %s to nfs:%s', filepath, args.key);
+    logger.syncInfo('[%s] uploading %s to nfs:%s', this.category, filepath, args.key);
     var result = yield nfs.upload(filepath, args);
     info.url = result.url || result.key;
     info.size = dataSize;
@@ -220,14 +220,14 @@ proto.syncFile = function* (info) {
     info.md5 = md5sum;
     info.category = this.category;
 
-    logger.syncInfo('upload %s to nfs:%s with size:%s, sha1:%s, md5: %s',
-      args.key, info.url, bytes(info.size), info.sha1, info.md5);
+    logger.syncInfo('[%s] upload %s to nfs:%s with size:%s, sha1:%s, md5: %s',
+      this.category, args.key, info.url, bytes(info.size), info.sha1, info.md5);
   } finally {
     // remove tmp file whatever
     fs.unlink(filepath, utility.noop);
   }
 
-  logger.syncInfo('Sync dist file: %j done', info);
+  logger.syncInfo('[%s] Sync dist file: %j done', this.category, info);
   yield* distService.savefile(info);
 };
 
@@ -237,8 +237,8 @@ proto.syncFile = function* (info) {
  * @param {String} fullname
  */
 
-proto.listdiff = function* (fullname) {
-  var items = yield* this.listdir(fullname);
+proto.listdiff = function* (fullname, dirIndex) {
+  var items = yield* this.listdir(fullname, dirIndex);
   if (!items || items.length === 0) {
     return [];
   }
@@ -252,6 +252,11 @@ proto.listdiff = function* (fullname) {
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
     var exist = map[item.name];
+
+    if (item.isNew) {
+      news.push(item);
+      continue;
+    }
 
     if (!exist || exist.date !== item.date) {
       news.push(item);
