@@ -20,8 +20,8 @@ var MirrorsSyncer;
 
 var syncers = config.categories;
 
-for (var name in syncers) {
-  var syncer = syncers[name];
+for (var key in syncers) {
+  var syncer = syncers[key];
   if (!config.enableSync) {
     syncer.enable = false;
   }
@@ -52,7 +52,7 @@ for (var name in syncers) {
     continue;
   }
 
-  syncer.Syncer = require('./' + name);
+  syncer.Syncer = require('./' + key);
 }
 
 Object.keys(syncers).forEach(function (name) {
@@ -65,27 +65,27 @@ Object.keys(syncers).forEach(function (name) {
   logger.syncInfo('enable sync %s from %s every %dms',
   item.Syncer.name, item.disturl, syncInterval);
 
-  var running = false;
   var fn = co.wrap(function* () {
-    if (running) {
+    if (item.syncing) {
       return;
     }
-    running = true;
+    item.syncing = true;
     logger.syncInfo('Start sync task for %s', item.category);
     var syncer = new item.Syncer({
       disturl: item.disturl,
       category: item.category,
       repo: item.githubRepo,
-      max: item.max
+      max: item.max,
+      alwayNewDirIndex: item.alwayNewDirIndex,
     });
 
     try {
       yield* syncer.start();
     } catch (err) {
-      err.message += ' (sync node dist error)';
+      err.message += ' (sync ' + item.category + ' dist error)';
       logger.syncError(err);
     }
-    running = false;
+    item.syncing = false;
   });
 
   fn().catch(onerror);

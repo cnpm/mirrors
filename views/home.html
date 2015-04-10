@@ -27,8 +27,8 @@
 
 <h2><a href="https://github.com/creationix/nvm" target="_blank">nvm</a></h2>
 <textarea rows="2" style="width: 80%; overflow:hidden" readonly>
-NVM_NODEJS_ORG_MIRROR=<%= baseUrl %>/node nvm install node/latest
-NVM_IOJS_ORG_MIRROR=<%= baseUrl %>/iojs nvm install iojs/latest
+NVM_NODEJS_ORG_MIRROR=<%= baseUrl %>/node nvm install node-0.12.2
+NVM_IOJS_ORG_MIRROR=<%= baseUrl %>/iojs nvm install iojs-1
 </textarea>
 
 <h2><a href="https://github.com/hakobera/nvmw" target="_blank">nvmw</a></h2>
@@ -37,18 +37,25 @@ set "NVMW_NODEJS_ORG_MIRROR=<%= baseUrl %>/node"
 set "NVMW_IOJS_ORG_MIRROR=<%= baseUrl %>/iojs"
 set "NVMW_NPM_MIRROR=<%= baseUrl %>/npm"
 
-nvmw install node/0.11.14
-nvmw install iojs/1.0.2
+nvmw install node-v0.12.2
+nvmw install iojs-v1.6.3
 </textarea>
 
 <h2><a href="https://npmjs.com" target="_blank">npm</a></h2>
-<textarea rows="2" style="width: 80%; overflow:hidden" readonly>
-CHROMEDRIVER_CDNURL=<%= baseUrl %>/chromedriver npm install chromedriver
-PHANTOMJS_CDNURL=<%= baseUrl %>/phantomjs npm install phantomjs
+<textarea rows="3" style="width: 80%; overflow:hidden" readonly>
+npm install phantomjs --phantomjs_cdnurl=<%= baseUrl %>/phantomjs
+npm install chromedriver --chromedriver_cdnurl=<%= baseUrl %>/chromedriver
+npm install operadriver --operadriver_cdnurl=<%= baseUrl %>/operadriver
 </textarea>
 
 <h2><a href="https://github.com/vvo/selenium-standalone" target="_blank">selenium-standalone</a></h2>
-<textarea rows="2" style="width: 80%; overflow:hidden" readonly>
-CHROMEDRIVER_CDNURL=<%= baseUrl %>/chromedriver \
-SELENIUM_CDNURL=<%= baseUrl %>s/selenium selenium-standalone install
+<textarea rows="8" style="width: 80%; overflow:hidden" readonly>
+# choose selenium version
+selenium-standalone install --version=2.43.0 --baseURL=<%= baseUrl %>/selenium
+
+# choose chrome driver version
+selenium-standalone install --drivers.chrome.version=2.12 --drivers.chrome.baseURL=<%= baseUrl %>/chromedriver
+
+# choose ie driver architecture
+selenium-standalone start --drivers.ie.arch=ia32 --drivers.ie.baseURL=<%= baseUrl %>/selenium
 </textarea>

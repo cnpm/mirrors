@@ -22,6 +22,7 @@ function MirrorsSyncer(options) {
   if (!(this instanceof MirrorsSyncer)) {
     return new MirrorsSyncer(options);
   }
+  this._alwayNewDirIndex = options.alwayNewDirIndex;
   Syncer.call(this, options);
 }
 
@@ -36,7 +37,11 @@ proto.check = function (checksums, info) {
   return checksums.size === info.size;
 };
 
-proto.listdir = function* (fullname) {
+proto.listdir = function* (fullname, dirIndex) {
+  var alwayNewDir = false;
+  if (typeof this._alwayNewDirIndex === 'number' && this._alwayNewDirIndex === dirIndex) {
+    alwayNewDir = true;
+  }
   var url = this.disturl + fullname;
 
   var res = yield urllib.requestThunk(url, {
@@ -50,7 +55,8 @@ proto.listdir = function* (fullname) {
   }
 
   return res.data.map(function (file) {
-    return {
+    var item = {
+      isNew: null,
       name: file.name,
       size: file.size || '-',
       date: file.date,
@@ -58,5 +64,9 @@ proto.listdir = function* (fullname) {
       parent: fullname,
       downloadURL: file.url
     };
+    if (item.type === 'dir' && alwayNewDir) {
+      item.isNew = true;
+    }
+    return item;
   });
 };

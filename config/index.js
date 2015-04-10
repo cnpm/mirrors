@@ -170,6 +170,7 @@ var config = {
       max: 5, // sync the latest 5 releases
     },
     chromedriver: {
+      alwayNewDirIndex: 0,
       name: 'ChromeDriver',
       category: 'chromedriver',
       enable: true,
@@ -178,7 +179,17 @@ var config = {
       url: 'https://sites.google.com/a/chromium.org/chromedriver/',
       description: 'ChromeDriver is a standalone server which implements WebDriver\'s wire protocol for Chromium, which is then available for Chrome on Android and Chrome on Desktop (Mac, Linux, Windows and ChromeOS).'
     },
+    operadriver: {
+      name: 'OperaDriver',
+      category: 'operadriver',
+      enable: true,
+      disturl: 'https://github.com/operasoftware/operachromiumdriver/releases',
+      githubRepo: 'operasoftware/operachromiumdriver',
+      url: 'https://github.com/operasoftware/operachromiumdriver',
+      description: 'OperaDriver for Chromium-based Opera releases'
+    },
     selenium: {
+      alwayNewDirIndex: 0,
       name: 'selenium',
       category: 'selenium',
       enable: true,

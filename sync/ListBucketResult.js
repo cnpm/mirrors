@@ -45,8 +45,8 @@ proto.syncDir = function* (fullname) {
     }
   });
 
-  this.logger.syncInfo('sync %s:%s got %d new items, %d dirs, %d files to sync',
-    this.disturl, fullname, news.length, dirs.length, files.length);
+  this.logger.syncInfo('[%s] sync %s:%s got %d new items, %d dirs, %d files to sync',
+    this.category, this.disturl, fullname, news.length, dirs.length, files.length);
 
   for (var i = 0; i < files.length; i++) {
     yield* this.syncFile(files[i]);
@@ -59,8 +59,8 @@ proto.syncDir = function* (fullname) {
     yield* this.distService.savedir(dir);
   }
 
-  this.logger.syncInfo('Sync %s finished, %d dirs, %d files',
-  fullname, dirs.length, files.length);
+  this.logger.syncInfo('[%s] Sync %s finished, %d dirs, %d files',
+    this.category, fullname, dirs.length, files.length);
 };
 
 proto.check = function (checksums, info) {
