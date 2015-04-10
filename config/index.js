@@ -170,6 +170,7 @@ var config = {
       max: 5, // sync the latest 5 releases
     },
     chromedriver: {
+      alwayNewDirIndex: 0,
       name: 'ChromeDriver',
       category: 'chromedriver',
       enable: true,
@@ -179,6 +180,7 @@ var config = {
       description: 'ChromeDriver is a standalone server which implements WebDriver\'s wire protocol for Chromium, which is then available for Chrome on Android and Chrome on Desktop (Mac, Linux, Windows and ChromeOS).'
     },
     selenium: {
+      alwayNewDirIndex: 0,
       name: 'selenium',
       category: 'selenium',
       enable: true,
