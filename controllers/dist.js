@@ -127,6 +127,11 @@ function* pipe(info, attachment) {
 }
 
 function* downloadAsReadStream(key) {
+  var options = { timeout: ms('10m') };
+  if (nfs.createDownloadStream) {
+    return yield nfs.createDownloadStream(key, options);
+  }
+
   var tmpPath = path.join(config.uploadDir,
     utility.randomString() + key.replace(/\//g, '-'));
   function cleanup() {
@@ -135,7 +140,7 @@ function* downloadAsReadStream(key) {
   }
   debug('downloadAsReadStream() %s to %s', key, tmpPath);
   try {
-    yield nfs.download(key, tmpPath, {timeout: ms('10m')});
+    yield nfs.download(key, tmpPath, options);
   } catch (err) {
     debug('downloadAsReadStream() %s to %s error: %s', key, tmpPath, err.stack);
     cleanup();
