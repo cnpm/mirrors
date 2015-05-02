@@ -158,14 +158,14 @@ var config = {
       url: 'https://npmjs.com',
       description: 'a JavaScript package manager.'
     },
-    'atom-shell': {
-      name: 'atom-shell',
-      category: 'atom-shell',
+    'electron': {
+      name: 'electron',
+      category: 'electron',
       enable: true,
       // interval: ms('5m'),
-      disturl: 'https://github.com/atom/atom-shell/releases',
-      githubRepo: 'atom/atom-shell',
-      url: 'https://github.com/atom/atom-shell',
+      disturl: 'https://github.com/atom/electron/releases',
+      githubRepo: 'atom/electron',
+      url: 'https://github.com/atom/electron',
       description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.',
       max: 5, // sync the latest 5 releases
     },
