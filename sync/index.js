@@ -40,15 +40,16 @@ for (var key in syncers) {
     continue;
   }
 
+  if (syncer.syncerClass) {
+    syncer.Syncer = require('./' + syncer.syncerClass);
+    console.log(syncer)
+    continue;
+  }
+
   // sync from github
   if (syncer.githubRepo) {
     GithubSyncer = GithubSyncer || require('./github');
     syncer.Syncer = GithubSyncer;
-    continue;
-  }
-
-  if (syncer.syncerClass) {
-    syncer.Syncer = require('./' + syncer.syncerClass);
     continue;
   }
 
