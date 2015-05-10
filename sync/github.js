@@ -59,56 +59,62 @@ proto.listdir = function* (fullname) {
     throw new Error(util.format('get %s resposne %s', this.url, result.status));
   }
 
-  var archiveUrl = this.archiveUrl;
   var releases = this.max
     ? result.data.slice(0, this.max)
     : result.data;
 
-  return releases.map(parseRelease).reduce(function (prev, curr) {
+  var that = this;
+  return releases.map(function (release) {
+    return that.parseRelease(fullname, release);
+  }).reduce(function (prev, curr) {
     return prev.concat(curr);
   });
+};
 
-  function parseRelease(release) {
-    var items = [];
-    var name;
-    if (release.tarball_url) {
-      name = release.tag_name + '.tar.gz';
-      items.push({
-        name: name,
-        date: release.created_at,
-        size: null,
-        type: 'file',
-        downloadURL: archiveUrl + name,
-        parent: fullname
-      });
-    }
-
-    if (release.zipball_url) {
-      name = release.tag_name + '.zip';
-      items.push({
-        name: name,
-        date: release.created_at,
-        size: null,
-        type: 'file',
-        downloadURL: archiveUrl + name,
-        parent: fullname
-      });
-    }
-
-    if (release.assets) {
-      release.assets.forEach(function (asset) {
-        items.push({
-          name: asset.name,
-          date: asset.updated_at || asset.created_at,
-          size: asset.size,
-          type: 'file',
-          downloadURL: asset.browser_download_url,
-          parent: fullname
-        });
-      });
-    }
-
-    return items;
+proto.parseRelease = function (fullname, release) {
+  var items = [];
+  var name;
+  if (release.tarball_url) {
+    name = release.tag_name + '.tar.gz';
+    items.push({
+      name: name,
+      date: release.created_at,
+      size: null,
+      type: 'file',
+      downloadURL: this.archiveUrl + name,
+      parent: fullname
+    });
   }
 
+  if (release.zipball_url) {
+    name = release.tag_name + '.zip';
+    items.push({
+      name: name,
+      date: release.created_at,
+      size: null,
+      type: 'file',
+      downloadURL: this.archiveUrl + name,
+      parent: fullname
+    });
+  }
+
+  if (release.assets) {
+    var that = this;
+    release.assets.forEach(function (asset) {
+      items.push(that.formatAssetItem(fullname, asset));
+    });
+  }
+
+  return items;
+};
+
+proto.formatAssetItem = function (fullname, asset) {
+  return {
+    name: asset.name,
+    date: asset.updated_at || asset.created_at,
+    size: asset.size,
+    type: 'file',
+    downloadURL: asset.browser_download_url,
+    parent: fullname
+  };
 };

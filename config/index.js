@@ -158,7 +158,7 @@ var config = {
       url: 'https://npmjs.com',
       description: 'a JavaScript package manager.'
     },
-    'electron': {
+    electron: {
       name: 'electron',
       category: 'electron',
       enable: true,
@@ -186,7 +186,8 @@ var config = {
       disturl: 'https://github.com/operasoftware/operachromiumdriver/releases',
       githubRepo: 'operasoftware/operachromiumdriver',
       url: 'https://github.com/operasoftware/operachromiumdriver',
-      description: 'OperaDriver for Chromium-based Opera releases'
+      description: 'OperaDriver for Chromium-based Opera releases',
+      syncerClass: 'Operadriver',
     },
     selenium: {
       alwayNewDirIndex: 0,
