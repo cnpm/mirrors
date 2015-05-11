@@ -42,7 +42,6 @@ for (var key in syncers) {
 
   if (syncer.syncerClass) {
     syncer.Syncer = require('./' + syncer.syncerClass);
-    console.log(syncer)
     continue;
   }
 
@@ -85,6 +84,7 @@ Object.keys(syncers).forEach(function (name) {
     } catch (err) {
       err.message += ' (sync ' + item.category + ' dist error)';
       logger.syncError(err);
+      console.error(err.stack);
     }
     item.syncing = false;
   });

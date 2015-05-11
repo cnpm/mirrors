@@ -63,7 +63,6 @@ var proto = Syncer.prototype;
 
 proto.start = function* (name) {
   name = name || '/';
-  name.replace(/\/?$/, '/');
   yield* this.syncDir(name, 0);
 };
 

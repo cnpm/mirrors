@@ -32,6 +32,7 @@ function GithubSyncer(options) {
   this.archiveUrl = util.format('https://github.com/%s/archive/', options.repo);
   this.authorization = utils.getGithubBasicAuth();
   this.max = options.max;
+  this._result = null;
 }
 
 util.inherits(GithubSyncer, Syncer);
@@ -46,17 +47,20 @@ proto.check = function (checksums, info) {
 };
 
 proto.listdir = function* (fullname) {
-  var result = yield urllib.request(this.url, {
-    timeout: 60000,
-    dataType: 'json',
-    gzip: true,
-    headers: { authorization: this.authorization }
-  });
-  debug('listdir %s got %s, %j, releases: %s',
-    this.url, result.status, result.headers, result.data.length || '-');
+  var result = this._result;
+  if (!result) {
+    result = yield urllib.request(this.url, {
+      timeout: 60000,
+      dataType: 'json',
+      gzip: true,
+      headers: { authorization: this.authorization }
+    });
+    debug('listdir %s got %s, %j, releases: %s',
+      this.url, result.status, result.headers, result.data.length || '-');
 
-  if (result.status !== 200) {
-    throw new Error(util.format('get %s resposne %s', this.url, result.status));
+    if (result.status !== 200) {
+      throw new Error(util.format('get %s resposne %s', this.url, result.status));
+    }
   }
 
   var releases = this.max
@@ -101,7 +105,10 @@ proto.parseRelease = function (fullname, release) {
   if (release.assets) {
     var that = this;
     release.assets.forEach(function (asset) {
-      items.push(that.formatAssetItem(fullname, asset));
+      var item = that.formatAssetItem(fullname, asset);
+      if (item) {
+        items.push(item);
+      }
     });
   }
 

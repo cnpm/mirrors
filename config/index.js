@@ -167,7 +167,20 @@ var config = {
       githubRepo: 'atom/electron',
       url: 'https://github.com/atom/electron',
       description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.',
-      max: 5, // sync the latest 5 releases
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+    },
+    atom: {
+      name: 'atom',
+      category: 'atom',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/atom/atom/releases',
+      githubRepo: 'atom/atom',
+      url: 'https://github.com/atom/atom',
+      description: 'Atom is a hackable text editor for the 21st century, built on Electron, and based on everything we love about our favorite editors.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
     },
     chromedriver: {
       alwayNewDirIndex: 0,
@@ -187,7 +200,7 @@ var config = {
       githubRepo: 'operasoftware/operachromiumdriver',
       url: 'https://github.com/operasoftware/operachromiumdriver',
       description: 'OperaDriver for Chromium-based Opera releases',
-      syncerClass: 'Operadriver',
+      syncerClass: 'GithubWithVersion',
     },
     selenium: {
       alwayNewDirIndex: 0,
