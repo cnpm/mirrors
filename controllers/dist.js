@@ -84,7 +84,8 @@ function* download(category, name) {
     return yield* pipe.call(this, info, false);
   }
 
-  if (/\.(html|js|css|json|txt|tab|txt\.asc|txt\.gpg)$/.test(name)) {
+  if (/\.(html|js|css|json|txt|tab|txt\.asc|txt\.gpg)$/.test(name) ||
+      /RELEASES$/.test(name)) {
     if (info.url.indexOf('http') === 0) {
       info.url = urlparse(info.url).path;
     }
@@ -106,7 +107,8 @@ function* pipe(info, attachment) {
   }
 
   var type = mime.lookup(info.url);
-  if (/\.(txt\.asc|txt\.gpg|tab)$/.test(info.name)) {
+  if (/\.(txt\.asc|txt\.gpg|tab)$/.test(info.name) ||
+     (/RELEASES$/.test(info.name))) {
     type = 'text/plain';
   }
   debug('pipe %j, attachment: %s, type: %s', info, attachment, type);
