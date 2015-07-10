@@ -98,11 +98,33 @@ proto.listdir = function* () {
     var parent = '/';
     if (name.indexOf('/') > 0) {
       var names = name.split('/');
-      parent = names[0] + '/';
-      name = names[1].trim();
+      // 2.0/chromedriver_linux32.zip
+      // debug/v0.3.1/node-v11-win32-ia32.tar.gz
+      var lastIndex = names.length - 1;
+      name = names[lastIndex].trim();
+      if (!name) {
+        continue;
+      }
+      var lastParent = parent;
+      for (var j = 0; j < lastIndex; j++) {
+        parent = names.slice(0, j + 1).join('/') + '/';
+        if (parent !== '/' && !dirMap[parent]) {
+          dirMap[parent] = true;
+
+          // dir
+          items.push({
+            name: parent,
+            size: '-',
+            date: date,
+            type: 'dir',
+            parent: lastParent,
+          });
+        }
+        lastParent = '/' + parent;
+      }
     }
-    if (!name) {
-      continue;
+    if (parent[0] !== '/') {
+      parent = '/' + parent;
     }
     // file
     items.push({
@@ -110,24 +132,10 @@ proto.listdir = function* () {
       size: size,
       date: date,
       type: 'file',
-      parent: '/' + parent,
+      parent: parent,
       downloadURL: downloadURL
     });
-
-    if (parent !== '/' && !dirMap[parent]) {
-      dirMap[parent] = true;
-
-      // dir
-      items.push({
-        name: parent,
-        size: '-',
-        date: date,
-        type: 'dir',
-        parent: '/',
-      });
-    }
   }
-
   return items;
 };
 

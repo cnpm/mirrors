@@ -211,6 +211,16 @@ var config = {
       syncerClass: 'ListBucketResult',
       url: 'http://www.seleniumhq.org/download/',
       description: 'Selenium automates browsers. That\'s it! What you do with that power is entirely up to you. Primarily, it is for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can (and should!) also be automated as well.'
+    },
+    'node-inspector': {
+      alwayNewDirIndex: 0,
+      name: 'node-inspector',
+      category: 'node-inspector',
+      enable: true,
+      disturl: 'https://node-inspector.s3.amazonaws.com',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/node-inspector',
+      description: 'Node.js debugger based on Blink Developer Tools'
     }
   },
 };
