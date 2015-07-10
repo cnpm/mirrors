@@ -105,22 +105,21 @@ proto.listdir = function* () {
       if (!name) {
         continue;
       }
-      var lastParent = parent;
       for (var j = 0; j < lastIndex; j++) {
-        parent = names.slice(0, j + 1).join('/') + '/';
-        if (parent !== '/' && !dirMap[parent]) {
-          dirMap[parent] = true;
+        var dir = names[j] + '/';
+        if (dir !== '/' && !dirMap[parent + dir]) {
+          dirMap[parent + dir] = true;
 
           // dir
           items.push({
-            name: parent,
+            name: dir,
             size: '-',
             date: date,
             type: 'dir',
-            parent: lastParent,
+            parent: parent,
           });
         }
-        lastParent = '/' + parent;
+        parent += dir;
       }
     }
     if (parent[0] !== '/') {
