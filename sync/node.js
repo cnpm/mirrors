@@ -100,6 +100,11 @@ proto.check = function (checksums, info) {
   if (!info.size) {
     return true;
   }
+  // .html ignore size check
+  // like: http://nodejs.org/dist/latest-v0.10.x/docs/changelog.html
+  if (/\.html$/.test(info.name)) {
+    return true;
+  }
   return checksums.size === info.size;
 };
 

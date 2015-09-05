@@ -145,7 +145,8 @@ proto.syncFile = function* (info) {
     logger.syncInfo('[%s] download %s got status %s, headers: %j',
       this.category, downurl, statusCode, r.headers);
 
-    if (statusCode === 404) {
+    if (statusCode === 404 || statusCode === 403) {
+      // 403: https://iojs.org/dist/v1.0.2/doc/doc
       logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
       return;
     }
