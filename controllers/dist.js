@@ -93,6 +93,10 @@ function* download(category, name) {
   }
 
   if (info.url.indexOf('http') === 0) {
+    // make sure use nfs new domain
+    if (typeof nfs.url === 'function') {
+      info.url = nfs.url(urlparse(info.url).path);
+    }
     return this.redirect(info.url);
   }
 
