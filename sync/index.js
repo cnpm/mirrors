@@ -1,6 +1,4 @@
 /**!
- * mirrors - sync/index.js
- *
  * Authors:
  *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
  */

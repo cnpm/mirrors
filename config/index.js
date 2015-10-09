@@ -129,6 +129,15 @@ var config = {
       url: 'https://iojs.org',
       description: 'is an npm compatible platform originally based on node.js™.'
     },
+    alinode: {
+      name: 'alinode',
+      category: 'alinode',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'http://alinode.aliyun.com/dist/alinode/',
+      url: 'http://alinode.aliyun.com',
+      description: 'alinode是阿里云出品的Node.js应用服务解决方案。它是基于社区Node改进的运行时环境和服务平台的总称。'
+    },
     python: {
       name: 'Python',
       category: 'python',
