@@ -57,7 +57,7 @@
     "mocha": "~2.3.3",
     "node-dev": "~2.6.0",
     "pedding": "~1.0.0",
-    "should": "~4.6.5",
+    "should": "~7.1.0",
     "should-http": "~0.0.2",
     "sqlite3": "~3.1.0",
     "supertest": "~0.15.0"
