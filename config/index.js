@@ -229,8 +229,18 @@ var config = {
       disturl: 'https://node-inspector.s3.amazonaws.com',
       syncerClass: 'ListBucketResult',
       url: 'https://github.com/node-inspector',
-      description: 'Node.js debugger based on Blink Developer Tools'
-    }
+      description: 'Node.js debugger based on Blink Developer Tools',
+    },
+    fsevents: {
+      alwayNewDirIndex: 0,
+      name: 'fsevents',
+      category: 'fsevents',
+      enable: true,
+      disturl: 'https://fsevents-binaries.s3-us-west-2.amazonaws.com',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/strongloop/fsevents',
+      description: 'Native Access to Mac OS-X FSEvents',
+    },
   },
 };
 
