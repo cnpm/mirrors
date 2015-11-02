@@ -165,7 +165,8 @@ var config = {
       disturl: 'https://github.com/npm/npm/releases',
       repo: 'npm/npm',
       url: 'https://npmjs.com',
-      description: 'a JavaScript package manager.'
+      description: 'a JavaScript package manager.',
+      syncerClass: 'github',
     },
     electron: {
       name: 'electron',
