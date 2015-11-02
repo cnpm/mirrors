@@ -18,6 +18,10 @@ var MirrorsSyncer;
 
 var syncers = config.categories;
 
+function onerror(err) {
+  logger.error(err);
+}
+
 for (var key in syncers) {
   var syncer = syncers[key];
   if (!config.enableSync) {
@@ -68,14 +72,9 @@ Object.keys(syncers).forEach(function (name) {
       return;
     }
     item.syncing = true;
+    item.repo = item.repo || item.githubRepo;
     logger.syncInfo('Start sync task for %s', item.category);
-    var syncer = new item.Syncer({
-      disturl: item.disturl,
-      category: item.category,
-      repo: item.githubRepo,
-      max: item.max,
-      alwayNewDirIndex: item.alwayNewDirIndex,
-    });
+    var syncer = new item.Syncer(item);
 
     try {
       yield* syncer.start();
@@ -92,7 +91,3 @@ Object.keys(syncers).forEach(function (name) {
     fn().catch(onerror);
   }, syncInterval);
 });
-
-function onerror(err) {
-  logger.error(err);
-}

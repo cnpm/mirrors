@@ -1,6 +1,4 @@
 /**!
- * mirrors - sync/GtihubWithVersion.js
- *
  * Copyright(c) cnpm and other contributors.
  * MIT Licensed
  *
@@ -24,6 +22,10 @@ function GtihubWithVersionSyncer(options) {
     return new GtihubWithVersionSyncer(options);
   }
   GithubSyncer.call(this, options);
+  if (options.needFormatTagName === undefined) {
+    options.needFormatTagName = true;
+  }
+  this.needFormatTagName = options.needFormatTagName;
 }
 
 util.inherits(GtihubWithVersionSyncer, GithubSyncer);
@@ -32,7 +34,10 @@ var proto = GtihubWithVersionSyncer.prototype;
 
 proto.parseRelease = function (fullname, release) {
   var items = [];
-  var version = release.tag_name.replace(/^v/, '');
+  var version = release.tag_name;
+  if (this.needFormatTagName) {
+    version = version.replace(/^v/, '');
+  }
   if (fullname === '/') {
     items.push({
       name: version + '/',

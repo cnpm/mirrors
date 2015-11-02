@@ -163,7 +163,7 @@ var config = {
       enable: true,
       // interval: ms('5m'),
       disturl: 'https://github.com/npm/npm/releases',
-      githubRepo: 'npm/npm',
+      repo: 'npm/npm',
       url: 'https://npmjs.com',
       description: 'a JavaScript package manager.'
     },
@@ -173,11 +173,12 @@ var config = {
       enable: true,
       // interval: ms('5m'),
       disturl: 'https://github.com/atom/electron/releases',
-      githubRepo: 'atom/electron',
+      repo: 'atom/electron',
       url: 'https://github.com/atom/electron',
       description: 'lets you write cross-platform desktop applications using JavaScript, HTML and CSS.',
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
     },
     atom: {
       name: 'atom',
@@ -185,11 +186,12 @@ var config = {
       enable: true,
       // interval: ms('5m'),
       disturl: 'https://github.com/atom/atom/releases',
-      githubRepo: 'atom/atom',
+      repo: 'atom/atom',
       url: 'https://github.com/atom/atom',
       description: 'Atom is a hackable text editor for the 21st century, built on Electron, and based on everything we love about our favorite editors.',
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
     },
     chromedriver: {
       alwayNewDirIndex: 0,
@@ -206,10 +208,11 @@ var config = {
       category: 'operadriver',
       enable: true,
       disturl: 'https://github.com/operasoftware/operachromiumdriver/releases',
-      githubRepo: 'operasoftware/operachromiumdriver',
+      repo: 'operasoftware/operachromiumdriver',
       url: 'https://github.com/operasoftware/operachromiumdriver',
       description: 'OperaDriver for Chromium-based Opera releases',
       syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
     },
     selenium: {
       alwayNewDirIndex: 0,
@@ -240,6 +243,17 @@ var config = {
       syncerClass: 'ListBucketResult',
       url: 'https://github.com/strongloop/fsevents',
       description: 'Native Access to Mac OS-X FSEvents',
+    },
+    'node-sass': {
+      name: 'node-sass',
+      category: 'node-sass',
+      enable: true,
+      disturl: 'https://github.com/sass/node-sass/releases',
+      repo: 'sass/node-sass',
+      url: 'https://github.com/sass/node-sass',
+      description: 'Node.js bindings to libsass',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
     },
   },
 };
