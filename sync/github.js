@@ -32,6 +32,8 @@ function GithubSyncer(options) {
   this.archiveUrl = util.format('https://github.com/%s/archive/', options.repo);
   this.authorization = utils.getGithubBasicAuth();
   this.max = options.max;
+  // 200 MB
+  this.maxFileSize = options.maxFileSize || 1024 * 1024 * 200;
   this._result = null;
 }
 
@@ -107,7 +109,9 @@ proto.parseRelease = function (fullname, release) {
     release.assets.forEach(function (asset) {
       var item = that.formatAssetItem(fullname, asset);
       if (item) {
-        items.push(item);
+        if (!item.size || item.size <= that.maxFileSize) {
+          items.push(item);
+        }
       }
     });
   }
