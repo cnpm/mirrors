@@ -85,7 +85,9 @@ proto.parseRelease = function (fullname, release) {
     release.assets.forEach(function (asset) {
       var item = that.formatAssetItem(fullname, asset);
       if (item) {
-        items.push(item);
+        if (!item.size || item.size <= that.maxFileSize) {
+          items.push(item);
+        }
       }
     });
   }
