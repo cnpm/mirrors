@@ -256,6 +256,14 @@ var config = {
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
     },
+    sqlite3: {
+      name: 'sqlite3',
+      category: 'sqlite3',
+      enable: true,
+      disturl: 'https://github.com/mapbox/node-sqlite3',
+      url: 'https://github.com/mapbox/node-sqlite3',
+      description: 'Asynchronous, non-blocking SQLite3 bindings for Node.js',
+    },
   },
 };
 

@@ -63,7 +63,7 @@ var proto = Syncer.prototype;
 
 proto.start = function* (name) {
   name = name || '/';
-  yield* this.syncDir(name, 0);
+  yield this.syncDir(name, 0);
 };
 
 /**
@@ -73,7 +73,7 @@ proto.start = function* (name) {
  */
 
 proto.syncDir = function* (fullname, dirIndex) {
-  var news = yield* this.listdiff(fullname, dirIndex);
+  var news = yield this.listdiff(fullname, dirIndex);
   var files = [];
   var dirs = [];
 
@@ -88,17 +88,17 @@ proto.syncDir = function* (fullname, dirIndex) {
     this.category, this.disturl, fullname, dirIndex, news.length, dirs.length, files.length);
 
   for (var i = 0; i < files.length; i++) {
-    yield* this.syncFile(files[i]);
+    yield this.syncFile(files[i]);
   }
 
   for (var i = 0; i < dirs.length; i++) {
     var dir = dirs[i];
     // recursive sync dir
-    yield* this.syncDir(dir.parent + dir.name, dirIndex + 1);
+    yield this.syncDir(dir.parent + dir.name, dirIndex + 1);
 
     // save to database
     dir.category = this.category;
-    yield* this.distService.savedir(dir);
+    yield this.distService.savedir(dir);
     logger.syncInfo('[%s] Save dir:%s#%s %j to database', this.category, fullname, dirIndex, dir);
   }
 
@@ -228,7 +228,7 @@ proto.syncFile = function* (info) {
   }
 
   logger.syncInfo('[%s] Sync dist file: %j done', this.category, info);
-  yield* distService.savefile(info);
+  yield distService.savefile(info);
 };
 
 /**
@@ -238,11 +238,11 @@ proto.syncFile = function* (info) {
  */
 
 proto.listdiff = function* (fullname, dirIndex) {
-  var items = yield* this.listdir(fullname, dirIndex);
+  var items = yield this.listdir(fullname, dirIndex);
   if (!items || items.length === 0) {
     return [];
   }
-  var exists = yield* this.listExists(fullname);
+  var exists = yield this.listExists(fullname);
   var map = {};
   for (var i = 0; i < exists.length; i++) {
     var item = exists[i];
@@ -279,7 +279,7 @@ proto.listdiff = function* (fullname, dirIndex) {
 };
 
 proto.listExists = function* (fullname) {
-  var exists = yield* this.distService.listdir(this.category, fullname);
-  debug('listdiff %s %s got %s exists items', this.category, fullname, exists.length);
+  var exists = yield this.distService.listdir(this.category, fullname);
+  debug('listExists %s %s got %s exists items', this.category, fullname, exists.length);
   return exists;
 };
