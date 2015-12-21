@@ -58,7 +58,7 @@ proto.listdiff = function* (fullname, dirIndex) {
   for (var version in versions) {
     var pkg = versions[version];
     var binaryInfo = pkg.binary || {};
-    pkg.dirname = 'v' + pkg.version;
+    pkg.dirname = 'v' + pkg.version + '/';
     pkg.publish_time = result.data.time[pkg.version];
     if (existDirsMap[pkg.dirname]) {
       existsCount++;
