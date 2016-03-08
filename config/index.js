@@ -256,6 +256,17 @@ var config = {
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
     },
+    leveldown: {
+      name: 'leveldown',
+      category: 'leveldown',
+      enable: true,
+      disturl: 'https://github.com/Level/leveldown/releases',
+      repo: 'Level/leveldown',
+      url: 'https://github.com/Level/leveldown',
+      description: 'Pure C++ Node.js LevelDB binding serving as the back-end to LevelUP',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+    },
     sqlite3: {
       name: 'sqlite3',
       category: 'sqlite3',
