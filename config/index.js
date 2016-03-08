@@ -255,6 +255,8 @@ var config = {
       description: 'Node.js bindings to libsass',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     leveldown: {
       name: 'leveldown',
@@ -266,6 +268,8 @@ var config = {
       description: 'Pure C++ Node.js LevelDB binding serving as the back-end to LevelUP',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     'leveldown-hyper': {
       name: 'leveldown-hyper',
@@ -277,6 +281,8 @@ var config = {
       description: 'Fork of leveldown using HyperDex fork of LevelDB as backend',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     mknod: {
       name: 'mknod',
@@ -288,6 +294,8 @@ var config = {
       description: 'Node bindings for mknod',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     rabin: {
       name: 'rabin',
@@ -299,6 +307,8 @@ var config = {
       description: 'node native addon for rabin fingerprinting data streams',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     'sodium-prebuilt': {
       name: 'sodium-prebuilt',
@@ -310,6 +320,8 @@ var config = {
       description: 'Port of the lib sodium encryption library to Node.js',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     'utp-native': {
       name: 'utp-native',
@@ -321,6 +333,8 @@ var config = {
       description: 'Native bindings for libutp',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     'node-tk5': {
       name: 'node-tk5',
@@ -332,6 +346,8 @@ var config = {
       description: 'gs2 tk5 api for node.js',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     couchbase: {
       name: 'couchbase',
@@ -343,6 +359,8 @@ var config = {
       description: 'libcouchbase node.js access',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     'fuse-bindings': {
       name: 'fuse-bindings',
@@ -354,6 +372,8 @@ var config = {
       description: 'Fully maintained FUSE bindings for Node that aims to cover the entire FUSE api',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     'zmq-prebuilt': {
       name: 'zmq-prebuilt',
@@ -365,6 +385,8 @@ var config = {
       description: 'Prebuilt Node.js bindings to the zeromq library',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     gl: {
       name: 'gl',
@@ -376,6 +398,8 @@ var config = {
       description: 'Creates WebGL contexts without making windows',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     hackrf: {
       name: 'hackrf',
@@ -387,6 +411,8 @@ var config = {
       description: 'Control a HackRF device (e.g. Jawbreaker, HackRF One, or Rad1o)',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     sqlite3: {
       name: 'sqlite3',
@@ -395,6 +421,8 @@ var config = {
       disturl: 'https://github.com/mapbox/node-sqlite3',
       url: 'https://github.com/mapbox/node-sqlite3',
       description: 'Asynchronous, non-blocking SQLite3 bindings for Node.js',
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
   },
 };
