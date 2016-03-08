@@ -7,7 +7,7 @@ DB = sqlite
 
 install:
 	@npm install --build-from-source $(REGISTRY) \
-		--disturl=https://npm.taobao.org/dist
+		--disturl=https://npm.taobao.org/mirrors/node
 
 install-production production:
 	@NODE_ENV=production $(MAKE) install
@@ -24,7 +24,6 @@ init-mysql:
 
 test: install init-database
 	@NODE_ENV=test DB=${DB} node_modules/.bin/mocha \
-		--harmony \
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
 		--require should \
@@ -42,7 +41,7 @@ test-mysql: init-mysql
 test-all: test-sqlite test-mysql
 
 test-cov cov: install init-database
-	@NODE_ENV=test DB=${DB} node --harmony \
+	@NODE_ENV=test DB=${DB} \
 		node_modules/.bin/istanbul cover --preserve-comments \
 		node_modules/.bin/_mocha \
 		-- -u exports \
@@ -62,7 +61,6 @@ test-cov-mysql: init-mysql
 
 test-travis: install init-database
 	@NODE_ENV=test DB=${DB} CNPM_SOURCE_NPM=https://registry.npmjs.org CNPM_SOURCE_NPM_ISCNPM=false \
-		node --harmony \
 		node_modules/.bin/istanbul cover --preserve-comments \
 		node_modules/.bin/_mocha \
 		--report lcovonly \
@@ -95,6 +93,6 @@ autod: install
 	@$(MAKE) install
 
 dev:
-	@node_modules/.bin/node-dev --harmony dispatch.js
+	@node_modules/.bin/node-dev dispatch.js
 
 .PHONY: test

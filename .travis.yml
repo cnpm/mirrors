@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - "2"
+  - "5"
   - "4"
 addons:
   apt:
@@ -17,4 +17,4 @@ before_install:
     fi;
   - "npm install --build-from-source"
 script: "make test-travis-all"
-after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
+after_script: "npm install codecov && codecov"
