@@ -1,6 +1,4 @@
-/**!
-* mirrors - sync/ListBucketResult.js
-*
+/**
 * Authors:
 *   fengmk2 <fengmk2@gmail.com> (https://github.com/fengmk2)
 */
@@ -33,7 +31,7 @@ util.inherits(ListBucketResult, Syncer);
 var proto = ListBucketResult.prototype;
 
 proto.syncDir = function* (fullname) {
-  var news = yield* this.listdiff(fullname);
+  var news = yield this.listdiff(fullname);
   var files = [];
   var dirs = [];
 
@@ -49,14 +47,14 @@ proto.syncDir = function* (fullname) {
     this.category, this.disturl, fullname, news.length, dirs.length, files.length);
 
   for (var i = 0; i < files.length; i++) {
-    yield* this.syncFile(files[i]);
+    yield this.syncFile(files[i]);
   }
 
   // save new dirs
   for (var i = 0; i < dirs.length; i++) {
     var dir = dirs[i];
     dir.category = this.category;
-    yield* this.distService.savedir(dir);
+    yield this.distService.savedir(dir);
   }
 
   this.logger.syncInfo('[%s] Sync %s finished, %d dirs, %d files',

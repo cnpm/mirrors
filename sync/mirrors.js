@@ -41,6 +41,9 @@ proto.listdir = function* (fullname, dirIndex) {
   var alwayNewDir = false;
   if (typeof this._alwayNewDirIndex === 'number' && this._alwayNewDirIndex === dirIndex) {
     alwayNewDir = true;
+  } else if (Array.isArray(this._alwayNewDirIndex) && this._alwayNewDirIndex.indexOf(dirIndex) >= 0) {
+    // node-inspector `alwayNewDirIndex = [0, 1]`
+    alwayNewDir = true;
   }
   var url = this.disturl + fullname;
 
