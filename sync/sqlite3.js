@@ -109,6 +109,7 @@ proto.listdiff = function* (fullname, dirIndex) {
     });
 
     var fileParent = fullname + pkg.dirname + '/';
+    fileParent = fileParent.replace('//', '/');
     for (var p = 0; p < nodePlatforms.length; p++) {
       var nodePlatform = nodePlatforms[p];
       for (var a = 0; a < nodeAbiVersions.length; a++) {
