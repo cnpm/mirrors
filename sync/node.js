@@ -79,7 +79,8 @@ proto.listdir = function* (fullname) {
 
   var res = yield urllib.requestThunk(url, {
     timeout: 60 * 1000,
-    dataType: 'text'
+    dataType: 'text',
+    followRedirect: true,
   });
   debug('listdir %s got %s, %j', url, res.status, res.headers);
 

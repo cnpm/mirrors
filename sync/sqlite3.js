@@ -52,6 +52,7 @@ proto.listdiff = function* (fullname, dirIndex) {
     timeout: 60000,
     dataType: 'json',
     gzip: true,
+    followRedirect: true,
   });
   var versions = result.data.versions || {};
   var needs = [];

@@ -111,6 +111,7 @@ proto.listdir = function* (fullname) {
   var url = this.disturl;
   var result = yield urllib.request(url, {
     timeout: 60000,
+    followRedirect: true,
   });
   debug('listdir %s got %s, %j', url, result.status, result.headers);
   var html = result.data && result.data.toString() || '';

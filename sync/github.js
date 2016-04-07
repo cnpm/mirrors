@@ -55,7 +55,8 @@ proto.listdir = function* (fullname) {
       timeout: 60000,
       dataType: 'json',
       gzip: true,
-      headers: { authorization: this.authorization }
+      headers: { authorization: this.authorization },
+      followRedirect: true,
     });
     debug('listdir %s got %s, %j, releases: %s',
       this.url, result.status, result.headers, result.data.length || '-');
