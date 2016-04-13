@@ -1,9 +1,7 @@
-/**!
- * mirrors - config/index.js
- *
+/**
  * Authors:
  *  dead_horse <dead_horse@qq.com>
- *  fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
+ *  fengmk2 <fengmk2@gmail.com> (http://fengmk2.com)
  */
 
 'use strict';
@@ -119,6 +117,16 @@ var config = {
       disturl: 'http://nodejs.org/dist',
       url: 'http://nodejs.org',
       description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.'
+    },
+    'node-rc': {
+      name: 'Node.js RC',
+      category: 'node-rc',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'http://nodejs.org/download/rc',
+      url: 'http://nodejs.org',
+      description: 'Node.js Release Candidate',
+      syncerClass: 'node',
     },
     iojs: {
       name: 'io.js',
