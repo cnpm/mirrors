@@ -142,7 +142,7 @@ var config = {
       category: 'alinode',
       enable: true,
       // interval: ms('5m'),
-      disturl: 'https://alinode.aliyun.com/dist/new-alinode/',
+      disturl: 'http://alinode.aliyun.com/dist/new-alinode/',
       url: 'https://alinode.aliyun.com',
       description: 'alinode是阿里云出品的Node.js应用服务解决方案。它是基于社区Node改进的运行时环境和服务平台的总称。'
     },
