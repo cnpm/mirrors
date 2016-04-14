@@ -212,6 +212,7 @@ proto.syncFile = function* (info) {
     // upload to NFS
     logger.syncInfo('[%s] uploading %s to nfs:%s', this.category, filepath, args.key);
     var result = yield nfs.upload(filepath, args);
+    debug(result);
     info.url = result.url || result.key;
     info.size = dataSize;
     info.sha1 = sha1sum;

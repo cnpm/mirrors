@@ -140,6 +140,8 @@ proto.parseDistHtml = function (res, parent) {
       size = '-';
     }
 
+    debug(itemName, m[2], type, size, parent);
+
     items.push({
       name: itemName,
       date: m[2],

@@ -114,8 +114,8 @@ var config = {
       category: 'node',
       enable: true,
       // interval: ms('5m'),
-      disturl: 'http://nodejs.org/dist',
-      url: 'http://nodejs.org',
+      disturl: 'https://nodejs.org/dist',
+      url: 'https://nodejs.org',
       description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.'
     },
     'node-rc': {
@@ -123,8 +123,8 @@ var config = {
       category: 'node-rc',
       enable: true,
       // interval: ms('5m'),
-      disturl: 'http://nodejs.org/download/rc',
-      url: 'http://nodejs.org',
+      disturl: 'https://nodejs.org/download/rc',
+      url: 'https://nodejs.org',
       description: 'Node.js Release Candidate',
       syncerClass: 'node',
     },
