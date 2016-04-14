@@ -432,6 +432,16 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    nodegit: {
+      name: 'nodegit',
+      category: 'nodegit',
+      enable: true,
+      disturl: 'https://github.com/nodegit/nodegit',
+      url: 'https://github.com/nodegit/nodegit',
+      description: 'Native Node bindings to Git. http://www.nodegit.org/',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 

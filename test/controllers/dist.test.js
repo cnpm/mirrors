@@ -1,6 +1,4 @@
-/**!
- * mirrors - test/controllers/dist.test.js
- *
+/**
  * Authors:
  *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
  */
@@ -33,7 +31,7 @@ describe('test/controllers/dist.test.js', function () {
       .expect(/<title>Node.js Mirror<\/title>/)
       .expect(/Mirror index of/)
       .expect(/\.\./)
-      .expect(/http:\/\/nodejs\.org\/dist\//, done);
+      .expect(/https:\/\/nodejs\.org\/dist\//, done);
     });
 
     it('should response 200 with items', function (done) {
@@ -56,7 +54,7 @@ describe('test/controllers/dist.test.js', function () {
       .expect(/\.\./)
       .expect(/<a href="\/node\/latest\/">latest\/<\/a>/)
       .expect(/<a href="\/node\/node-0.0.1.tar.gz">node-0.0.1.tar.gz<\/a>/)
-      .expect(/http:\/\/nodejs\.org\/dist\//, done);
+      .expect(/https:\/\/nodejs\.org\/dist\//, done);
     });
   });
 });

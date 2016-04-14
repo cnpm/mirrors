@@ -12,25 +12,25 @@
  * Module dependencies.
  */
 
-var debug = require('debug')('mirrors:sync:sqlite3');
+var debug = require('debug')('mirrors:sync:nodegit');
 var util = require('util');
 var urllib = require('urllib');
 var Syncer = require('./syncer');
 
-module.exports = Sqlite3Syncer;
+module.exports = NodeGitSyncer;
 
-function Sqlite3Syncer(options) {
-  if (!(this instanceof Sqlite3Syncer)) {
-    return new Sqlite3Syncer(options);
+function NodeGitSyncer(options) {
+  if (!(this instanceof NodeGitSyncer)) {
+    return new NodeGitSyncer(options);
   }
   Syncer.call(this, options);
-  this._npmPackageUrl = 'https://registry.npmjs.com/sqlite3';
-  this._storeUrl = 'https://mapbox-node-binary.s3.amazonaws.com';
+  this._npmPackageUrl = 'https://registry.npmjs.com/nodegit';
+  this._storeUrl = 'https://nodegit.s3.amazonaws.com/nodegit/nodegit/';
 }
 
-util.inherits(Sqlite3Syncer, Syncer);
+util.inherits(NodeGitSyncer, Syncer);
 
-var proto = Sqlite3Syncer.prototype;
+var proto = NodeGitSyncer.prototype;
 
 proto.check = function() {
   return true;
@@ -65,7 +65,7 @@ proto.listdiff = function* (fullname, dirIndex) {
       existsCount++;
       continue;
     }
-    if (binaryInfo.host === this._storeUrl) {
+    if (binaryInfo.host && binaryInfo.host.indexOf(this._storeUrl) === 0) {
       needs.push(pkg);
     }
   }
@@ -111,13 +111,15 @@ proto.listdiff = function* (fullname, dirIndex) {
 
     var fileParent = fullname + pkg.dirname + '/';
     fileParent = fileParent.replace('//', '/');
+    // https://nodegit.s3.amazonaws.com/nodegit/nodegit/nodegit-v0.12.2-node-v46-darwin-x64.tar.gz
+    // https://nodegit.s3.amazonaws.com/nodegit/nodegit/nodegit-v0.12.2-node-v46-win32-x64.tar.gz
     for (var p = 0; p < nodePlatforms.length; p++) {
       var nodePlatform = nodePlatforms[p];
       for (var a = 0; a < nodeAbiVersions.length; a++) {
         var nodeAbiVersion = nodeAbiVersions[a];
-        var name = 'node-' + nodeAbiVersion + '-' + nodePlatform + '-x64.tar.gz';
-        var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
-        debug(downloadURL);
+        var name = 'nodegit-v' + pkg.version + '-node-' + nodeAbiVersion + '-' + nodePlatform + '-x64.tar.gz';
+        var downloadURL = this._storeUrl + name;
+        debug(downloadURL, name, fileParent, date);
         items.push({
           name: name,
           date: date,
