@@ -263,6 +263,15 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    mongodb: {
+      name: 'mongodb',
+      category: 'mongodb',
+      enable: true,
+      repo: 'mongodb/mongo',
+      disturl: 'https://www.mongodb.org/dl',
+      url: 'https://github.com/mongodb/mongo',
+      description: 'The Mongo Database http://www.mongodb.org/',
+    },
     chromedriver: {
       alwayNewDirIndex: 0,
       name: 'ChromeDriver',

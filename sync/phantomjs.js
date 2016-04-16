@@ -84,7 +84,7 @@ proto._findItems = function (html) {
     var downloadURL = m[1].trim();
     var name = m[2].trim();
     if (!name || !downloadURL || !/\.(zip|bz2|gz)$/.test(downloadURL)) {
-      return;
+      continue;
     }
     downloadURL = urlResolve(this.disturl, downloadURL);
     var size = parseInt(bytes(m[3].toLowerCase()));
