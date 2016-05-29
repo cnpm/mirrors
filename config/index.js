@@ -442,6 +442,18 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    flow: {
+      name: 'flow',
+      category: 'flow',
+      enable: true,
+      disturl: 'https://github.com/facebook/flow/releases',
+      repo: 'facebook/flow',
+      url: 'https://github.com/facebook/flow',
+      description: 'Adds static typing to JavaScript to improve developer productivity and code quality. http://flowtype.org/',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+    },
   },
 };
 
