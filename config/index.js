@@ -1,14 +1,4 @@
-/**
- * Authors:
- *  dead_horse <dead_horse@qq.com>
- *  fengmk2 <fengmk2@gmail.com> (http://fengmk2.com)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var ms = require('humanize-ms');
 var mkdirp = require('mkdirp');
@@ -106,6 +96,11 @@ var config = {
   // sync by clone from other mirrors
   cloneMode: false,
   cloneUrl: 'http://npm.taobao.org/mirrors/apis',
+
+  // proxy nodesecurity advisories
+  nodesecurity: {
+    advisories: 'https://api.nodesecurity.io/advisories',
+  },
 
   // sync categories
   categories: {

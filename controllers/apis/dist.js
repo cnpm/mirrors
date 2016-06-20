@@ -1,15 +1,4 @@
-/**!
- * mirrors - controllers/home.js
- *
- * Authors:
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var debug = require('debug')('mirrors:controllers:apis:dist');
 var Dist = require('../../services/dist');
