@@ -1,22 +1,12 @@
-/**!
- * mirrors - routes.js
- *
- * Authors:
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
 
-/**
- * Module dependencies.
- */
-
-var mount = require('koa-mount');
-var router = require('koa-middlewares').router;
-var Home = require('./controllers/home');
-var Dist = require('./controllers/dist');
-var APIDist = require('./controllers/apis/dist');
-var config = require('./config');
+const mount = require('koa-mount');
+const router = require('koa-middlewares').router;
+const Home = require('./controllers/home');
+const Dist = require('./controllers/dist');
+const APIDist = require('./controllers/apis/dist');
+const advisories = require('./controllers/apis/nodesecurity/advisories');
+const config = require('./config');
 
 module.exports = function (app) {
   if (config.mount && config.mount !== '/') {
@@ -29,6 +19,7 @@ module.exports = function (app) {
   }
 
   app.get('/', Home);
+  app.get('/apis/nodesecurity/advisories', advisories);
   app.get(/^\/apis\/.*/, APIDist);
   app.get(/^\/.*/, Dist);
 };
