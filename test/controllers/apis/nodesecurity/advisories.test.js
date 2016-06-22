@@ -12,6 +12,8 @@ describe('test/controllers/apis/nodesecurity/advisories.test.js', () => {
       request(app.listen())
       .get('/apis/nodesecurity/advisories')
       .expect('X-From-Cache', '0')
+      .expect('X-Cache-DateTime', /^\d+$/)
+      .expect('Content-Type', 'application/json; charset=utf-8')
       .expect(res => {
         res.body.results.length.should.equal(res.body.total);
         res.body.count.should.equal(res.body.total);
@@ -24,6 +26,8 @@ describe('test/controllers/apis/nodesecurity/advisories.test.js', () => {
       request(app.listen())
       .get('/apis/nodesecurity/advisories')
       .expect('X-From-Cache', '1')
+      .expect('X-Cache-DateTime', /^\d+$/)
+      .expect('Content-Type', 'application/json; charset=utf-8')
       .expect(res => {
         res.body.results.length.should.equal(res.body.total);
         res.body.count.should.equal(res.body.total);
@@ -37,6 +41,8 @@ describe('test/controllers/apis/nodesecurity/advisories.test.js', () => {
       request(app.listen())
       .get('/apis/nodesecurity/advisories')
       .expect('X-From-Cache', '1')
+      .expect('X-Cache-DateTime', /^\d+$/)
+      .expect('Content-Type', 'application/json; charset=utf-8')
       .expect(res => {
         res.body.results.length.should.equal(res.body.total);
         res.body.count.should.equal(res.body.total);
