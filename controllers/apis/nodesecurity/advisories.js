@@ -13,13 +13,18 @@ const MAX_AGE = 60000;
 
 module.exports = function*() {
   if (!cache.data) {
-    this.body = yield updateCache();
+    yield updateCache();
+    this.body = cache.data;
     this.set('X-From-Cache', '0');
+    this.set('X-Cache-DateTime', String(cache.modified));
+    this.type = 'json';
     return;
   }
 
-  this.set('X-From-Cache', '1');
   this.body = cache.data;
+  this.set('X-From-Cache', '1');
+  this.set('X-Cache-DateTime', String(cache.modified));
+  this.type = 'json';
 
   if (cache.modified && Date.now() - cache.modified > MAX_AGE) {
     updateCache()(function(err) {
@@ -44,9 +49,10 @@ function updateCache() {
         return callback(new Error('GET ' + config.nodesecurity.advisories + ' status error: ' + res.statusCode));
       }
 
-      cache.data = data;
+      // 避免在每次请求的时候做这么大量的 JSON 操作
+      cache.data = new Buffer(JSON.stringify(data));
       cache.modified = Date.now();
-      callback(null, cache.data);
+      callback();
     });
   };
 }
