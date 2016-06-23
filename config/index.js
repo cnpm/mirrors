@@ -183,6 +183,8 @@ var config = {
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
       needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     atom: {
       name: 'atom',
@@ -196,6 +198,8 @@ var config = {
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
       needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     chromedriver: {
       alwayNewDirIndex: 0,
@@ -217,6 +221,8 @@ var config = {
       description: 'OperaDriver for Chromium-based Opera releases',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     selenium: {
       alwayNewDirIndex: 0,
@@ -239,7 +245,6 @@ var config = {
       description: 'Node.js debugger based on Blink Developer Tools',
     },
     fsevents: {
-      alwayNewDirIndex: 0,
       name: 'fsevents',
       category: 'fsevents',
       enable: true,
@@ -247,6 +252,8 @@ var config = {
       syncerClass: 'ListBucketResult',
       url: 'https://github.com/strongloop/fsevents',
       description: 'Native Access to Mac OS-X FSEvents',
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     'node-sass': {
       name: 'node-sass',
@@ -448,6 +455,8 @@ var config = {
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
     poi: {
       name: 'poi',
@@ -460,6 +469,8 @@ var config = {
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
     },
   },
 };
