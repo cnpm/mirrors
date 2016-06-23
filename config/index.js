@@ -449,6 +449,18 @@ var config = {
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
     },
+    poi: {
+      name: 'poi',
+      category: 'poi',
+      enable: true,
+      disturl: 'https://github.com/poooi/poi/releases',
+      repo: 'poooi/poi',
+      url: 'https://github.com/poooi/poi',
+      description: 'Scalable KanColle browser and tool.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+    },
   },
 };
 
