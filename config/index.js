@@ -111,7 +111,8 @@ var config = {
       // interval: ms('5m'),
       disturl: 'https://nodejs.org/dist',
       url: 'https://nodejs.org',
-      description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.'
+      description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.',
+      syncDocument: true,
     },
     'node-rc': {
       name: 'Node.js RC',
@@ -122,6 +123,18 @@ var config = {
       url: 'https://nodejs.org',
       description: 'Node.js Release Candidate',
       syncerClass: 'node',
+      syncDocument: true,
+    },
+    'node-nightly': {
+      name: 'Node.js Nightly',
+      category: 'node-nightly',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://nodejs.org/download/nightly',
+      url: 'https://nodejs.org',
+      description: 'Node.js Nightly Build',
+      syncerClass: 'node',
+      syncDocument: false,
     },
     iojs: {
       name: 'io.js',

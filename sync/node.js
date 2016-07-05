@@ -1,22 +1,9 @@
-/**
- * Authors:
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var debug = require('debug')('mirrors:sync:node');
 var urllib = require('urllib');
 var util = require('util');
 var Syncer = require('./syncer');
-
-/**
- * Module exports.
- */
 
 module.exports = NodeSyncer;
 
@@ -31,6 +18,7 @@ function NodeSyncer(options) {
     return new NodeSyncer(options);
   }
   Syncer.call(this, options);
+  this._syncDocument = options.syncDocument === false ? false: true;
 }
 
 util.inherits(NodeSyncer, Syncer);
@@ -39,7 +27,7 @@ var proto = NodeSyncer.prototype;
 
 // <a href="latest/">latest/</a>                             02-May-2014 14:45                   -
 // <a href="node-v0.4.10.tar.gz">node-v0.4.10.tar.gz</a>     26-Aug-2011 16:22            12410018
-proto.FILE_RE = /^<a[^>]+>([^<]+)<\/a>\s+(\d+\-\w+\-\d+ \d+\:\d+)\s+([\-\d]+)/;
+proto.FILE_RE = /^<a[^>]+?href=\"([^\"]+)\"[^>]*>[^<]+<\/a>\s+(\d+\-\w+\-\d+ \d+\:\d+)\s+([\-\d]+)/;
 
 // */docs/api/
 proto.DOC_API_RE = /\/docs\/api\/$/;
@@ -73,6 +61,10 @@ proto.listdir = function* (fullname) {
   var isDocPath = this.DOC_API_RE.test(fullname);
   if (isDocPath) {
     url += 'index.html';
+
+    if (!this._syncDocument) {
+      return [];
+    }
   }
 
   var res = yield urllib.requestThunk(url, {
