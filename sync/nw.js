@@ -92,6 +92,10 @@ proto.listdir = function* (fullname) {
     var name = names[names.length - 1];
     var date = match[2];
     var size = Number(match[4]);
+    // ignore file > 100MB
+    if (size > 104857600) {
+      continue;
+    }
 
     debug(name, date, size, fullname);
 
