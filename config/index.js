@@ -199,6 +199,17 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    nwjs: {
+      name: 'nwjs',
+      category: 'nwjs',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://nwjs.s3-us-west-2.amazonaws.com',
+      description: 'lets you call all Node.js modules directly from DOM and enables a new way of writing applications with all Web technologies.',
+      syncerClass: 'nw',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     atom: {
       name: 'atom',
       category: 'atom',
