@@ -65,6 +65,10 @@ proto.listdir = function* (fullname) {
       // <Prefix>v0.8.4/</Prefix>
       continue;
     }
+    if (name.indexOf('/x64/') > 0) {
+      // <Prefix>v0.16.0/x64/</Prefix>
+      name = 'x64/';
+    }
 
     debug(name, fullname);
 

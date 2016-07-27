@@ -204,7 +204,7 @@ var config = {
       category: 'nwjs',
       enable: true,
       // interval: ms('5m'),
-      disturl: 'http://nwjs.s3-us-west-2.amazonaws.com',
+      disturl: 'https://nwjs.s3-us-west-2.amazonaws.com',
       description: 'lets you call all Node.js modules directly from DOM and enables a new way of writing applications with all Web technologies.',
       syncerClass: 'nw',
       // for mirrors
