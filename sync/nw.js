@@ -59,8 +59,9 @@ proto.listdir = function* (fullname) {
       // <Prefix>sample/</Prefix>
       continue;
     }
+    var splits = name.split('.');
     // only sync version >= 0.12.0
-    if (name.split('.')[0] === 'v0' && parseInt(name.split('.')[1]) < 12) {
+    if (splits.length === 3 && splits[0] === 'v0' && parseInt(splits[1]) < 12) {
       // <Prefix>v0.11.6/</Prefix>
       // <Prefix>v0.8.4/</Prefix>
       continue;
