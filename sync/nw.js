@@ -90,7 +90,11 @@ proto.listdir = function* (fullname) {
       break;
     }
     var names = match[1].split('/');
-    var name = names[names.length - 1];
+    var name = names[names.length - 1].trim();
+    // <Key>v0.13.0-alpha5/</Key>
+    if (!name) {
+      continue;
+    }
     var date = match[2];
     var size = Number(match[4]);
     // ignore file > 100MB
