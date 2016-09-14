@@ -154,6 +154,15 @@ var config = {
       url: 'https://alinode.aliyun.com',
       description: 'alinode是阿里云出品的Node.js应用服务解决方案。它是基于社区Node改进的运行时环境和服务平台的总称。'
     },
+    nsolid: {
+      name: 'nsolid',
+      category: 'nsolid',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://nsolid-download.nodesource.com/download/nsolid-node/release/',
+      url: 'https://nodesource.com/products/nsolid',
+      description: 'N|Solid™ is the premier enterprise-grade Node.js® platform.',
+    },
     python: {
       name: 'Python',
       category: 'python',
