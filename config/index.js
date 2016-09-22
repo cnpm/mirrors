@@ -208,6 +208,20 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'git-for-windows': {
+      name: 'git-for-windows',
+      category: 'git-for-windows',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/git-for-windows/git/releases',
+      repo: 'git-for-windows/git',
+      url: 'https://github.com/git-for-windows/git',
+      description: 'A fork of Git containing Windows-specific patches. http://git-scm.com/',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     nwjs: {
       name: 'nwjs',
       category: 'nwjs',
