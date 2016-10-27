@@ -519,6 +519,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'libjpeg-turbo': {
+      name: 'libjpeg-turbo',
+      category: 'libjpeg-turbo',
+      enable: true,
+      disturl: 'https://sourceforge.net/projects/libjpeg-turbo/rss?path=%2F',
+      url: 'https://github.com/libjpeg-turbo/libjpeg-turbo',
+      description: 'libjpeg-turbo is a JPEG image codec.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'SourceForge',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
