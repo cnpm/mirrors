@@ -47,7 +47,8 @@
     "sequelize": "~2.0.0-rc8",
     "thunkify-wrap": "^1.0.4",
     "urllib": "^2.5.0",
-    "utility": "^1.5.0"
+    "utility": "^1.5.0",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "autod": "2",

@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:files="https://sourceforge.net/api/files.rdf#" xmlns:media="http://video.search.yahoo.com/mrss/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:sf="https://sourceforge.net/api/sfelements.rdf#" version="2.0">
+  <channel xmlns:files="https://sourceforge.net/api/files.rdf#" xmlns:media="http://video.search.yahoo.com/mrss/" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:sf="https://sourceforge.net/api/sfelements.rdf#">
+    <title>libjpeg-turbo</title>
+    <link>https://sourceforge.net</link>
+    <description><![CDATA[Files from libjpeg-turbo libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, SSE2, NEON, AltiVec) to accelerate baseline JPEG compression and decompression on x86, x86-64, ARM, and PowerPC systems. On such systems, libjpeg-turbo is generally 2-6x as fast as libjpeg, all else being equal.  On other types of systems, libjpeg-turbo can still outperform libjpeg by a significant amount, by virtue of its highly-optimized Huffman coding routines.  In many cases, the performance of libjpeg-turbo rivals that of proprietary high-speed JPEG codecs.
+
+libjpeg-turbo implements both the traditional libjpeg API as well as the less powerful but more straightforward TurboJPEG API.  libjpeg-turbo also features colorspace extensions that allow it to compress from/decompress to 32-bit and big-endian pixel buffers (RGBX, XBGR, etc.), as well as a full-featured Java interface.
+]]></description>
+    <pubDate>Thu, 27 Oct 2016 06:24:25 UT</pubDate>
+    <managingEditor>noreply@sourceforge.net (SourceForge.net)</managingEditor>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <item>
+      <title><![CDATA[/1.5.1/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/README.md/download</guid>
+      <pubDate>Sat, 08 Oct 2016 01:21:31 UT</pubDate>
+      <description><![CDATA[/1.5.1/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25805987</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/README.md/download" filesize="6024"><media:hash algo="md5">6779d55dbcfdf468ee428f1af78f122e</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:19:00 UT</pubDate>
+      <description><![CDATA[/1.5.0/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759604</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/README.md/download" filesize="2646"><media:hash algo="md5">f3e15af5fcb67248ee14e20b864bdc70</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:17:56 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759603</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/README.md/download" filesize="7109"><media:hash algo="md5">7f96ec5aecef438c3d19cddf81c75db8</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.2/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:17:23 UT</pubDate>
+      <description><![CDATA[/1.4.2/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759602</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/README.md/download" filesize="2865"><media:hash algo="md5">d3fef22b06f9f0a03314d6d83aa3d5ca</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.1/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:17:19 UT</pubDate>
+      <description><![CDATA[/1.4.1/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759601</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/README.md/download" filesize="3758"><media:hash algo="md5">986a27f7c126220df24286509b123024</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.0/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:17:16 UT</pubDate>
+      <description><![CDATA[/1.4.0/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759600</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/README.md/download" filesize="5016"><media:hash algo="md5">7fecbbac3d2784720d7457629217d46a</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.90 (1.4 beta1)/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:16:52 UT</pubDate>
+      <description><![CDATA[/1.3.90 (1.4 beta1)/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759599</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/README.md/download" filesize="7252"><media:hash algo="md5">dd03238648dbb6c0f78a2c808f3628fd</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.1/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:16:07 UT</pubDate>
+      <description><![CDATA[/1.3.1/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759598</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/README.md/download" filesize="2988"><media:hash algo="md5">fefecea47fe4ef24886ea14dff0d3a95</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.0/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/README.md/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:16:03 UT</pubDate>
+      <description><![CDATA[/1.3.0/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759597</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/README.md/download" filesize="2578"><media:hash algo="md5">e797c91166d9aa10348c8ba015f94fb7</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:10:13 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759581</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz.sig/download" filesize="72"><media:hash algo="md5">dcf25b1347068f53b5863d9366243360</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:10:09 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759580</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.tar.gz.sig/download" filesize="72"><media:hash algo="md5">709c24663128ece86f832144af31e728</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/out]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/out/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/out/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:06:47 UT</pubDate>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759575</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/out/download" filesize="152"><media:hash algo="md5">43fc219d7832a9fb0d0466f2a27169f3</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.1.0/libjpeg-turbo-1.1.0.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.0/libjpeg-turbo-1.1.0.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.0/libjpeg-turbo-1.1.0.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:07:50 UT</pubDate>
+      <description><![CDATA[/1.1.0/libjpeg-turbo-1.1.0.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759567</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.1.0/libjpeg-turbo-1.1.0.tar.gz.sig/download" filesize="72"><media:hash algo="md5">b88091c744674ef63ad0a68bf5955fc9</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.0.1/libjpeg-turbo-1.0.1.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.1/libjpeg-turbo-1.0.1.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.1/libjpeg-turbo-1.0.1.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:07:46 UT</pubDate>
+      <description><![CDATA[/1.0.1/libjpeg-turbo-1.0.1.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759563</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.0.1/libjpeg-turbo-1.0.1.tar.gz.sig/download" filesize="72"><media:hash algo="md5">6b51c12d03e34ef5d28b5559510af3b1</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.0/libjpeg-turbo-1.3.0.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-1.3.0.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-1.3.0.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:08:53 UT</pubDate>
+      <description><![CDATA[/1.3.0/libjpeg-turbo-1.3.0.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759565</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-1.3.0.tar.gz.sig/download" filesize="72"><media:hash algo="md5">84531e88ed7a9436c372db6d45eb5998</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.1.1/libjpeg-turbo-1.1.1.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.1/libjpeg-turbo-1.1.1.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.1/libjpeg-turbo-1.1.1.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:07:53 UT</pubDate>
+      <description><![CDATA[/1.1.1/libjpeg-turbo-1.1.1.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759569</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.1.1/libjpeg-turbo-1.1.1.tar.gz.sig/download" filesize="72"><media:hash algo="md5">3a902754d501c30e5002f25b63af6c77</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.2/libjpeg-turbo-1.4.2.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-1.4.2.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-1.4.2.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:09:38 UT</pubDate>
+      <description><![CDATA[/1.4.2/libjpeg-turbo-1.4.2.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759558</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-1.4.2.tar.gz.sig/download" filesize="72"><media:hash algo="md5">669bbe20ff93c4130b8f1d5f714f9af0</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.1/libjpeg-turbo-1.3.1.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-1.3.1.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-1.3.1.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:08:57 UT</pubDate>
+      <description><![CDATA[/1.3.1/libjpeg-turbo-1.3.1.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759572</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-1.3.1.tar.gz.sig/download" filesize="72"><media:hash algo="md5">790cbcafada675e1076fd4cdd36a442c</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.2.0/libjpeg-turbo-1.2.0.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.0/libjpeg-turbo-1.2.0.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.0/libjpeg-turbo-1.2.0.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:08:24 UT</pubDate>
+      <description><![CDATA[/1.2.0/libjpeg-turbo-1.2.0.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759560</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.2.0/libjpeg-turbo-1.2.0.tar.gz.sig/download" filesize="72"><media:hash algo="md5">10e90ff8a7e15ff1d3ab7df77363a2d7</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.2.1/libjpeg-turbo-1.2.1.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/libjpeg-turbo-1.2.1.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/libjpeg-turbo-1.2.1.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:08:28 UT</pubDate>
+      <description><![CDATA[/1.2.1/libjpeg-turbo-1.2.1.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759561</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/libjpeg-turbo-1.2.1.tar.gz.sig/download" filesize="72"><media:hash algo="md5">0940f186d7c4de39a662f776d6f0bc43</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.1/libjpeg-turbo-1.4.1.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-1.4.1.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-1.4.1.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:09:34 UT</pubDate>
+      <description><![CDATA[/1.4.1/libjpeg-turbo-1.4.1.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759568</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-1.4.1.tar.gz.sig/download" filesize="72"><media:hash algo="md5">a58ecf3b5dde74ac0b90aca512907389</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.1.90 (1.2beta1)/libjpeg-turbo-1.1.90.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.90%20%281.2beta1%29/libjpeg-turbo-1.1.90.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.90%20%281.2beta1%29/libjpeg-turbo-1.1.90.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:08:11 UT</pubDate>
+      <description><![CDATA[/1.1.90 (1.2beta1)/libjpeg-turbo-1.1.90.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759559</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.1.90%20%281.2beta1%29/libjpeg-turbo-1.1.90.tar.gz.sig/download" filesize="71"><media:hash algo="md5">93e0ebcef595b8d4d687ad472278af74</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.2.90 (1.3beta1)/libjpeg-turbo-1.2.90.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.90%20%281.3beta1%29/libjpeg-turbo-1.2.90.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.90%20%281.3beta1%29/libjpeg-turbo-1.2.90.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:08:45 UT</pubDate>
+      <description><![CDATA[/1.2.90 (1.3beta1)/libjpeg-turbo-1.2.90.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759571</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.2.90%20%281.3beta1%29/libjpeg-turbo-1.2.90.tar.gz.sig/download" filesize="72"><media:hash algo="md5">bc2719dc415ce49bb39ccd12e16b444c</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.90 (1.4 beta1)/libjpeg-turbo-1.3.90.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-1.3.90.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-1.3.90.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:09:16 UT</pubDate>
+      <description><![CDATA[/1.3.90 (1.4 beta1)/libjpeg-turbo-1.3.90.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759564</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-1.3.90.tar.gz.sig/download" filesize="72"><media:hash algo="md5">033edffa126f200f433ebb42a040d347</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:09:56 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759562</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.tar.gz.sig/download" filesize="72"><media:hash algo="md5">437e212403516058bcb8ad812603f273</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.0.0/libjpeg-turbo-1.0.0.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.0/libjpeg-turbo-1.0.0.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.0/libjpeg-turbo-1.0.0.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:07:42 UT</pubDate>
+      <description><![CDATA[/1.0.0/libjpeg-turbo-1.0.0.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759566</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.0.0/libjpeg-turbo-1.0.0.tar.gz.sig/download" filesize="72"><media:hash algo="md5">a3c0f1e3e4bbb56c51a0763dde47cbf0</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.0/libjpeg-turbo-1.4.0.tar.gz.sig]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-1.4.0.tar.gz.sig/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-1.4.0.tar.gz.sig/download</guid>
+      <pubDate>Fri, 23 Sep 2016 19:09:30 UT</pubDate>
+      <description><![CDATA[/1.4.0/libjpeg-turbo-1.4.0.tar.gz.sig]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25759573</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">data</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-1.4.0.tar.gz.sig/download" filesize="72"><media:hash algo="md5">1816b78f0c999c1d366893fc222766be</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-official_1.5.1_i386.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official_1.5.1_i386.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official_1.5.1_i386.deb/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:11:02 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-official_1.5.1_i386.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750596</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official_1.5.1_i386.deb/download" filesize="1013664"><media:hash algo="md5">bfb7c1c19d80be1e99563d43d62150eb</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-official_1.5.1_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official_1.5.1_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official_1.5.1_amd64.deb/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:11:00 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-official_1.5.1_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750594</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official_1.5.1_amd64.deb/download" filesize="942292"><media:hash algo="md5">bcd9185142081adc35271603313d9a5e</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-official32_1.5.1_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official32_1.5.1_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official32_1.5.1_amd64.deb/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:59 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-official32_1.5.1_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750591</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official32_1.5.1_amd64.deb/download" filesize="754062"><media:hash algo="md5">9e0b80383ba6c71d35483193379fd052</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-official-1.5.1.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.x86_64.rpm/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:58 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-official-1.5.1.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750588</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.x86_64.rpm/download" filesize="907583"><media:hash algo="md5">0022fcd6b6e5a19802b0af7fb67d6f1b</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-official-1.5.1.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.src.rpm/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:56 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-official-1.5.1.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750586</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.src.rpm/download" filesize="1651974"><media:hash algo="md5">f33f680259b23c08603c49a0ca7ddd95</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-official-1.5.1.i386.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.i386.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.i386.rpm/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:54 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-official-1.5.1.i386.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750582</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-official-1.5.1.i386.rpm/download" filesize="1018815"><media:hash algo="md5">dfb9d121e63420cdc6511e58b3623333</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1.tar.gz]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:52 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1.tar.gz]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750580</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">tar archive</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-gzip; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz/download" filesize="1650647"><media:hash algo="md5">55deb139b0cac3c8200b75d485fc13f3</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1.dmg]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.dmg/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.dmg/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:50 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1.dmg]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750579</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">x86 boot sector</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.dmg/download" filesize="8358019"><media:hash algo="md5">ac0610d8e579569c84056f3a54315771</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-vc64.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc64.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc64.exe/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:38 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-vc64.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750577</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc64.exe/download" filesize="1178768"><media:hash algo="md5">30ce1904a404642f46d869a4aa89a82a</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-vc.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc.exe/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:37 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-vc.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750574</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-vc.exe/download" filesize="1065728"><media:hash algo="md5">0fd7ec10f3575bf3d9396afcf7b3fb35</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-jws.zip]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-jws.zip/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-jws.zip/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:35 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-jws.zip]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750571</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Zip archive data (Zip archive data)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/zip; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-jws.zip/download" filesize="1190175"><media:hash algo="md5">0baacd4bec109f065cfda3819555b7ce</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-gcc64.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-gcc64.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-gcc64.exe/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:33 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-gcc64.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750570</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-gcc64.exe/download" filesize="1242008"><media:hash algo="md5">963080562ffd963b14ac97f9e8a925b3</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-gcc.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-gcc.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-gcc.exe/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:31 UT</pubDate>
+      <description><![CDATA[/1.5.1/libjpeg-turbo-1.5.1-gcc.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750569</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1-gcc.exe/download" filesize="1142240"><media:hash algo="md5">84da0fd21beeb3b028693530b25b7176</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/index.html]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/index.html/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/index.html/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:30 UT</pubDate>
+      <description><![CDATA[/1.5.1/index.html]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750568</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">HTML document text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/html; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/index.html/download" filesize="2323"><media:hash algo="md5">b146ceefb219834949404c5bafbf8448</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.1/files.txt]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/files.txt/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/files.txt/download</guid>
+      <pubDate>Wed, 21 Sep 2016 00:10:29 UT</pubDate>
+      <description><![CDATA[/1.5.1/files.txt]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25750567</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/files.txt/download" filesize="1059"><media:hash algo="md5">b8e87986016b712080c880f249274ac0</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-official_1.5.0_i386.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official_1.5.0_i386.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official_1.5.0_i386.deb/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:13 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-official_1.5.0_i386.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320010</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official_1.5.0_i386.deb/download" filesize="1014286"><media:hash algo="md5">57250c49e81e11939b583f1c0fdbe65c</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-official_1.5.0_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official_1.5.0_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official_1.5.0_amd64.deb/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:11 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-official_1.5.0_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320009</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official_1.5.0_amd64.deb/download" filesize="944506"><media:hash algo="md5">82b6a2d626a6f14b61d3657d9237422b</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-official32_1.5.0_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official32_1.5.0_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official32_1.5.0_amd64.deb/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:10 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-official32_1.5.0_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320008</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official32_1.5.0_amd64.deb/download" filesize="754290"><media:hash algo="md5">e5adf553efaf49718c6fced53965ddd9</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-official-1.5.0.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.x86_64.rpm/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:09 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-official-1.5.0.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320007</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.x86_64.rpm/download" filesize="907475"><media:hash algo="md5">4ec8da0adfbabeae2cb26610365ff6a0</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-official-1.5.0.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.src.rpm/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:07 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-official-1.5.0.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320006</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.src.rpm/download" filesize="1654715"><media:hash algo="md5">1dd640db1ee9ba94e5e03fd32c9d71cc</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-official-1.5.0.i386.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.i386.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.i386.rpm/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:05 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-official-1.5.0.i386.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320005</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-official-1.5.0.i386.rpm/download" filesize="1018846"><media:hash algo="md5">d6f03300f661fdf227cec13e8f9cc3f4</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0.tar.gz]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.tar.gz/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.tar.gz/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:03 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0.tar.gz]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320004</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">tar archive</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-gzip; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.tar.gz/download" filesize="1654276"><media:hash algo="md5">3fc5d9b6a8bce96161659ae7a9939257</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0.dmg]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.dmg/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.dmg/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:58:01 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0.dmg]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320003</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">VAX COFF executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0.dmg/download" filesize="4453320"><media:hash algo="md5">5b33c3179c576b298d2863079c868512</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-vc64.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-vc64.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-vc64.exe/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:57:55 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-vc64.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320002</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-vc64.exe/download" filesize="1177240"><media:hash algo="md5">8fb06ba4ebe92c7e218ab8e49cbbbf58</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-vc.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-vc.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-vc.exe/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:57:53 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-vc.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320001</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-vc.exe/download" filesize="1063992"><media:hash algo="md5">31236c9cac02914af9f0eefbb4aa0db3</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-jws.zip]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-jws.zip/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-jws.zip/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:57:51 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-jws.zip]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25320000</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Zip archive data (Zip archive data)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/zip; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-jws.zip/download" filesize="1188708"><media:hash algo="md5">dab357bdab27eae6928d45fe8ba87c80</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-gcc64.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-gcc64.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-gcc64.exe/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:57:49 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-gcc64.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25319999</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-gcc64.exe/download" filesize="1240368"><media:hash algo="md5">2374e2c6c930c7acc9fc59bb483a0e7e</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-gcc.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-gcc.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-gcc.exe/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:57:48 UT</pubDate>
+      <description><![CDATA[/1.5.0/libjpeg-turbo-1.5.0-gcc.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25319998</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/libjpeg-turbo-1.5.0-gcc.exe/download" filesize="1140592"><media:hash algo="md5">0d44c249ef0ea56a04de99e76a7a9d7f</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/index.html]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/index.html/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/index.html/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:57:43 UT</pubDate>
+      <description><![CDATA[/1.5.0/index.html]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25319997</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">HTML document text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/html; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/index.html/download" filesize="2430"><media:hash algo="md5">253bad3a8b770144971fcbcb8422f572</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.5.0/files.txt]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/files.txt/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/files.txt/download</guid>
+      <pubDate>Tue, 07 Jun 2016 17:57:43 UT</pubDate>
+      <description><![CDATA[/1.5.0/files.txt]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">25319996</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.5.0/files.txt/download" filesize="1101"><media:hash algo="md5">ecbcc511300e6f66ed3b9310438a4672</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/OldFiles/1.0.90 (1.1beta1)/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/1.0.90%20%281.1beta1%29/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/1.0.90%20%281.1beta1%29/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:26 UT</pubDate>
+      <description><![CDATA[/OldFiles/1.0.90 (1.1beta1)/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699115</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/1.0.90%20%281.1beta1%29/README.md/download" filesize="1298"><media:hash algo="md5">8717b295298b9eea93f92b60f7dd1214</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/OldFiles/0.0.93/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/0.0.93/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/0.0.93/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:25 UT</pubDate>
+      <description><![CDATA[/OldFiles/0.0.93/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699114</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/0.0.93/README.md/download" filesize="158"><media:hash algo="md5">f0127a5db7a2e289e860f5024b3890f4</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/OldFiles/0.0.91/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/0.0.91/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/0.0.91/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:24 UT</pubDate>
+      <description><![CDATA[/OldFiles/0.0.91/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699113</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/OldFiles/0.0.91/README.md/download" filesize="241"><media:hash algo="md5">94bf86cb597abbd6a9a957469a79ca2f</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.2.90 (1.3beta1)/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.90%20%281.3beta1%29/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.90%20%281.3beta1%29/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:16 UT</pubDate>
+      <description><![CDATA[/1.2.90 (1.3beta1)/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699105</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.2.90%20%281.3beta1%29/README.md/download" filesize="3640"><media:hash algo="md5">9504af137d5ab6d36b01edcd3f50c49f</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.2.1/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:15 UT</pubDate>
+      <description><![CDATA[/1.2.1/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699104</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.md/download" filesize="2778"><media:hash algo="md5">336f6da7fe049bfdda47a67f354b9c35</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.2.0/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.0/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.2.0/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:14 UT</pubDate>
+      <description><![CDATA[/1.2.0/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699103</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.2.0/README.md/download" filesize="2034"><media:hash algo="md5">123baad32690976102820622a099b1d7</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.1.90 (1.2beta1)/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.90%20%281.2beta1%29/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.90%20%281.2beta1%29/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:13 UT</pubDate>
+      <description><![CDATA[/1.1.90 (1.2beta1)/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699102</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.1.90%20%281.2beta1%29/README.md/download" filesize="3717"><media:hash algo="md5">714b0182cf1b9e582a4fad2ed1edf694</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.1.1/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.1/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.1/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:12 UT</pubDate>
+      <description><![CDATA[/1.1.1/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699101</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.1.1/README.md/download" filesize="1895"><media:hash algo="md5">dccfd2ade8d1cf15fc5682f110487e93</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.1.0/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.0/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.1.0/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:10 UT</pubDate>
+      <description><![CDATA[/1.1.0/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699100</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.1.0/README.md/download" filesize="1573"><media:hash algo="md5">7abe4c3028f754c553fb96fa69a41ff7</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.0.1/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.1/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.1/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:09 UT</pubDate>
+      <description><![CDATA[/1.0.1/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699099</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.0.1/README.md/download" filesize="718"><media:hash algo="md5">92983c2386ac6cd05a32908ac34a91fe</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.0.0/README.md]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.0/README.md/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.0.0/README.md/download</guid>
+      <pubDate>Mon, 14 Mar 2016 02:12:08 UT</pubDate>
+      <description><![CDATA[/1.0.0/README.md]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24699098</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">English text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.0.0/README.md/download" filesize="1150"><media:hash algo="md5">7066b98772422e7fa9a79d331f1450dc</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-gcc64.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-gcc64.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-gcc64.exe/download</guid>
+      <pubDate>Tue, 01 Mar 2016 00:00:42 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-gcc64.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698686</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-gcc64.exe/download" filesize="1239136"><media:hash algo="md5">75b7dfa65092f040b409cbd37e255065</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-vc.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-vc.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-vc.exe/download</guid>
+      <pubDate>Tue, 01 Mar 2016 00:00:42 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-vc.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698687</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-vc.exe/download" filesize="1063424"><media:hash algo="md5">637d4c5e9c7254e36ae03cf6f2fb215f</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-vc64.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-vc64.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-vc64.exe/download</guid>
+      <pubDate>Tue, 01 Mar 2016 00:00:42 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-vc64.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698688</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-vc64.exe/download" filesize="1179216"><media:hash algo="md5">7a5a81cab8a05422714764d6596a9bed</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.2/libjpeg-turbo-official-1.4.2.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official-1.4.2.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official-1.4.2.x86_64.rpm/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:19 UT</pubDate>
+      <description><![CDATA[/1.4.2/libjpeg-turbo-official-1.4.2.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698684</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official-1.4.2.x86_64.rpm/download" filesize="887622"><media:hash algo="md5">57fbad35976c53790f3e33a6774c166a</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.2/libjpeg-turbo-official-1.4.2.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official-1.4.2.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official-1.4.2.src.rpm/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:19 UT</pubDate>
+      <description><![CDATA[/1.4.2/libjpeg-turbo-official-1.4.2.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698683</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official-1.4.2.src.rpm/download" filesize="1571983"><media:hash algo="md5">86e9735aab53248a5c66d671c89b52c7</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.1/libjpeg-turbo-official-1.4.1.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-official-1.4.1.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-official-1.4.1.x86_64.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:36:29 UT</pubDate>
+      <description><![CDATA[/1.4.1/libjpeg-turbo-official-1.4.1.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698680</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-official-1.4.1.x86_64.rpm/download" filesize="890484"><media:hash algo="md5">81c26b88a6cf65f40c8c8895998ae11e</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.1/libjpeg-turbo-official-1.4.1.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-official-1.4.1.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-official-1.4.1.src.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:36:29 UT</pubDate>
+      <description><![CDATA[/1.4.1/libjpeg-turbo-official-1.4.1.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698679</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.1/libjpeg-turbo-official-1.4.1.src.rpm/download" filesize="1531669"><media:hash algo="md5">c4c7e8c8a076eb55ad34955f4b9fab69</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.0/libjpeg-turbo-official-1.4.0.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-official-1.4.0.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-official-1.4.0.x86_64.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:33:56 UT</pubDate>
+      <description><![CDATA[/1.4.0/libjpeg-turbo-official-1.4.0.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698677</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-official-1.4.0.x86_64.rpm/download" filesize="888046"><media:hash algo="md5">b46dc9b7e4bb6f67bb8d2daf458c120c</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.0/libjpeg-turbo-official-1.4.0.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-official-1.4.0.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-official-1.4.0.src.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:33:56 UT</pubDate>
+      <description><![CDATA[/1.4.0/libjpeg-turbo-official-1.4.0.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698676</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.0/libjpeg-turbo-official-1.4.0.src.rpm/download" filesize="1526974"><media:hash algo="md5">f568bb16a29809b3cea6156ab1f4452c</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.90 (1.4 beta1)/libjpeg-turbo-official-1.3.90.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-official-1.3.90.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-official-1.3.90.x86_64.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:31:38 UT</pubDate>
+      <description><![CDATA[/1.3.90 (1.4 beta1)/libjpeg-turbo-official-1.3.90.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698674</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-official-1.3.90.x86_64.rpm/download" filesize="872022"><media:hash algo="md5">3362280515272aaa18c03067e6691a99</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.90 (1.4 beta1)/libjpeg-turbo-official-1.3.90.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-official-1.3.90.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-official-1.3.90.src.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:31:38 UT</pubDate>
+      <description><![CDATA[/1.3.90 (1.4 beta1)/libjpeg-turbo-official-1.3.90.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698673</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.90%20%281.4%20beta1%29/libjpeg-turbo-official-1.3.90.src.rpm/download" filesize="1524444"><media:hash algo="md5">619a14b1778c7a741d632d1282707924</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.1/libjpeg-turbo-official-1.3.1.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-official-1.3.1.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-official-1.3.1.src.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:28:10 UT</pubDate>
+      <description><![CDATA[/1.3.1/libjpeg-turbo-official-1.3.1.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698670</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-official-1.3.1.src.rpm/download" filesize="1393306"><media:hash algo="md5">2a620872230906e6c81b94c0dfe926dd</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.1/libjpeg-turbo-official-1.3.1.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-official-1.3.1.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-official-1.3.1.x86_64.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:28:10 UT</pubDate>
+      <description><![CDATA[/1.3.1/libjpeg-turbo-official-1.3.1.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698671</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.1/libjpeg-turbo-official-1.3.1.x86_64.rpm/download" filesize="818538"><media:hash algo="md5">aa92748d9ab8af282b7afadc39879478</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.0/libjpeg-turbo-official-1.3.0.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-official-1.3.0.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-official-1.3.0.src.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:25:04 UT</pubDate>
+      <description><![CDATA[/1.3.0/libjpeg-turbo-official-1.3.0.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698667</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-official-1.3.0.src.rpm/download" filesize="1365185"><media:hash algo="md5">7b27a1b7ac62933dc3255ec4b934cf5f</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.3.0/libjpeg-turbo-official-1.3.0.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-official-1.3.0.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-official-1.3.0.x86_64.rpm/download</guid>
+      <pubDate>Sat, 15 Aug 2015 21:25:04 UT</pubDate>
+      <description><![CDATA[/1.3.0/libjpeg-turbo-official-1.3.0.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24698668</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.3.0/libjpeg-turbo-official-1.3.0.x86_64.rpm/download" filesize="817506"><media:hash algo="md5">19231663e96dce58c3d2ec6b1a78c9c6</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-jws.zip]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-jws.zip/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-jws.zip/download</guid>
+      <pubDate>Tue, 01 Mar 2016 00:00:49 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-jws.zip]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24620175</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Zip archive data (Zip archive data)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/zip; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-jws.zip/download" filesize="1188717"><media:hash algo="md5">a09b73757d6993722dab4e6376a54608</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-gcc.exe]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-gcc.exe/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-gcc.exe/download</guid>
+      <pubDate>Tue, 01 Mar 2016 00:00:42 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90-gcc.exe]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24620173</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">PE32 executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90-gcc.exe/download" filesize="1138640"><media:hash algo="md5">c1d76ad21fe5c5f92f60f11f244d4cfc</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official-1.4.90.src.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.src.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.src.rpm/download</guid>
+      <pubDate>Mon, 29 Feb 2016 23:54:20 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official-1.4.90.src.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24620162</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.src.rpm/download" filesize="1652734"><media:hash algo="md5">de1fd7230caa8d037b570359dbe72f00</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90.tar.gz]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.tar.gz/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.tar.gz/download</guid>
+      <pubDate>Mon, 29 Feb 2016 23:53:52 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90.tar.gz]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24620160</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">tar archive</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-gzip; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.tar.gz/download" filesize="1652431"><media:hash algo="md5">963c4b6754ace3e5ff6a3699b805701e</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official_1.4.90_i386.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official_1.4.90_i386.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official_1.4.90_i386.deb/download</guid>
+      <pubDate>Mon, 29 Feb 2016 18:30:21 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official_1.4.90_i386.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24618218</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official_1.4.90_i386.deb/download" filesize="1016518"><media:hash algo="md5">4965b31e72976e73d6a604b5f982d11c</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official_1.4.90_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official_1.4.90_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official_1.4.90_amd64.deb/download</guid>
+      <pubDate>Mon, 29 Feb 2016 18:30:20 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official_1.4.90_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24618217</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official_1.4.90_amd64.deb/download" filesize="945894"><media:hash algo="md5">a891b2d692eda11f5bdcb46636d59a30</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official32_1.4.90_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official32_1.4.90_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official32_1.4.90_amd64.deb/download</guid>
+      <pubDate>Mon, 29 Feb 2016 18:30:18 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official32_1.4.90_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24618216</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official32_1.4.90_amd64.deb/download" filesize="756664"><media:hash algo="md5">696a3f94644cbd3b49986051db70c4da</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official-1.4.90.x86_64.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.x86_64.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.x86_64.rpm/download</guid>
+      <pubDate>Mon, 29 Feb 2016 18:30:17 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official-1.4.90.x86_64.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24618215</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.x86_64.rpm/download" filesize="908772"><media:hash algo="md5">a85c5d857e743214f072b10ac55d3447</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official-1.4.90.i386.rpm]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.i386.rpm/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.i386.rpm/download</guid>
+      <pubDate>Mon, 29 Feb 2016 18:30:13 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-official-1.4.90.i386.rpm]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24618212</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">unknown</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-rpm; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-official-1.4.90.i386.rpm/download" filesize="1020914"><media:hash algo="md5">650f3c4347c13b771ab40946deca16bc</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90.dmg]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.dmg/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.dmg/download</guid>
+      <pubDate>Mon, 29 Feb 2016 18:30:09 UT</pubDate>
+      <description><![CDATA[/1.4.90 (1.5 beta1)/libjpeg-turbo-1.4.90.dmg]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">24618210</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">VAX COFF executable</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.90%20%281.5%20beta1%29/libjpeg-turbo-1.4.90.dmg/download" filesize="4326022"><media:hash algo="md5">75df9976e159f29fe345df8a3fbdfc98</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/cygwin/x86_64/setup.ini]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86_64/setup.ini/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86_64/setup.ini/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:46 UT</pubDate>
+      <description><![CDATA[/cygwin/x86_64/setup.ini]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">23639079</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86_64/setup.ini/download" filesize="1519"><media:hash algo="md5">fc404436fc60b62a78f1dfb61502014c</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/cygwin/x86/setup.ini]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86/setup.ini/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86/setup.ini/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:46 UT</pubDate>
+      <description><![CDATA[/cygwin/x86/setup.ini]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">23639078</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">text</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="text/plain; charset=us-ascii" url="https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86/setup.ini/download" filesize="3462"><media:hash algo="md5">b464f77efef873db971bf24f1fb7be22</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/cygwin/x86_64/libjpeg-turbo-official-1.4.2-20150921.tar.bz2]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86_64/libjpeg-turbo-official-1.4.2-20150921.tar.bz2/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86_64/libjpeg-turbo-official-1.4.2-20150921.tar.bz2/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:39 UT</pubDate>
+      <description><![CDATA[/cygwin/x86_64/libjpeg-turbo-official-1.4.2-20150921.tar.bz2]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">23639077</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">POSIX tar archive</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-bzip2; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86_64/libjpeg-turbo-official-1.4.2-20150921.tar.bz2/download" filesize="773461"><media:hash algo="md5">daacdd1f7da890942af34c963a0a3091</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/cygwin/x86/libjpeg-turbo-official-1.4.2-20150921.tar.bz2]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86/libjpeg-turbo-official-1.4.2-20150921.tar.bz2/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86/libjpeg-turbo-official-1.4.2-20150921.tar.bz2/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:33 UT</pubDate>
+      <description><![CDATA[/cygwin/x86/libjpeg-turbo-official-1.4.2-20150921.tar.bz2]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">23639076</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">POSIX tar archive</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/x-bzip2; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/cygwin/x86/libjpeg-turbo-official-1.4.2-20150921.tar.bz2/download" filesize="751613"><media:hash algo="md5">0eb43cb25aa541375ac171e211aac577</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.2/libjpeg-turbo-official_1.4.2_i386.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official_1.4.2_i386.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official_1.4.2_i386.deb/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:26 UT</pubDate>
+      <description><![CDATA[/1.4.2/libjpeg-turbo-official_1.4.2_i386.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">23639075</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official_1.4.2_i386.deb/download" filesize="996570"><media:hash algo="md5">a8eaf27ac58fd79006392e3ea890557e</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:25 UT</pubDate>
+      <description><![CDATA[/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">23639074</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb/download" filesize="925346"><media:hash algo="md5">cc3305aadd28db3328c272ec06a5c63b</media:hash></media:content>
+    </item>
+    <item>
+      <title><![CDATA[/1.4.2/libjpeg-turbo-official32_1.4.2_amd64.deb]]></title>
+      <link>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official32_1.4.2_amd64.deb/download</link>
+      <guid>https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official32_1.4.2_amd64.deb/download</guid>
+      <pubDate>Mon, 21 Sep 2015 22:26:24 UT</pubDate>
+      <description><![CDATA[/1.4.2/libjpeg-turbo-official32_1.4.2_amd64.deb]]></description>
+      <files:sf-file-id xmlns:files="https://sourceforge.net/api/files.rdf#">23639073</files:sf-file-id>
+      <files:extra-info xmlns:files="https://sourceforge.net/api/files.rdf#">Debian binary package (format 2.0)</files:extra-info>
+      <media:content xmlns:media="http://video.search.yahoo.com/mrss/" type="application/octet-stream; charset=binary" url="https://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-official32_1.4.2_amd64.deb/download" filesize="741956"><media:hash algo="md5">433e28f6d5d92f2df3dffcc72c327afe</media:hash></media:content>
+    </item>
+  </channel>
+</rss>
