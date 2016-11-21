@@ -95,7 +95,7 @@ var config = {
 
   // sync by clone from other mirrors
   cloneMode: false,
-  cloneUrl: 'http://npm.taobao.org/mirrors/apis',
+  cloneUrl: 'https://npm.taobao.org/mirrors/apis',
 
   // proxy nodesecurity advisories
   nodesecurity: {
@@ -166,9 +166,9 @@ var config = {
     python: {
       name: 'Python',
       category: 'python',
-      enable: false,
+      enable: true,
       // interval: ms('5m'),
-      disturl: 'https://www.python.org/downloads',
+      disturl: 'https://www.python.org/ftp/python/',
       description: 'is a programming language that lets you work quickly and integrate systems more effectively.',
       url: 'https://www.python.org'
     },
