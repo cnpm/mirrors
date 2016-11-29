@@ -481,6 +481,15 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    grpc: {
+      name: 'grpc',
+      category: 'grpc',
+      enable: true,
+      disturl: 'https://github.com/grpc/grpc',
+      url: 'https://github.com/grpc/grpc',
+      description: 'The C based gRPC (C++, Node.js, Python, Ruby, Objective-C, PHP, C#)',
+      alwayNewDirIndex: 0,
+    },
     nodegit: {
       name: 'nodegit',
       category: 'nodegit',

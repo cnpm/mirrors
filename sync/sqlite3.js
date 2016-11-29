@@ -1,16 +1,4 @@
-/**
- * Copyright(c) cnpm and other contributors.
- * MIT Licensed
- *
- * Authors:
- *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.com)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var debug = require('debug')('mirrors:sync:sqlite3');
 var util = require('util');
@@ -117,6 +105,9 @@ proto.listdiff = function* (fullname, dirIndex) {
         var nodeAbiVersion = nodeAbiVersions[a];
         var name = 'node-' + nodeAbiVersion + '-' + nodePlatform + '-x64.tar.gz';
         var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
+        if (this.formatDownloadUrl) {
+          downloadURL = this.formatDownloadUrl(pkg, nodeAbiVersion, nodePlatform, name);
+        }
         debug(downloadURL);
         items.push({
           name: name,
