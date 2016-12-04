@@ -208,6 +208,21 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'node-chakracore': {
+      name: 'node-chakracore',
+      category: 'node-chakracore',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/nodejs/node-chakracore/releases',
+      repo: 'nodejs/node-chakracore',
+      url: 'https://github.com/nodejs/node-chakracore',
+      description: 'Node.js on ChakraCore ✨🐢🚀✨',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     'git-for-windows': {
       name: 'git-for-windows',
       category: 'git-for-windows',
