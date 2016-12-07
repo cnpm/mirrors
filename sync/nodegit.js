@@ -1,16 +1,4 @@
-/**
- * Copyright(c) cnpm and other contributors.
- * MIT Licensed
- *
- * Authors:
- *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.com)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var debug = require('debug')('mirrors:sync:nodegit');
 var util = require('util');
@@ -76,26 +64,8 @@ proto.listdiff = function* (fullname, dirIndex) {
     throw new Error(util.format('get %s resposne %s', this._npmPackageUrl, result.status));
   }
 
-  var nodePlatforms = [
-    'linux',
-    'darwin',
-    'win32',
-  ];
-  // https://github.com/cnpm/mirrors/issues/56
-  var nodeAbiVersions = [
-    // for the future
-    'v50', // 8
-    'v49', // 7
-    'v48', // 6
-    // current versions
-    'v47', // 5
-    'v46', // 4
-    'v45', // 3
-    'v44', // 2
-    'v43', // 1
-    'v14', // 0.12
-    'v11', // 0.10
-  ];
+  var nodePlatforms = utils.nodePlatforms;
+  var nodeAbiVersions = yield this.getNodeAbiVersions();
   var items = [];
   for (var i = 0; i < needs.length; i++) {
     var pkg = needs[i];

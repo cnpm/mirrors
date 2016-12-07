@@ -4,6 +4,7 @@ var debug = require('debug')('mirrors:sync:sqlite3');
 var util = require('util');
 var urllib = require('urllib');
 var Syncer = require('./syncer');
+var utils = require('../lib/utils');
 
 module.exports = Sqlite3Syncer;
 
@@ -20,11 +21,11 @@ util.inherits(Sqlite3Syncer, Syncer);
 
 var proto = Sqlite3Syncer.prototype;
 
-proto.check = function() {
+proto.check = function check() {
   return true;
 };
 
-proto.listdiff = function* (fullname, dirIndex) {
+proto.listdiff = function* listdiff(fullname, dirIndex) {
   if (dirIndex !== 0) {
     return [];
   }
@@ -64,26 +65,8 @@ proto.listdiff = function* (fullname, dirIndex) {
     throw new Error(util.format('get %s resposne %s', this._npmPackageUrl, result.status));
   }
 
-  var nodePlatforms = [
-    'linux',
-    'darwin',
-    'win32',
-  ];
-  // https://github.com/cnpm/mirrors/issues/56
-  var nodeAbiVersions = [
-    // for the future
-    'v50', // 8
-    'v49', // 7
-    'v48', // 6
-    // current versions
-    'v47', // 5
-    'v46', // 4
-    'v45', // 3
-    'v44', // 2
-    'v43', // 1
-    'v14', // 0.12
-    'v11', // 0.10
-  ];
+  var nodePlatforms = utils.nodePlatforms;
+  var nodeAbiVersions = yield this.getNodeAbiVersions();
   var items = [];
   for (var i = 0; i < needs.length; i++) {
     var pkg = needs[i];
