@@ -1,14 +1,4 @@
-/**
- * Authors:
- *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var debug = require('debug')('mirrors:sync:syncer');
 var distService = require('../services/dist');
@@ -24,11 +14,6 @@ var crypto = require('crypto');
 var urllib = require('urllib');
 var bytes = require('bytes');
 var fs = require('fs');
-
-
-/**
- * Module Exports.
- */
 
 module.exports = Syncer;
 
@@ -138,7 +123,7 @@ proto.syncFile = function* (info) {
     logger.syncInfo('[%s] downloading %s %s to %s',
       this.category, info.size ? bytes(info.size) : '', downurl, filepath);
     // get tarball
-    var r = yield urllib.requestThunk(downurl, options);
+    var r = yield urllib.request(downurl, options);
     var statusCode = r.status || -1;
     logger.syncInfo('[%s] download %s got status %s, headers: %j',
       this.category, downurl, statusCode, r.headers);
@@ -278,8 +263,30 @@ proto.listdiff = function* (fullname, dirIndex) {
   return news;
 };
 
-proto.listExists = function* (fullname) {
+proto.listExists = function* listExists(fullname) {
   var exists = yield this.distService.listdir(this.category, fullname);
   debug('listExists %s %s got %s exists items', this.category, fullname, exists.length);
   return exists;
+};
+
+// https://nodejs.org/zh-cn/download/releases/
+proto.getNodeAbiVersions = function* getNodeAbiVersions() {
+  const nodeAbiVersions = [];
+  const result = yield urllib.request('https://nodejs.org/dist/index.json', {
+    dataType: 'json',
+    timeout: 10000,
+    gzip: true,
+  });
+  const versions = result.data;
+  for (const version of versions) {
+    if (!version.modules) continue;
+    const modulesVersion = parseInt(version.modules);
+    const nodeAbiVersion = `v${modulesVersion}`;
+    // min version: node 0.10
+    if (modulesVersion >= 11 && nodeAbiVersions.indexOf(nodeAbiVersion) === -1) {
+      nodeAbiVersions.push(nodeAbiVersion);
+    }
+  }
+
+  return nodeAbiVersions;
 };

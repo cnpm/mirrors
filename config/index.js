@@ -139,7 +139,7 @@ var config = {
     iojs: {
       name: 'io.js',
       category: 'iojs',
-      enable: true,
+      enable: false,
       // interval: ms('5m'),
       disturl: 'https://iojs.org/dist',
       url: 'https://iojs.org',
