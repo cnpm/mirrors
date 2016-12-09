@@ -286,6 +286,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    geckodriver: {
+      name: 'geckodriver',
+      category: 'geckodriver',
+      enable: true,
+      disturl: 'https://github.com/mozilla/geckodriver/releases',
+      repo: 'mozilla/geckodriver',
+      url: 'https://github.com/mozilla/geckodriver',
+      description: 'WebDriver <-> Marionette proxy',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     selenium: {
       alwayNewDirIndex: 0,
       name: 'selenium',
