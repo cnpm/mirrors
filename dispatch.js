@@ -1,16 +1,4 @@
-/**!
- * mirrors - dispatch.js
- *
- * Authors:
- *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var childProcess = require('child_process');
 var cfork = require('cfork');

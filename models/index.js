@@ -1,16 +1,4 @@
-/**!
- * mirrors - models/index.js
- *
- * Authors:
- *  dead_horse <dead_horse@qq.com>
- *  fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var sequelize = require('../common/sequelize');
 var path = require('path');

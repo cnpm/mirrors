@@ -1,13 +1,4 @@
-/**
-* Authors:
-*   fengmk2 <fengmk2@gmail.com> (https://github.com/fengmk2)
-*/
-
 'use strict';
-
-/**
-* Module dependencies.
-*/
 
 var debug = require('debug')('mirrors:sync:ListBucketResult');
 var util = require('util');
@@ -178,7 +169,7 @@ proto.listdiff = function* () {
 };
 
 proto.listExists = function* () {
-  var exists = yield* this.distService.listdir(this.category);
+  var exists = yield this.distService.listdir(this.category);
   debug('listdiff %s got %s exists items', this.category, exists.length);
   return exists;
 };
