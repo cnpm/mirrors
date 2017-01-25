@@ -85,7 +85,7 @@ proto.listdir = function* (fullname) {
       size: size,
       type: 'file',
       parent: fullname,
-      downloadURL: this.disturl + '/' + PADDING + fullname + name,
+      downloadURL: this.disturl + '/atom-shell/dist' + fullname + name,
     });
   }
 
