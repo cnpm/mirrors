@@ -54,6 +54,7 @@ proto.listdir = function* (fullname) {
       size: '-',
       type: 'dir',
       parent: fullname,
+      downloadURL: this.disturl + '/' + PADDING + fullname + name,
     });
   }
 
