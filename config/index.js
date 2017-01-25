@@ -213,7 +213,7 @@ var config = {
       category: 'atom-shell',
       enable: true,
       disturl: 'https://gh-contractor-zcbenz.s3.amazonaws.com',
-      syncerClass: 'ListBucketResult',
+      syncerClass: 'atom-shell',
       url: 'https://github.com/electron/electron-rebuild',
       description: 'atom-shell dist for electron-rebuild',
     },
