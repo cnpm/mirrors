@@ -54,7 +54,6 @@ proto.listdir = function* (fullname) {
       size: '-',
       type: 'dir',
       parent: fullname,
-      downloadURL: this.disturl + '/' + PADDING + fullname + name,
     });
   }
 
@@ -86,6 +85,7 @@ proto.listdir = function* (fullname) {
       size: size,
       type: 'file',
       parent: fullname,
+      downloadURL: this.disturl + '/' + PADDING + fullname + name,
     });
   }
 
