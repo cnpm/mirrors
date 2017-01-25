@@ -1,15 +1,4 @@
-/**!
- * mirrors - sync/mirrors.js
- *
- * Authors:
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var debug = require('debug')('mirrors:sync:mirrors');
 var util = require('util');
