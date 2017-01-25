@@ -208,6 +208,15 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'atom-shell': {
+      name: 'atom-shell',
+      category: 'atom-shell',
+      enable: true,
+      disturl: 'https://gh-contractor-zcbenz.s3.amazonaws.com',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/electron/electron-rebuild',
+      description: 'atom-shell dist for electron-rebuild',
+    },
     'node-chakracore': {
       name: 'node-chakracore',
       category: 'node-chakracore',

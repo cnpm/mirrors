@@ -1,13 +1,4 @@
-/**
- * Authors:
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 global.Promise = require('bluebird');
 var logger = require('../common/logger');
