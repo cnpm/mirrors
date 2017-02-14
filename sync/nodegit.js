@@ -4,6 +4,7 @@ var debug = require('debug')('mirrors:sync:nodegit');
 var util = require('util');
 var urllib = require('urllib');
 var Syncer = require('./syncer');
+var utils = require('../lib/utils');
 
 module.exports = NodeGitSyncer;
 
