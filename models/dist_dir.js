@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `dist_dir` (
  `name` varchar(200) NOT NULL COMMENT 'dir name',
  `parent` varchar(200) NOT NULL COMMENT 'parent dir' DEFAULT '/',
  `category` varchar(200) COMMENT 'dist category',
- `date` varchar(40) COMMENT '02-May-2014 01:06'
+ `date` varchar(40) COMMENT '02-May-2014 01:06',
  PRIMARY KEY (`id`),
  UNIQUE KEY `dist_dir_category_parent_name` (`category`, `parent`, `name`),
  KEY `dist_dir_gmt_modified` (`gmt_modified`)
