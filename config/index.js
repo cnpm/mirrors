@@ -578,6 +578,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    docker: {
+      name: 'docker',
+      category: 'docker',
+      enable: true,
+      disturl: 'https://github.com/docker/docker/releases',
+      url: 'https://github.com/docker/docker',
+      description: 'ScaDocker - the open-source application container engine https://www.docker.com',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'docker',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 

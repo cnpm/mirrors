@@ -89,3 +89,16 @@ exports.getfile = function* (category, fullname) {
     }
   });
 };
+
+exports.get = function* (type, category, parent, name) {
+  var T = type === 'dir' ? Dir : File;
+  var attributrs = type === 'dir' ? DIR_ADDITIONS : FILE_ADDITIONS;
+  return yield T.find({
+    attributrs: KEYS.concat(attributrs),
+    where: {
+      parent: parent,
+      name: name,
+      category: category
+    }
+  });
+};
