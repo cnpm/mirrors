@@ -177,15 +177,18 @@ proto.syncFile = function* (info) {
       md5: md5sum,
       size: dataSize,
     };
-    var equivalent = this.check(checksums, info);
 
-    if (!equivalent) {
-      var err = new Error(fmt('Download %s file check not valid', downurl));
-      err.data = {
-        checksums: checksums,
-        info: info
-      };
-      throw err;
+    if (this.check) {
+      var equivalent = this.check(checksums, info);
+
+      if (!equivalent) {
+        var err = new Error(fmt('Download %s file check not valid', downurl));
+        err.data = {
+          checksums: checksums,
+          info: info
+        };
+        throw err;
+      }
     }
 
     var args = {

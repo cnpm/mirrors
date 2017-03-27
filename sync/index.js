@@ -68,7 +68,7 @@ Object.keys(syncers).forEach(function (name) {
     var syncer = new item.Syncer(item);
 
     try {
-      yield* syncer.start();
+      yield syncer.start();
     } catch (err) {
       err.message += ' (sync ' + item.category + ' dist error)';
       logger.syncError(err);
