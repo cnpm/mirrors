@@ -57,9 +57,11 @@ proto.syncDir = function* (fullname, dirIndex) {
 };
 
 proto.listdir = function* () {
-  var releases = [];
+  var existsRootDirs = yield distService.listdir(this.category, '/');
   // init sync should sync 3 pages
-  for (var i = 1; i <= 1; i++) {
+  var page = existsRootDirs.length > 0 ? 1 : 3;
+  var releases = [];
+  for (var i = 1; i <= page; i++) {
     var result = yield urllib.request(this.url + '?page=' + i, {
       timeout: 60000,
       dataType: 'json',
