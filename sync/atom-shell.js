@@ -64,7 +64,7 @@ proto.listdir = function* (fullname) {
     }
 
     // skip not finished version, wait for all files upload success
-    var version = name.split('/').substring(1);
+    var version = name.split('/')[0].substring(1);
     if (!this.versionsMap[version]) {
       continue;
     }
