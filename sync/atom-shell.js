@@ -18,6 +18,23 @@ util.inherits(AtomShellSyncer, Syncer);
 
 var proto = AtomShellSyncer.prototype;
 
+proto.start = function* (name) {
+  // make sure version exists on https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json
+  var indexJSONUrl = 'https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json';
+  var versions = yield urllib.request(indexJSONUrl, {
+    dataType: 'json',
+    timeout: 20000,
+  });
+  this.versionsMap = {};
+  for (var i = 0; i < versions.length; i++) {
+    var item = versions[i];
+    this.versionsMap[item.version] = item;
+  }
+
+  name = name || '/';
+  yield this.syncDir(name, 0);
+};
+
 proto.listdir = function* (fullname) {
   var PADDING = 'atom-shell/dist/';
   var prefix = PADDING + fullname.substring(1);
@@ -33,6 +50,9 @@ proto.listdir = function* (fullname) {
   var items = [];
   // https://gh-contractor-zcbenz.s3.amazonaws.com/?max-keys=10000&delimiter=/&prefix=atom-shell/dist/
   // <CommonPrefixes><Prefix>atom-shell/dist/0.23.0/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>atom-shell/dist/1.1.0/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>atom-shell/dist/1.4.5/</Prefix></CommonPrefixes>
+  // <CommonPrefixes>
+  // <Prefix>atom-shell/dist/v1.6.3/</Prefix>
+  // </CommonPrefixes>
   var dirRe = /<CommonPrefixes><Prefix>([^<]+)<\/Prefix><\/CommonPrefixes>/g;
   while (true) {
     var match = dirRe.exec(html);
@@ -45,6 +65,13 @@ proto.listdir = function* (fullname) {
       // <Prefix>.tmp/</Prefix>
       continue;
     }
+
+    // skip not finished version, wait for all files upload success
+    var version = name.split('/').substring(1);
+    if (!this.versionsMap[version]) {
+      continue;
+    }
+
     if (name.indexOf('/x64/') > 0) {
       // <Prefix>v0.16.0/x64/</Prefix>
       name = 'x64/';
