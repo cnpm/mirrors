@@ -18,23 +18,6 @@ util.inherits(AtomShellSyncer, Syncer);
 
 var proto = AtomShellSyncer.prototype;
 
-proto.start = function* (name) {
-  // make sure version exists on https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json
-  var indexJSONUrl = 'https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json';
-  var versions = yield urllib.request(indexJSONUrl, {
-    dataType: 'json',
-    timeout: 20000,
-  });
-  this.versionsMap = {};
-  for (var i = 0; i < versions.length; i++) {
-    var item = versions[i];
-    this.versionsMap[item.version] = item;
-  }
-
-  name = name || '/';
-  yield this.syncDir(name, 0);
-};
-
 proto.listdir = function* (fullname) {
   var PADDING = 'atom-shell/dist/';
   var prefix = PADDING + fullname.substring(1);
@@ -64,6 +47,20 @@ proto.listdir = function* (fullname) {
       // <Prefix>0.23.0/</Prefix>
       // <Prefix>.tmp/</Prefix>
       continue;
+    }
+
+    if (!this.versionsMap) {
+      // make sure version exists on https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json
+      var indexJSONUrl = 'https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json';
+      var versions = yield urllib.request(indexJSONUrl, {
+        dataType: 'json',
+        timeout: 20000,
+      });
+      this.versionsMap = {};
+      for (var i = 0; i < versions.length; i++) {
+        var item = versions[i];
+        this.versionsMap[item.version] = item;
+      }
     }
 
     // skip not finished version, wait for all files upload success
