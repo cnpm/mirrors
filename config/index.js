@@ -579,15 +579,15 @@ var config = {
       alwayNewDirIndex: 0,
     },
 
-    docker: {
-      name: 'docker',
-      category: 'docker',
+    moby: {
+      name: 'moby',
+      category: 'moby',
       enable: true,
-      disturl: 'https://github.com/docker/docker/releases',
-      url: 'https://github.com/docker/docker',
-      description: 'ScaDocker - the open-source application container engine https://www.docker.com',
+      disturl: 'https://github.com/moby/moby/releases',
+      url: 'https://github.com/moby/moby',
+      description: 'a collaborative project for the container ecosystem to assemble container-based systems https://mobyproject.org/',
       max: 10, // sync the latest 10 releases
-      syncerClass: 'docker',
+      syncerClass: 'moby',
       // for mirrors
       alwayNewDirIndex: 0,
     },
