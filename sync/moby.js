@@ -1,6 +1,6 @@
 'use strict';
 
-var debug = require('debug')('mirrors:sync:docker');
+var debug = require('debug')('mirrors:sync:moby');
 var util = require('util');
 var urllib = require('urllib');
 var utils = require('../lib/utils');
@@ -8,22 +8,22 @@ var Syncer = require('./syncer');
 var distService = require('../services/dist');
 var logger = require('../common/logger');
 
-module.exports = DockerSyncer;
+module.exports = MobySyncer;
 
-function DockerSyncer(options) {
-  if (!(this instanceof DockerSyncer)) {
-    return new DockerSyncer(options);
+function MobySyncer(options) {
+  if (!(this instanceof MobySyncer)) {
+    return new MobySyncer(options);
   }
   Syncer.call(this, options);
-  this.url = util.format('https://api.github.com/repos/docker/docker/releases');
+  this.url = util.format('https://api.github.com/repos/moby/moby/releases');
   this.authorization = utils.getGithubBasicAuth();
   this.sub1Dirs = {};
   this.sub2Dirs = {};
 }
 
-util.inherits(DockerSyncer, Syncer);
+util.inherits(MobySyncer, Syncer);
 
-var proto = DockerSyncer.prototype;
+var proto = MobySyncer.prototype;
 
 proto.syncDir = function* (fullname, dirIndex) {
   var news = yield this.listdiff(fullname, dirIndex);
@@ -98,20 +98,19 @@ proto.parseRelease = function (release) {
   var items = [];
   var sub1Dirs = this.sub1Dirs;
   var sub2Dirs = this.sub2Dirs;
-
-  // **Linux 64bits tgz**: https://get.docker.com/builds/Linux/x86_64/docker-17.04.0-ce-rc1.tgz\r\n>
-  // **Darwin/OSX 64bits client tgz**: https://get.docker.com/builds/Darwin/x86_64/docker-17.04.0-ce-rc1.tgz\r\n>
-  // **Linux 32bits arm tgz**: https://get.docker.com/builds/Linux/armel/docker-17.04.0-ce-rc1.tgz\r\n>
-  // **Windows 64bits zip**: https://get.docker.com/builds/Windows/x86_64/docker-17.04.0-ce-rc1.zip\r\n>
-  // **Windows 32bits client zip**: https://get.docker.com/builds/Windows/i386/docker-17.04.0-ce-rc1.zip\r\n"
+  // **Linux 64bits tgz**: https://get.docker.com/builds/Linux/x86_64/docker-17.04.0-ce.tgz\r\n>
+  // **Darwin/OSX 64bits client tgz**: https://get.docker.com/builds/Darwin/x86_64/docker-17.04.0-ce.tgz\r\n>
+  // **Linux 32bits arm tgz**: https://get.docker.com/builds/Linux/armel/docker-17.04.0-ce.tgz\r\n>
+  // **Windows 64bits zip**: https://get.docker.com/builds/Windows/x86_64/docker-17.04.0-ce.zip\r\n>
+  // **Windows 32bits client zip**: https://get.docker.com/builds/Windows/i386/docker-17.04.0-ce.zip\r\n"
   var body = release.body || '';
   var urlRE = /https:\/\/get\.docker.com\/builds\/([^\/]+)\/([^\/]+)\/(.+?\.\w+)$/gm;
   var m = urlRE.exec(body);
   while (m) {
-    // [ 'https://get.docker.com/builds/Windows/i386/docker-17.04.0-ce-rc1.zip',
+    // [ 'https://get.docker.com/builds/Windows/i386/docker-17.04.0-ce.zip',
     // 'Windows',
     // 'i386',
-    // 'docker-17.04.0-ce-rc1.zip'
+    // 'docker-17.04.0-ce.zip'
     items.push({
       name: m[3],
       date: release.created_at,
