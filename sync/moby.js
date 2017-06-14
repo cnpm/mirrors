@@ -98,7 +98,6 @@ proto.parseRelease = function (release) {
   var items = [];
   var sub1Dirs = this.sub1Dirs;
   var sub2Dirs = this.sub2Dirs;
-https://get.docker.com/builds/Linux/x86_64/docker-17.05.0-ce.tgz
   // **Linux 64bits tgz**: https://get.docker.com/builds/Linux/x86_64/docker-17.04.0-ce.tgz\r\n>
   // **Darwin/OSX 64bits client tgz**: https://get.docker.com/builds/Darwin/x86_64/docker-17.04.0-ce.tgz\r\n>
   // **Linux 32bits arm tgz**: https://get.docker.com/builds/Linux/armel/docker-17.04.0-ce.tgz\r\n>
