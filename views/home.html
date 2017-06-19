@@ -116,6 +116,18 @@
   <pre>
   set "PYTHON_MIRROR=<%= baseUrl %>/python" &amp;&amp; npm install --global --production windows-build-tools
   </pre>
+  
+  <h2><a href="https://github.com/node-inspector/node-inspector" target="_blank">node-inspector</a></h2>
+  <pre>
+  # npm version
+  npm install node-inspector --profiler_binary_host_mirror=<%= baseUrl %>/node-inspector/
+  # yarn version
+  npm_config_profiler_binary_host_mirror=<%= baseUrl %>/node-inspector/ yarn add node-inspector
+  # yarn global version
+  npm_config_profiler_binary_host_mirror=<%= baseUrl %>/node-inspector/ yarn global add node-inspector
+  </pre>
+  
+  
 </div>
 <script type="text/javascript">
   document.querySelectorAll && document.querySelectorAll('pre').forEach(function (item) {
