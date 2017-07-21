@@ -591,6 +591,22 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    yarn: {
+      name: 'yarn',
+      category: 'yarn',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/yarnpkg/yarn/releases',
+      repo: 'yarnpkg/yarn',
+      url: 'https://github.com/yarnpkg/yarn',
+      description: '📦🐈 Fast, reliable, and secure dependency management.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
