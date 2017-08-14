@@ -243,6 +243,7 @@ var config = {
       description: 'A fork of Git containing Windows-specific patches. http://git-scm.com/',
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
       // for mirrors
       alwayNewDirIndex: 0,
     },
