@@ -608,6 +608,20 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'utf-8-validate': {
+      name: 'utf-8-validate',
+      category: 'utf-8-validate',
+      enable: true,
+      disturl: 'https://github.com/websockets/utf-8-validate/releases',
+      repo: 'websockets/utf-8-validate',
+      url: 'https://github.com/websockets/utf-8-validate',
+      description: 'Check if a buffer contains valid UTF-8',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
