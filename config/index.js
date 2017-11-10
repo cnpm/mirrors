@@ -622,6 +622,34 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'node-pngquant-native': {
+      name: 'node-pngquant-native',
+      category: 'node-pngquant-native',
+      enable: true,
+      disturl: 'https://github.com/xiangshouding/node-pngquant-native/releases',
+      repo: 'xiangshouding/node-pngquant-native',
+      url: 'https://github.com/xiangshouding/node-pngquant-native',
+      description: 'node-pngquant-native is an addon of node, support node version v0.8.0 to latest, It compress a buffer of .png image, so can\'t call other processes.',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'node-pngcrush': {
+      name: 'node-pngcrush',
+      category: 'node-pngcrush',
+      enable: true,
+      disturl: 'https://github.com/xiangshouding/node-pngcrush/releases',
+      repo: 'xiangshouding/node-pngcrush',
+      url: 'https://github.com/xiangshouding/node-pngcrush',
+      description: 'node-pngcrush是一个node的插件，它把pngcrush内嵌到了插件中，而不是调用命令行的方式，提升处理速率，有效的省去了调用外部程序产生的时间开销。',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
