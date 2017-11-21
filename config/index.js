@@ -522,6 +522,7 @@ var config = {
     grpc: {
       name: 'grpc',
       category: 'grpc',
+      needTargetLibc: true,
       enable: true,
       disturl: 'https://github.com/grpc/grpc',
       url: 'https://github.com/grpc/grpc',
