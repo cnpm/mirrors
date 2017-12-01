@@ -251,7 +251,7 @@ proto.listdiff = function* (fullname, dirIndex) {
       continue;
     }
 
-    if (exist.type === 'file' && !this.check(exist, item)) {
+    if (exist.type === 'file' && item.size !== '-' && !this.check(exist, item)) {
       news.push(item);
       continue;
     }
