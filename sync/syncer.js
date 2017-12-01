@@ -180,6 +180,10 @@ proto.syncFile = function* (info) {
 
     if (this.check) {
       var equivalent = this.check(checksums, info);
+      
+      if (info.remoteMetaUpdated === true) {
+        equivalent = true;
+      }
 
       if (!equivalent) {
         var err = new Error(fmt('Download %s file check not valid', downurl));
@@ -248,11 +252,13 @@ proto.listdiff = function* (fullname, dirIndex) {
 
     if (!exist || exist.date !== item.date) {
       news.push(item);
+      item.remoteMetaUpdated = true;
       continue;
     }
 
     if (exist.type === 'file' && item.size !== '-' && !this.check(exist, item)) {
       news.push(item);
+      item.remoteMetaUpdated = true;
       continue;
     }
 
