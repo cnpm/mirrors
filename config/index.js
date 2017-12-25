@@ -102,6 +102,8 @@ var config = {
     advisories: 'https://api.nodesecurity.io/advisories',
   },
 
+  // formatDownloadUrl: function (url) {},
+
   // sync categories
   categories: {
     node: {
