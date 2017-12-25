@@ -103,6 +103,14 @@ proto.syncFile = function* (info) {
   if (info.downloadURL) {
     downurl = info.downloadURL;
   }
+  // https://cnpmjs.org/mirrors/chromium-browser-snapshots/Linux_x64/494755/chrome-linux.zip
+  // =>
+  // https://cnpmjs.oss-ap-southeast-1.aliyuncs.com/dist/chromium-browser-snapshots/Linux_x64/494755/chrome-linux.zip
+  // =>
+  // https://cnpmjs.oss-ap-southeast-1-internal.aliyuncs.com/dist/chromium-browser-snapshots/Linux_x64/494755/chrome-linux.zip
+  if (typeof config.formatDownloadUrl === 'function') {
+    downurl = config.formatDownloadUrl(downurl);
+  }
   var filepath = utils.getTarballFilepath(name);
   var ws = fs.createWriteStream(filepath);
 
