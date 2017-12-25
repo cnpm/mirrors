@@ -519,6 +519,17 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'chromium-browser-snapshots': {
+      name: 'chromium-browser-snapshots',
+      category: 'chromium-browser-snapshots',
+      enable: true,
+      disturl: 'https://github.com/GoogleChrome/puppeteer',
+      url: 'https://github.com/GoogleChrome/puppeteer',
+      description: 'Headless Chrome Node API',
+      // for mirrors
+      alwayNewDirIndex: 0,
+      syncerClass: 'PuppeteerChromeSyncer',
+    },
     grpc: {
       name: 'grpc',
       category: 'grpc',
