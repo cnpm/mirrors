@@ -99,6 +99,13 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
         size: '-',
         type: 'dir',
       });
+      needs.push({
+        name: parentDir + '/',
+        parent: '/',
+        date: publish_time,
+        size: '-',
+        type: 'dir',
+      });
     }
   }
   debug('listdir %s got %s, %j, new %d versions, exists %d versions',
