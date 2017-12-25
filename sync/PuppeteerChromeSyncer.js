@@ -51,7 +51,7 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
   // };
 
   let existsCount = 0;
-  const existDirResults = yield parentDirs.map(name => '/' + name + '/');
+  const existDirResults = yield parentDirs.map(name => this.listExists('/' + name + '/'));
   const existDirsMap = {};
   for (const rows of existDirResults) {
     for (const row of rows) {
