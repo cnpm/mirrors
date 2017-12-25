@@ -86,23 +86,46 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
       var nodePlatform = nodePlatforms[p];
       for (var a = 0; a < nodeAbiVersions.length; a++) {
         var nodeAbiVersion = nodeAbiVersions[a];
-        var name = 'node-' + nodeAbiVersion + '-' + nodePlatform + '-x64.tar.gz';
-        var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
-        if (this.formatDownloadUrl) {
-          downloadURL = this.formatDownloadUrl(pkg, nodeAbiVersion, nodePlatform, name);
+        var downloadItem = this.formatDownloadItem(fileParent, pkg, nodeAbiVersion, nodePlatform);
+        debug(downloadItem);
+        if (Array.isArray(downloadItem)) {
+          downloadItem.forEach(function(oneItem) {
+            items.push({
+              date: date,
+              size: null,
+              type: 'file',
+              parent: fileParent,
+              downloadURL: oneItem.downloadURL,
+              name: oneItem.name,
+            });
+          });
+        } else {
+          items.push({
+            date: date,
+            size: null,
+            type: 'file',
+            parent: fileParent,
+            downloadURL: downloadItem.downloadURL,
+            name: downloadItem.name,
+          });
         }
-        debug(downloadURL);
-        items.push({
-          name: name,
-          date: date,
-          size: null,
-          type: 'file',
-          downloadURL: downloadURL,
-          parent: fileParent,
-        });
       }
     }
   }
 
   return items;
+};
+
+proto.formatDownloadItem = function(fileParent, pkg, nodeAbiVersion, nodePlatform) {
+  var name = 'node-' + nodeAbiVersion + '-' + nodePlatform + '-x64.tar.gz';
+  var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
+  if (this.formatDownloadUrl) {
+    downloadURL = this.formatDownloadUrl(pkg, nodeAbiVersion, nodePlatform, name);
+  }
+
+  return {
+    name: name,
+    // size: null,
+    downloadURL: downloadURL,
+  };
 };
