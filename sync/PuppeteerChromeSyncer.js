@@ -65,15 +65,22 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
     followRedirect: true,
   });
   const versions = result.data.versions || {};
-  const needs = [];
+  const chromium_revisions = {};
   for (var version in versions) {
     const pkg = versions[version];
     const puppeteerInfo = pkg.puppeteer || {};
     if (!puppeteerInfo.chromium_revision) continue;
-    const publish_time = result.data.time[pkg.version];
+    if (chromium_revisions[puppeteerInfo.chromium_revision]) continue;
 
+    const publish_time = result.data.time[pkg.version];
+    chromium_revisions[puppeteerInfo.chromium_revision] = publish_time;
+  }
+
+  const needs = [];
+  for (var chromium_revision in chromium_revisions) {
+    const publish_time = chromium_revisions[chromium_revision];
     for (const parentDir of parentDirs) {
-      const dirname = '/' + parentDir + '/' + puppeteerInfo.chromium_revision + '/';
+      const dirname = '/' + parentDir + '/' + chromium_revision + '/';
 
       if (existDirsMap[dirname]) {
         existsCount++;
