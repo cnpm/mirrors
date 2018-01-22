@@ -100,7 +100,7 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
 
       // dir
       needs.push({
-        name: puppeteerInfo.chromium_revision + '/',
+        name: chromium_revision + '/',
         parent: '/' + parentDir + '/',
         date: publish_time,
         size: '-',
