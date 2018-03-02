@@ -618,7 +618,7 @@ var config = {
       description: '📦🐈 Fast, reliable, and secure dependency management.',
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
-      needFormatTagName: true,
+      needFormatTagName: false,
       // for mirrors
       alwayNewDirIndex: 0,
     },
