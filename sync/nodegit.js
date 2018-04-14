@@ -14,7 +14,7 @@ function NodeGitSyncer(options) {
   }
   Syncer.call(this, options);
   this._npmPackageUrl = 'https://registry.npmjs.com/nodegit';
-  this._storeUrl = 'https://nodegit.s3.amazonaws.com/nodegit/nodegit/';
+  this._storeUrl = 'https://axonodegit.s3.amazonaws.com/nodegit/nodegit/';
 }
 
 util.inherits(NodeGitSyncer, Syncer);
