@@ -552,6 +552,16 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    cypress: {
+      name: 'cypress',
+      category: 'cypress',
+      enable: true,
+      disturl: 'https://cdn.cypress.io/desktop',
+      url: 'https://github.com/cypress-io/cypress',
+      description: 'Fast, easy and reliable testing for anything that runs in a browser. https://www.cypress.io',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     flow: {
       name: 'flow',
       category: 'flow',
