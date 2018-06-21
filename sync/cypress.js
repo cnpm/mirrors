@@ -94,7 +94,7 @@ proto.listdiff = function* (fullname, dirIndex) {
 
       var fileParent = dirParent + nodePlatform + '/';
       var downloadURL = this._storeUrl + fileParent + 'cypress.zip';
-      debug(downloadURL, name, fileParent, date);
+      debug(downloadURL, fileParent, date);
       items.push({
         name: 'cypress.zip',
         date: date,
