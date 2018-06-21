@@ -14,7 +14,7 @@ function CypressSyncer(options) {
   }
   Syncer.call(this, options);
   this._npmPackageUrl = 'https://registry.npmjs.com/cypress';
-  this._storeUrl = 'https://cdn.cypress.io/desktop/';
+  this._storeUrl = 'https://cdn.cypress.io/desktop';
 }
 
 util.inherits(CypressSyncer, Syncer);
