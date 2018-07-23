@@ -646,6 +646,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'jpegtran-bin': {
+      name: 'jpegtran-bin',
+      category: 'jpegtran-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/jpegtran-bin/tree',
+      url: 'https://github.com/imagemin/jpegtran-bin',
+      description: 'jpegtran bin-wrapper that makes it seamlessly available as a local dependency http://libjpeg-turbo.virtualgl.org',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'jpegtran-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
