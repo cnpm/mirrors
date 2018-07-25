@@ -685,6 +685,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'gifsicle-bin': {
+      name: 'gifsicle-bin',
+      category: 'gifsicle-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/gifsicle-bin/tree',
+      url: 'https://github.com/imagemin/gifsicle-bin',
+      description: 'gifsicle bin-wrapper that makes it seamlessly available as a local dependency http://www.lcdf.org/gifsicle/',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'gifsicle-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
