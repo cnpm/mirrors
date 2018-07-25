@@ -737,6 +737,97 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'jpegoptim-bin': {
+      name: 'jpegoptim-bin',
+      category: 'jpegoptim-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/jpegoptim-bin/tree',
+      url: 'https://github.com/imagemin/jpegoptim-bin',
+      description: 'jpegoptim bin-wrapper that makes it seamlessly available as a local dependency https://github.com/tjko/jpegoptim',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'jpegoptim-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'pngcrush-bin': {
+      name: 'pngcrush-bin',
+      category: 'pngcrush-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/pngcrush-bin/tree',
+      url: 'https://github.com/imagemin/pngcrush-bin',
+      description: 'pngcrush bin-wrapper that makes it seamlessly available as a local dependency http://pmt.sourceforge.net/pngcrush/',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'pngcrush-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'guetzli-bin': {
+      name: 'guetzli-bin',
+      category: 'guetzli-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/guetzli-bin/tree',
+      url: 'https://github.com/imagemin/guetzli-bin',
+      description: 'guetzli wrapper that makes it seamlessly available as a local dependency https://github.com/google/guetzli',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'guetzli-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'gif2webp-bin': {
+      name: 'gif2webp-bin',
+      category: 'gif2webp-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/gif2webp-bin/tree',
+      url: 'https://github.com/imagemin/gif2webp-bin',
+      description: 'gif2webp bin-wrapper that makes it seamlessly available as a local dependency',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'gif2webp-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'pngout-bin': {
+      name: 'pngout-bin',
+      category: 'pngout-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/pngout-bin/tree',
+      url: 'https://github.com/imagemin/pngout-bin',
+      description: 'pngout bin-wrapper that makes it seamlessly available as a local dependency http://advsys.net/ken/util/pngout.htm',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'pngout-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'advpng-bin': {
+      name: 'advpng-bin',
+      category: 'advpng-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/advpng-bin/tree',
+      url: 'https://github.com/imagemin/advpng-bin',
+      description: 'AdvPNG bin-wrapper that makes it seamlessly available as a local dependency https://github.com/amadvance/advancecomp',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'advpng-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'jpeg-recompress-bin': {
+      name: 'jpeg-recompress-bin',
+      category: 'jpeg-recompress-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/jpeg-recompress-bin/tree',
+      url: 'https://github.com/imagemin/jpeg-recompress-bin',
+      description: 'jpeg-recompress bin-wrapper that makes it seamlessly available as a local dependency https://github.com/danielgtaylor/jpeg-archive',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'jpeg-recompress-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
