@@ -698,6 +698,45 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'mozjpeg-bin': {
+      name: 'mozjpeg-bin',
+      category: 'mozjpeg-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/mozjpeg-bin/tree',
+      url: 'https://github.com/imagemin/mozjpeg-bin',
+      description: 'mozjpeg bin-wrapper that makes it seamlessly available as a local dependency https://github.com/mozilla/mozjpeg',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'mozjpeg-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'cwebp-bin': {
+      name: 'cwebp-bin',
+      category: 'cwebp-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/cwebp-bin/tree',
+      url: 'https://github.com/imagemin/cwebp-bin',
+      description: 'cwebp bin-wrapper that makes it seamlessly available as a local dependency https://developers.google.com/speed/webp',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'cwebp-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'optipng-bin': {
+      name: 'optipng-bin',
+      category: 'optipng-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/optipng-bin/tree',
+      url: 'https://github.com/imagemin/optipng-bin',
+      description: 'optipng bin-wrapper that makes it seamlessly available as a local dependency http://optipng.sourceforge.net',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'optipng-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
