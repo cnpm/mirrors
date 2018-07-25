@@ -672,6 +672,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'zopflipng-bin': {
+      name: 'zopflipng-bin',
+      category: 'zopflipng-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/zopflipng-bin/tree',
+      url: 'https://github.com/imagemin/zopflipng-bin',
+      description: 'zopflipng bin-wrapper that makes it seamlessly available as a local dependency https://github.com/google/zopfli',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'zopflipng-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 

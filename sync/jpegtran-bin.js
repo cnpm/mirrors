@@ -170,7 +170,8 @@ proto.listdiff = function* (fullname, dirIndex) {
       }
 
       if (platform === 'macos') {
-        if (semver.lt(pkg.version, this._getMinMacOSVersion())) {
+        var minMacOSVersion = this._getMinMacOSVersion();
+        if (minMacOSVersion === true || (typeof minMacOSVersion === 'string' && semver.lt(pkg.version, minMacOSVersion))) {
           platform = 'osx';
           items.push({
             name: platform + '/',
@@ -196,7 +197,7 @@ proto.listdiff = function* (fullname, dirIndex) {
         // libjpeg-62.dll
         // jpegtran.exe
         var binaryName = this._binaryName;
-        if (platform === 'win') {
+        if (platform === 'win' || platform === 'win32') {
           binaryName = this._binaryName + '.exe';
         }
 
