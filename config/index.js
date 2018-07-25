@@ -659,6 +659,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'pngquant-bin': {
+      name: 'pngquant-bin',
+      category: 'pngquant-bin',
+      enable: true,
+      disturl: 'https://github.com/imagemin/pngquant-bin/tree',
+      url: 'https://github.com/imagemin/pngquant-bin',
+      description: 'pngquant bin-wrapper that makes it seamlessly available as a local dependency http://pngquant.org',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'pngquant-bin',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 

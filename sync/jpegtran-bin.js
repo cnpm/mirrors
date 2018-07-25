@@ -17,6 +17,7 @@ function JpegtranbinSyncer(options) {
   this._npmPackageUrl = 'https://registry.npmjs.com/jpegtran-bin';
   // https://github.com/imagemin/jpegtran-bin/blob/master/lib/index.js#L6
   this._storeUrl = 'https://raw.githubusercontent.com/imagemin/jpegtran-bin';
+  this._binaryName = 'jpegtran';
 }
 
 util.inherits(JpegtranbinSyncer, Syncer);
@@ -25,6 +26,38 @@ var proto = JpegtranbinSyncer.prototype;
 
 proto.check = function() {
   return true;
+};
+
+proto._getMinMacOSVersion = function() {
+  return '3.1.0';
+};
+
+proto._handleFreebsdPlatform = function() {
+  return true;
+};
+
+proto._downloadLib = function* (items, platform, fileParent, date) {
+  // libjpeg-62.dll
+  if (platform === 'win') {
+    var downloadURL = this._storeUrl + fileParent + 'libjpeg-62.dll';
+    debug(downloadURL, fileParent, date);
+    items.push({
+      name: 'libjpeg-62.dll',
+      date: date,
+      size: null,
+      type: 'file',
+      downloadURL: downloadURL,
+      parent: fileParent,
+    });
+  }
+};
+
+proto._getPlatforms = function() {
+  return [ 'macos', 'linux', 'freebsd', 'sunos', 'win' ];
+};
+
+proto._getPlatformArchs = function(platform) {
+  return [ 'x64', 'x86' ];
 };
 
 proto.listdiff = function* (fullname, dirIndex) {
@@ -92,7 +125,7 @@ proto.listdiff = function* (fullname, dirIndex) {
     });
 
     var dirParent = fullname + pkg.dirname + 'vendor/';
-    var platforms = [ 'macos', 'linux', 'freebsd', 'sunos', 'win' ];
+    var platforms = this._getPlatforms();
     // ${url}macos/jpegtran
     // ${url}linux/x86/jpegtran
     // ${url}linux/x64/jpegtran
@@ -106,12 +139,27 @@ proto.listdiff = function* (fullname, dirIndex) {
         type: 'dir',
         parent: dirParent,
       });
-      if (platform === 'freebsd' && semver.lt(pkg.version, '3.0.0')) {
+      if (this._handleFreebsdPlatform() && platform === 'freebsd' && semver.lt(pkg.version, '3.0.0')) {
         var fileParent = dirParent + platform + '/';
-        var downloadURL = this._storeUrl + fileParent + 'jpegtran';
+        var downloadURL = this._storeUrl + fileParent + this._binaryName;
         debug(downloadURL, fileParent, date);
         items.push({
-          name: 'jpegtran',
+          name: this._binaryName,
+          date: date,
+          size: null,
+          type: 'file',
+          downloadURL: downloadURL,
+          parent: fileParent,
+        });
+        continue;
+      }
+
+      if (platform === 'source') {
+        var fileParent = dirParent + platform + '/';
+        var downloadURL = this._storeUrl + fileParent + this._binaryName + '.tar.gz';
+        debug(downloadURL, fileParent, date);
+        items.push({
+          name: this._binaryName + '.tar.gz',
           date: date,
           size: null,
           type: 'file',
@@ -122,14 +170,21 @@ proto.listdiff = function* (fullname, dirIndex) {
       }
 
       if (platform === 'macos') {
-        if (semver.lt(pkg.version, '3.1.0')) {
+        if (semver.lt(pkg.version, this._getMinMacOSVersion())) {
           platform = 'osx';
+          items.push({
+            name: platform + '/',
+            date: date,
+            size: '-',
+            type: 'dir',
+            parent: dirParent,
+          });
         }
         var fileParent = dirParent + platform + '/';
-        var downloadURL = this._storeUrl + fileParent + 'jpegtran';
+        var downloadURL = this._storeUrl + fileParent + this._binaryName;
         debug(downloadURL, fileParent, date);
         items.push({
-          name: 'jpegtran',
+          name: this._binaryName,
           date: date,
           size: null,
           type: 'file',
@@ -140,22 +195,38 @@ proto.listdiff = function* (fullname, dirIndex) {
         // win
         // libjpeg-62.dll
         // jpegtran.exe
-        var binaryName = 'jpegtran';
+        var binaryName = this._binaryName;
         if (platform === 'win') {
-          binaryName = 'jpegtran.exe';
+          binaryName = this._binaryName + '.exe';
         }
 
-        var archs = [ 'x64', 'x86' ];
-        for (var arch of archs) {
-          items.push({
-            name: arch +  '/',
-            date: date,
-            size: '-',
-            type: 'dir',
-            parent: dirParent + platform + '/',
-          });
+        var archs = this._getPlatformArchs(platform);
+        if (archs && archs.length > 0) {
+          for (var arch of archs) {
+            items.push({
+              name: arch +  '/',
+              date: date,
+              size: '-',
+              type: 'dir',
+              parent: dirParent + platform + '/',
+            });
 
-          var fileParent = dirParent + platform + '/' + arch + '/';
+            var fileParent = dirParent + platform + '/' + arch + '/';
+            var downloadURL = this._storeUrl + fileParent + binaryName;
+            debug(downloadURL, fileParent, date);
+            items.push({
+              name: binaryName,
+              date: date,
+              size: null,
+              type: 'file',
+              downloadURL: downloadURL,
+              parent: fileParent,
+            });
+
+            yield this._downloadLib(items, platform, fileParent, date);
+          }
+        } else {
+          var fileParent = dirParent + platform + '/';
           var downloadURL = this._storeUrl + fileParent + binaryName;
           debug(downloadURL, fileParent, date);
           items.push({
@@ -167,19 +238,7 @@ proto.listdiff = function* (fullname, dirIndex) {
             parent: fileParent,
           });
 
-          // libjpeg-62.dll
-          if (platform === 'win') {
-            var downloadURL2 = this._storeUrl + fileParent + 'libjpeg-62.dll';
-            debug(downloadURL2, fileParent, date);
-            items.push({
-              name: 'libjpeg-62.dll',
-              date: date,
-              size: null,
-              type: 'file',
-              downloadURL: downloadURL2,
-              parent: fileParent,
-            });
-          }
+          yield this._downloadLib(items, platform, fileParent, date);
         }
       }
     }
