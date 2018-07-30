@@ -16,3 +16,4 @@ dump.rdb
 .dist
 .tmp
 config/config.js
+config/config_bak.js

@@ -1,15 +1,4 @@
-/**!
- * mirrors - test/controllers/apis/dist.test.js
- *
- * Authors:
- *   dead_horse <dead_horse@qq.com> (https://github.com/dead-horse)
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var Dist = require('../../../services/dist');
 var request = require('supertest');
@@ -19,10 +8,11 @@ var mm = require('mm');
 describe('test/controllers/apis/dist.test.js', function () {
   afterEach(mm.restore);
   describe('GET /apis/:category', function () {
-    it('should response 404 if category not exist', function (done) {
+    it('should response 200 and empty list if category not exist', function (done) {
       request(app.listen())
       .get('/apis/notexist')
-      .expect(404, done);
+      .expect([])
+      .expect(200, done);
     });
 
     it('should response 200 even if empty item list', function (done) {
