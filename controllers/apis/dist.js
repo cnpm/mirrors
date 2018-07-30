@@ -18,10 +18,10 @@ module.exports = function* () {
   var name = paths.join('/').replace(/^\/?/, '/').replace(/\/?$/, '/');
   debug('request %s, normalize to %s, got category: %s, name: %s', this.path, p, category, name);
 
-  if (!config.categories[category]) {
-    debug('requiest %s, category %s not exist', this.path, category);
-    return this.status = 404;
-  }
+  // if (!config.categories[category]) {
+  //   debug('requiest %s, category %s not exist', this.path, category);
+  //   return this.status = 404;
+  // }
   var items = yield Dist.listdir(category, name);
   var ctx = this;
   this.body = items.map(function (item) {

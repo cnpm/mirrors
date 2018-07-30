@@ -25,10 +25,10 @@ module.exports = function* () {
   debug('request %s, normalize to %s, got category: %s, name: %s', this.path, p, category, name);
 
   var categoryInfo = config.categories[category];
-  if (!categoryInfo) {
-    debug('requiest %s, category %s not exist', this.path, category);
-    return this.status = 404;
-  }
+  // if (!categoryInfo) {
+  //   debug('requiest %s, category %s not exist', this.path, category);
+  //   return this.status = 404;
+  // }
 
   // list dir
   if (name[name.length - 1] === '/') {
@@ -44,9 +44,13 @@ module.exports = function* () {
     });
 
     debug('list dir %s:%s, got %j', category, name, items);
-    var disturl = config.categories[category].disturl.replace(/\/$/, '') + name.replace(/^\/?/, '/');
+    var disturl = '';
+    if (config.categories[category]) {
+      disturl = config.categories[category].disturl.replace(/\/$/, '') + name.replace(/^\/?/, '/');
+    }
+    var title = (categoryInfo ? categoryInfo.name : category) + ' Mirror'
     yield this.render('dist', {
-      title: categoryInfo.name + ' Mirror',
+      title: title,
       disturl: disturl,
       category: category,
       items: items,
@@ -55,7 +59,7 @@ module.exports = function* () {
     return;
   }
 
-  yield* download.call(this, category, name);
+  yield download.call(this, category, name);
 };
 
 function* download(category, name) {
@@ -70,7 +74,7 @@ function* download(category, name) {
     if (info.url.indexOf('http') === 0) {
       info.url = urlparse(info.url).path;
     }
-    return yield* pipe.call(this, info, false);
+    return yield pipe.call(this, info, false);
   }
 
   if (/\.(html|js|css|json|txt|tab|txt\.asc|txt\.gpg)$/.test(name) ||
@@ -78,7 +82,7 @@ function* download(category, name) {
     if (info.url.indexOf('http') === 0) {
       info.url = urlparse(info.url).path;
     }
-    return yield* pipe.call(this, info, false);
+    return yield pipe.call(this, info, false);
   }
 
   if (info.url.indexOf('http') === 0) {
@@ -89,7 +93,7 @@ function* download(category, name) {
     return this.redirect(info.url);
   }
 
-  return yield* pipe.call(this, info, false);
+  return yield pipe.call(this, info, false);
 }
 
 function* pipe(info, attachment) {
@@ -118,7 +122,7 @@ function* pipe(info, attachment) {
     this.attachment(info.name);
   }
 
-  return this.body = yield* downloadAsReadStream(info.url);
+  return this.body = yield downloadAsReadStream(info.url);
 }
 
 function* downloadAsReadStream(key) {
