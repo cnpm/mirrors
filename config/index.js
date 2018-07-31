@@ -828,6 +828,38 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    zeromq: {
+      name: 'zeromq',
+      category: 'zeromq',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/zeromq/zeromq.js/releases',
+      repo: 'zeromq/zeromq.js',
+      url: 'https://github.com/zeromq/zeromq.js',
+      description: '⚡️ Node.js bindings to the ØMQ library http://zeromq.github.io/zeromq.js/',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    minikube: {
+      name: 'minikube',
+      category: 'minikube',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/kubernetes/minikube/releases',
+      repo: 'kubernetes/minikube',
+      url: 'https://github.com/kubernetes/minikube',
+      description: 'Run Kubernetes locally',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
