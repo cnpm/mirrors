@@ -527,7 +527,7 @@ var config = {
       enable: true,
       disturl: 'https://github.com/GoogleChrome/puppeteer',
       url: 'https://github.com/GoogleChrome/puppeteer',
-      description: 'Headless Chrome Node API',
+      description: 'Headless Chrome Node API. https://github.com/GoogleChrome/puppeteer',
       // for mirrors
       alwayNewDirIndex: 0,
       syncerClass: 'PuppeteerChromeSyncer',
