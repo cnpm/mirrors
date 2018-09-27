@@ -860,6 +860,22 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'sentry-cli': {
+      name: 'sentry-cli',
+      category: 'sentry-cli',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/getsentry/sentry-cli/releases',
+      repo: 'getsentry/sentry-cli',
+      url: 'https://github.com/getsentry/sentry-cli',
+      description: 'A command line utility to work with Sentry',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
