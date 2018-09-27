@@ -872,7 +872,7 @@ var config = {
       description: 'A command line utility to work with Sentry',
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
-      needFormatTagName: false,
+      needFormatTagName: true,
       // for mirrors
       alwayNewDirIndex: 0,
     },
