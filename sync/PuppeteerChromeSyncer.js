@@ -30,24 +30,19 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
     return [];
   }
 
-  // https://github.com/GoogleChrome/puppeteer/blob/fc2fc0de5d7050437f623f808ddff3488c895b72/lib/Downloader.js#L30
+  // https://github.com/GoogleChrome/puppeteer/blob/7f00860abd3c1efbca21351a8bdb12422dbe7aa2/lib/BrowserFetcher.js#L32
   const parentDirs = [
     'Linux_x64',
     'Mac',
     'Win',
     'Win_x64',
   ];
-  const filenameMap = {
-    'Linux_x64': 'chrome-linux.zip',
-    'Mac': 'chrome-mac.zip',
-    'Win': 'chrome-win32.zip',
-    'Win_x64': 'chrome-win32.zip',
-  };
+
   // const downloadURLs = {
-  //   linux: '%s/chromium-browser-snapshots/Linux_x64/%d/chrome-linux.zip',
-  //   mac: '%s/chromium-browser-snapshots/Mac/%d/chrome-mac.zip',
-  //   win32: '%s/chromium-browser-snapshots/Win/%d/chrome-win32.zip',
-  //   win64: '%s/chromium-browser-snapshots/Win_x64/%d/chrome-win32.zip',
+  //   linux: '%s/chromium-browser-snapshots/Linux_x64/%d/%s.zip',
+  //   mac: '%s/chromium-browser-snapshots/Mac/%d/%s.zip',
+  //   win32: '%s/chromium-browser-snapshots/Win/%d/%s.zip',
+  //   win64: '%s/chromium-browser-snapshots/Win_x64/%d/%s.zip',
   // };
 
   let existsCount = 0;
@@ -88,7 +83,7 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
       }
 
       // files
-      const filename = filenameMap[parentDir];
+      const filename = archiveName(parentDir, chromium_revision);
       needs.push({
         date: publish_time,
         size: null,
@@ -123,3 +118,21 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
   }
   return needs;
 };
+
+  /**
+   * https://github.com/GoogleChrome/puppeteer/blob/7f00860abd3c1efbca21351a8bdb12422dbe7aa2/lib/BrowserFetcher.js#L45
+   * @param {string} platform
+   * @param {string} revision
+   * @return {string}
+   */
+  function archiveName(platform, revision) {
+    if (platform === 'Linux_x64')
+      return 'chrome-linux.zip';
+    if (platform === 'Mac')
+      return 'chrome-mac.zip';
+    if (platform === 'Win' || platform === 'Win_x64') {
+      // Windows archive name changed at r591479.
+      return parseInt(revision, 10) > 591479 ? 'chrome-win.zip' : 'chrome-win32.zip';
+    }
+    return null;
+  }
