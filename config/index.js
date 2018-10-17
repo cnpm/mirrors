@@ -552,6 +552,16 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'canvas-prebuilt': {
+      name: 'canvas-prebuilt',
+      category: 'canvas-prebuilt',
+      enable: true,
+      disturl: 'https://github.com/chearon/node-canvas-prebuilt',
+      url: 'https://github.com/chearon/node-canvas-prebuilt',
+      description: 'Prebuilt versions of node-canvas as a drop-in replacement',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     cypress: {
       name: 'cypress',
       category: 'cypress',
