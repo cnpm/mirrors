@@ -209,6 +209,8 @@ var config = {
       needFormatTagName: true,
       // for mirrors
       alwayNewDirIndex: 0,
+      // retry on 403 response
+      retryOn403: true,
     },
     'atom-shell': {
       name: 'atom-shell',

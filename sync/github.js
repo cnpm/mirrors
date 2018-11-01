@@ -16,6 +16,7 @@ function GithubSyncer(options) {
   this.url = util.format('https://api.github.com/repos/%s/releases', options.repo);
   this.archiveUrl = util.format('https://github.com/%s/archive/', options.repo);
   this.authorization = utils.getGithubBasicAuth();
+  this._retryOn403 = !!options.retryOn403;
   this.max = options.max;
   // 200 MB
   this.maxFileSize = options.maxFileSize || 1024 * 1024 * 200;
@@ -46,6 +47,16 @@ proto.listdir = function* (fullname) {
     debug('listdir %s got %s, %j, releases: %s',
       this.url, result.status, result.headers, result.data.length || '-');
 
+    if (result.status === 403 && this._retryOn403) {
+      result = yield urllib.request(this.url, {
+        timeout: 60000,
+        dataType: 'json',
+        gzip: true,
+        followRedirect: true,
+      });
+      debug('listdir %s got %s, %j, releases: %s',
+        this.url, result.status, result.headers, result.data.length || '-');
+    }
     if (result.status !== 200) {
       throw new Error(util.format('get %s resposne %s', this.url, result.status));
     }
