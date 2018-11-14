@@ -16,6 +16,7 @@ function Sqlite3Syncer(options) {
   Syncer.call(this, options);
   this._npmPackageUrl = 'https://registry.npmjs.com/sqlite3';
   this._storeUrl = 'https://mapbox-node-binary.s3.amazonaws.com';
+  this._detectBinaryHost = true;
 }
 
 util.inherits(Sqlite3Syncer, Syncer);
@@ -55,7 +56,9 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
       existsCount++;
       continue;
     }
-    if (binaryInfo.host === this._storeUrl) {
+    if (!this._detectBinaryHost) {
+      needs.push(pkg);
+    } else if (binaryInfo.host === this._storeUrl) {
       needs.push(pkg);
     }
   }
