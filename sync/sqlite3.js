@@ -92,6 +92,7 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
         var nodeAbiVersion = nodeAbiVersions[a];
         var downloadItem = this.formatDownloadItem(fileParent, pkg, nodeAbiVersion, nodePlatform);
         debug(downloadItem);
+        if (!downloadItem) continue;
         if (Array.isArray(downloadItem)) {
           downloadItem.forEach(function(oneItem) {
             items.push({

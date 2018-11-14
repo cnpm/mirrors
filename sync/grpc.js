@@ -12,7 +12,7 @@ class GRPCSyncer extends Sqlite3Syncer {
 
     // https://storage.googleapis.com/grpc-precompiled-binaries/node/grpc/v1.0.1/node-v48-darwin-x64.tar.gz
     this._npmPackageUrl = 'https://registry.npmjs.com/grpc';
-    this._storeUrl = 'https://storage.googleapis.com/';
+    this._storeUrl = 'https://node-precompiled-binaries.grpc.io/';
     this._detectBinaryHost = false;
   }
 
@@ -49,6 +49,9 @@ class GRPCSyncer extends Sqlite3Syncer {
   // https://node-precompiled-binaries.grpc.io/grpc/v1.14.0/node-v64-linux-x64-glibc.tar.gz
 
   formatDownloadItem(fileParent, pkg, nodeAbiVersion, nodePlatform) {
+    if (semver.satisfies(pkg.version, '<1.0.0')) {
+      return null;
+    }
     var glibc = nodePlatform === 'linux' ? 'glibc' : 'unknown';
     var name = `node-${nodeAbiVersion}-${nodePlatform}-x64-${glibc}.tar.gz`;
     if (semver.satisfies(pkg.version, '<1.7.2')) {
