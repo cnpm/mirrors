@@ -3,6 +3,7 @@
 var debug = require('debug')('mirrors:sync:sqlite3');
 var util = require('util');
 var urllib = require('urllib');
+var logger = require('../common/logger');
 var Syncer = require('./syncer');
 var utils = require('../lib/utils');
 
@@ -58,8 +59,8 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
       needs.push(pkg);
     }
   }
-  debug('listdir %s got %s, %j, new %d versions, exists %d versions',
-    this._npmPackageUrl, result.status, result.headers, needs.length, existsCount);
+  logger.syncInfo('[%s] listdir %s got %s, %j, new %d versions, exists %d versions',
+      this.category, this._npmPackageUrl, result.status, result.headers, needs.length, existsCount);
 
   if (result.status !== 200) {
     throw new Error(util.format('get %s resposne %s', this._npmPackageUrl, result.status));
