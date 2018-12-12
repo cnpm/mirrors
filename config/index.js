@@ -901,6 +901,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    sharp: {
+      name: 'sharp',
+      category: 'sharp',
+      enable: true,
+      disturl: 'https://github.com/lovell/sharp/releases',
+      repo: 'lovell/sharp',
+      url: 'https://github.com/lovell/sharp',
+      description: 'High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP and TIFF images. Uses the libvips library. http://sharp.pixelplumbing.com/',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
