@@ -888,6 +888,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'sharp-libvips': {
+      name: 'sharp-libvips',
+      category: 'sharp-libvips',
+      enable: true,
+      disturl: 'https://github.com/lovell/sharp-libvips/releases',
+      repo: 'lovell/sharp-libvips',
+      url: 'https://github.com/lovell/sharp-libvips',
+      description: 'Packaging scripts to prebuild libvips and its dependencies - you\'re probably looking for https://github.com/lovell/sharp',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
