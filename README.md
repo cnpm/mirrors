@@ -28,6 +28,13 @@ mirrors everything
 ```bash
 $ npm install mirrors
 ```
+## Contributing
+
+1. `make test`
+2. Add your code and test code. Run test again. You can refer to `test/sync/nw.test.js` for syncer test
+
+For more information about how to run the project, see Makefile.
+
 
 ## Usage
 
