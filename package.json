@@ -54,17 +54,19 @@
   "devDependencies": {
     "autod": "2",
     "co-mocha": "1",
+    "intelli-espower-loader": "^1.0.1",
     "istanbul": "^0.4.3",
     "mm": "1",
     "mocha": "2",
     "node-dev": "2",
     "pedding": "1",
+    "power-assert": "^1.6.1",
     "should": "7",
     "should-http": "^0.0.2",
     "sqlite3": "4",
     "supertest": "1"
   },
   "engine": {
-    "node": ">=4.3.2"
+    "node": ">=8"
   }
 }

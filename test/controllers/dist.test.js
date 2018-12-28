@@ -6,7 +6,10 @@ var app = require('../../app');
 var mm = require('mm');
 
 describe('test/controllers/dist.test.js', function () {
-  afterEach(mm.restore);
+  afterEach(function () {
+    mm.restore()
+    app.close()
+  });
   describe('GET /:category', function () {
     it('should response 404 if category not exist', function (done) {
       request(app.listen())
