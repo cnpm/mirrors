@@ -61,7 +61,7 @@
     "pedding": "1",
     "should": "7",
     "should-http": "^0.0.2",
-    "sqlite3": "3",
+    "sqlite3": "4",
     "supertest": "1"
   },
   "engine": {
