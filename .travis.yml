@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - "6"
-  - "4"
+  - "stable"
+  - "10"
 script: "make test-travis-all"
 after_script: "npm i codecov && codecov"
