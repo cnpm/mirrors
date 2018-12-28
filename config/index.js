@@ -257,6 +257,7 @@ var config = {
       enable: true,
       // interval: ms('5m'),
       disturl: 'https://nwjs2.s3.amazonaws.com',
+      downloadHost: 'https://dl.nwjs.io',
       description: 'lets you call all Node.js modules directly from DOM and enables a new way of writing applications with all Web technologies.',
       syncerClass: 'nw',
       // for mirrors
