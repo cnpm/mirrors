@@ -17,3 +17,5 @@ dump.rdb
 .tmp
 config/config.js
 config/config_bak.js
+
+package-lock.json

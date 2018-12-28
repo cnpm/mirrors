@@ -29,6 +29,7 @@ test: install init-database
 		--require should \
 		--require should-http \
 		--require co-mocha \
+		--require intelli-espower-loader \
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
@@ -50,6 +51,7 @@ test-cov cov: install init-database
 		--require should \
 		--require should-http \
 		--require co-mocha \
+		--require intelli-espower-loader \
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
@@ -70,6 +72,7 @@ test-travis: install init-database
 		--require should \
 		--require should-http \
 		--require co-mocha \
+		--require intelli-espower-loader \
 		$(MOCHA_OPTS) \
 		$(TESTS)
 

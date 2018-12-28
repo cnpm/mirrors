@@ -18,6 +18,7 @@ function NWSyncer(options) {
     return new NWSyncer(options);
   }
   Syncer.call(this, options);
+  this.downloadHost = 'https://dl.nwjs.io';
 }
 
 util.inherits(NWSyncer, Syncer);
@@ -42,9 +43,9 @@ proto.listdir = function* (fullname) {
 
   var html = res.data || '';
   var items = [];
-  // http://nwjs.s3-us-west-2.amazonaws.com/?delimiter=/&prefix=
-  // http://nwjs.s3-us-west-2.amazonaws.com/?delimiter=/&prefix=v0.12.3/
-  // http://nwjs.s3-us-west-2.amazonaws.com/?delimiter=/&prefix=v0.16.0/x64/
+  // https://nwjs2.s3.amazonaws.com/?delimiter=/&prefix=
+  // https://nwjs2.s3.amazonaws.com/?delimiter=/&prefix=v0.12.3/
+  // https://nwjs2.s3.amazonaws.com/?delimiter=/&prefix=v0.16.0/x64/
   // <CommonPrefixes><Prefix>v0.13.0/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>v0.13.1/</Prefix></CommonPrefixes>
   var dirRe = /<CommonPrefixes><Prefix>([^<]+)<\/Prefix><\/CommonPrefixes>/g;
   while (true) {
@@ -110,6 +111,7 @@ proto.listdir = function* (fullname) {
       size: size,
       type: 'file',
       parent: fullname,
+      downloadURL: this.downloadHost + fullname + name
     });
   }
 

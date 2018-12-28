@@ -5,7 +5,7 @@ const app = require('../../../../app');
 const cacheRef = require('../../../../controllers/apis/nodesecurity/advisories')._cacheRef;
 const mm = require('mm');
 
-describe('test/controllers/apis/nodesecurity/advisories.test.js', () => {
+describe.skip('test/controllers/apis/nodesecurity/advisories.test.js', () => {
   afterEach(mm.restore);
   describe('GET /apis/:category', () => {
     it('should response 200 at the first time', done => {
