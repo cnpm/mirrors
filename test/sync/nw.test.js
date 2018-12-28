@@ -12,6 +12,7 @@ describe('test/sync/nw.test.js', function () {
     it('should list versions ', function *() {
       var items = yield syncer.listdir('/v0.35.0/');
       assert(items[1].name == 'SHASUMS256.txt')
+      assert(items[1].downloadURL.indexOf('https://dl.nwjs.io') !== -1)
     });
   });
 });

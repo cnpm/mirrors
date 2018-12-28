@@ -40,7 +40,6 @@ function Syncer(options) {
   this.category = options.category;
   this.distService = distService;
   this.logger = logger;
-  this.options = options;
 }
 
 var proto = Syncer.prototype;

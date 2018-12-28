@@ -18,6 +18,7 @@ function NWSyncer(options) {
     return new NWSyncer(options);
   }
   Syncer.call(this, options);
+  this.downloadHost = 'https://dl.nwjs.io';
 }
 
 util.inherits(NWSyncer, Syncer);
@@ -110,7 +111,7 @@ proto.listdir = function* (fullname) {
       size: size,
       type: 'file',
       parent: fullname,
-      downloadURL: this.options.downloadHost + fullname + name
+      downloadURL: this.downloadHost + fullname + name
     });
   }
 
