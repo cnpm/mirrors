@@ -98,8 +98,8 @@ proto.listdir = function* (fullname) {
     }
     var date = match[2];
     var size = Number(match[4]);
-    // ignore file > 100MB
-    if (size > 104857600) {
+    // ignore file > 200MB
+    if (size > 209715200) {
       continue;
     }
 
