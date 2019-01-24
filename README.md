@@ -28,6 +28,7 @@ mirrors everything
 ```bash
 $ npm install mirrors
 ```
+
 ## Contributing
 
 1. `make test`
@@ -35,6 +36,12 @@ $ npm install mirrors
 
 For more information about how to run the project, see Makefile.
 
+## Development run
+
+1. `make init-database`
+2. `node dispatch.js`
+3. You can alternatively choose which one you wanna sync in `config.categories` in `config/index.js`
+4. If you wanna visit 7001 port, change `bindingHost` to `0.0.0.0` in `config/index.js`
 
 ## Usage
 

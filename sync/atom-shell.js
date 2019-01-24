@@ -50,17 +50,14 @@ proto.listdir = function* (fullname) {
     }
 
     if (!this.versionsMap) {
-      // make sure version exists on https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json
-      var indexJSONUrl = 'https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json';
-      var versions = yield urllib.request(indexJSONUrl, {
+      // make sure version exists on https://registry.npmjs.com/electron
+      var pkgUrl = 'https://registry.npmjs.com/electron';
+      var pkgRes = yield urllib.request(pkgUrl, {
         dataType: 'json',
         timeout: 20000,
       });
-      this.versionsMap = {};
-      for (var i = 0; i < versions.length; i++) {
-        var item = versions[i];
-        this.versionsMap[item.version] = item;
-      }
+      var pkg = pkgRes.data;
+      this.versionsMap = pkg.versions;
     }
 
     // skip not finished version, wait for all files upload success
@@ -104,8 +101,8 @@ proto.listdir = function* (fullname) {
     }
     var date = match[2];
     var size = Number(match[4]);
-    // ignore file > 100MB
-    if (size > 104857600) {
+    // ignore file > 200MB
+    if (size > 209715200) {
       continue;
     }
 
