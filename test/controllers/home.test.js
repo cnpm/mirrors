@@ -22,6 +22,7 @@ describe('test/controllers/home.test.js', function () {
       .expect(200)
       .expect(/ Mirrors<\/title>/)
       .expect(/Node\.js/)
+      .expect('access-control-allow-origin', '*')
       .expect(/io\.js/, done);
     });
   });

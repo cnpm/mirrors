@@ -26,6 +26,7 @@ describe('test/controllers/dist.test.js', function () {
       .expect(/<title>Node.js Mirror<\/title>/)
       .expect(/Mirror index of/)
       .expect(/\.\./)
+      .expect('access-control-allow-origin', '*')
       .expect(/https:\/\/nodejs\.org\/dist\//, done);
     });
 
@@ -49,6 +50,7 @@ describe('test/controllers/dist.test.js', function () {
       .expect(/\.\./)
       .expect(/<a href="\/node\/latest\/">latest\/<\/a>/)
       .expect(/<a href="\/node\/node-0.0.1.tar.gz">node-0.0.1.tar.gz<\/a>/)
+      .expect('access-control-allow-origin', '*')
       .expect(/https:\/\/nodejs\.org\/dist\//, done);
     });
   });

@@ -18,7 +18,10 @@ app.use(middlewares.rt());
 app.use(middlewares.compress({threshold: 150}));
 app.use(middlewares.conditional());
 app.use(middlewares.etag());
-
+app.use(function* (next) {
+  this.set('access-control-allow-origin', '*');
+  yield next;
+});
 
 middlewares.ejs(app, {
   root: path.join(__dirname, 'views'),
