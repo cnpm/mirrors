@@ -914,6 +914,17 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'tfjs-models': {
+      alwayNewDirIndex: 0,
+      name: 'tfjs-models',
+      category: 'tfjs-models',
+      enable: true,
+      disturl: 'https://storage.googleapis.com/tfjs-models/',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/tensorflow/tfjs-models',
+      description: 'Pretrained models for TensorFlow.js https://js.tensorflow.org'
+    },
   },
 };
 
