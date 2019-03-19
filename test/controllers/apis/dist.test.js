@@ -23,6 +23,7 @@ describe('test/controllers/apis/dist.test.js', function () {
       request(app.listen())
       .get('/apis/node')
       .expect(200)
+      .expect('access-control-allow-origin', '*')
       .expect([], done);
     });
 
