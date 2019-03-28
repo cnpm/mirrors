@@ -925,6 +925,20 @@ var config = {
       url: 'https://github.com/tensorflow/tfjs-models',
       description: 'Pretrained models for TensorFlow.js https://js.tensorflow.org'
     },
+
+    'node-canvas-prebuilt': {
+      name: 'node-canvas-prebuilt',
+      category: 'node-canvas-prebuilt',
+      enable: true,
+      disturl: 'https://github.com/node-gfx/node-canvas-prebuilt/releases',
+      repo: 'node-gfx/node-canvas-prebuilt',
+      url: 'https://github.com/node-gfx/node-canvas-prebuilt',
+      description: 'Repo used to build binaries for node-canvas on CI',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
