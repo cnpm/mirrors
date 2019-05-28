@@ -109,14 +109,14 @@
 
   <h2><a href="https://github.com/mapbox/node-sqlite3" target="_blank">node-sqlite3</a></h2>
   <pre>
-  SQLITE3_BINARY_SITE=<%= baseUrl %>/sqlite3 npm install sqlite3
+  npm install sqlite3 --node_sqlite3_binary_host_mirror=<%= baseUrl %>
   </pre>
 
   <h2><a href="https://github.com/felixrieseberg/windows-build-tools" target="_blank">windows-build-tools</a></h2>
   <pre>
   set "PYTHON_MIRROR=<%= baseUrl %>/python" &amp;&amp; npm install --global --production windows-build-tools
   </pre>
-  
+
   <h2><a href="https://github.com/node-inspector/node-inspector" target="_blank">node-inspector</a></h2>
   <pre>
   # npm version
@@ -126,8 +126,8 @@
   # yarn global version
   npm_config_profiler_binary_host_mirror=<%= baseUrl %>/node-inspector/ yarn global add node-inspector
   </pre>
-  
-  
+
+
 </div>
 <script type="text/javascript">
   document.querySelectorAll && document.querySelectorAll('pre').forEach(function (item) {
