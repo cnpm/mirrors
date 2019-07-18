@@ -41,6 +41,17 @@ proto.check = function (checksums, info) {
   return checksums.size === info.size;
 };
 
+function formatRedirectUrl(url, location) {
+  url = urlutil.resolve(url, location);
+  if (config.githubApiProxy) {
+    url = url.replace('https://api.github.com', config.githubApiProxy);
+  }
+  if (config.githubProxy) {
+    url = url.replace('https://github.com', config.githubProxy);
+  }
+  return url;
+}
+
 proto.listdir = function* (fullname) {
   var result = this._result;
   if (!result) {
@@ -50,6 +61,7 @@ proto.listdir = function* (fullname) {
       gzip: true,
       headers: { authorization: this.authorization },
       followRedirect: true,
+      formatRedirectUrl: formatRedirectUrl,
     });
     debug('listdir %s got %s, %j, releases: %s',
       this.url, result.status, result.headers, result.data.length || '-');
@@ -60,6 +72,7 @@ proto.listdir = function* (fullname) {
         dataType: 'json',
         gzip: true,
         followRedirect: true,
+        formatRedirectUrl: formatRedirectUrl,
       });
       debug('listdir %s got %s, %j, releases: %s',
         this.url, result.status, result.headers, result.data.length || '-');

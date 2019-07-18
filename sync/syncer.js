@@ -14,6 +14,7 @@ var crypto = require('crypto');
 var urllib = require('urllib');
 var bytes = require('bytes');
 var fs = require('fs');
+var urlutil = require('url');
 
 module.exports = Syncer;
 
@@ -127,7 +128,17 @@ proto.syncFile = function* (info) {
     timeout: 6000000, // 100 minutes download
     headers: {
       'user-agent': config.ua
-    }
+    },
+    formatRedirectUrl: function(url, location) {
+      url = urlutil.resolve(url, location);
+      if (config.githubApiProxy) {
+        url = url.replace('https://api.github.com', config.githubApiProxy);
+      }
+      if (config.githubProxy) {
+        url = url.replace('https://github.com', config.githubProxy);
+      }
+      return url;
+    },
   };
 
   if (urlParse(downurl).host === 'api.github.com') {
