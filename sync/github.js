@@ -3,6 +3,7 @@
 var debug = require('debug')('mirrors:sync:github');
 var util = require('util');
 var urllib = require('urllib');
+var urlutil = require('url');
 var config = require('../config');
 var utils = require('../lib/utils');
 var Syncer = require('./syncer');
