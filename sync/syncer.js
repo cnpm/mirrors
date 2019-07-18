@@ -114,6 +114,13 @@ proto.syncFile = function* (info) {
   var filepath = utils.getTarballFilepath(name);
   var ws = fs.createWriteStream(filepath);
 
+  if (config.githubApiProxy) {
+    downurl = downurl.replace('https://api.github.com', config.githubApiProxy);
+  }
+  if (config.githubProxy) {
+    downurl = downurl.replace('https://github.com', config.githubProxy);
+  }
+
   var options = {
     writeStream: ws,
     followRedirect: true,
