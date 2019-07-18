@@ -3,6 +3,7 @@
 var debug = require('debug')('mirrors:sync:github');
 var util = require('util');
 var urllib = require('urllib');
+var config = require('../config');
 var utils = require('../lib/utils');
 var Syncer = require('./syncer');
 
@@ -14,7 +15,13 @@ function GithubSyncer(options) {
   }
   Syncer.call(this, options);
   this.url = util.format('https://api.github.com/repos/%s/releases', options.repo);
+  if (config.githubApiProxy) {
+    this.url = this.url.replace('https://api.github.com', config.githubApiProxy);
+  }
   this.archiveUrl = util.format('https://github.com/%s/archive/', options.repo);
+  if (config.githubProxy) {
+    this.archiveUrl = this.archiveUrl.replace('https://github.com', config.githubProxy);
+  }
   this.authorization = utils.getGithubBasicAuth();
   this._retryOn403 = !!options.retryOn403;
   this.max = options.max;
