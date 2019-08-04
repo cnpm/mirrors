@@ -63,11 +63,21 @@ proto.listdiff = function* (fullname, dirIndex) {
     throw new Error(util.format('get %s resposne %s', this._npmPackageUrl, result.status));
   }
 
-  var nodePlatforms = [
-    'osx64', 'mac', 'darwin', 'darwin-x64',
-    'linux-x64', 'linux64', 'linux',
-    'win32-ia32', 'win32-x64', 'win32', 'win64', 'win',
-  ];
+  // https://cdn.cypress.io/desktop/
+  var mapping = {
+    mac: 'darwin-x64',
+    darwin: 'darwin-x64',
+    'darwin-x64': 'darwin-x64',
+
+    linux: 'linux-x64',
+    linux64: 'linux-x64',
+    'linux-x64': 'linux-x64',
+
+    win: 'win32-ia32',
+    win32: 'win32-ia32',
+    'win32-ia32': 'win32-ia32',
+    'win32-x64': 'win32-x64',
+  };
   var items = [];
   for (var i = 0; i < needs.length; i++) {
     var pkg = needs[i];
@@ -95,19 +105,20 @@ proto.listdiff = function* (fullname, dirIndex) {
     // "linux64": {
     // "url": "https://cdn.cypress.io/desktop/3.4.1/linux-x64/cypress.zip"
     // },
-    for (var p = 0; p < nodePlatforms.length; p++) {
-      var nodePlatform = nodePlatforms[p];
+    for (var p in mapping) {
+      var nodePlatform = mapping[p];
       // dir
       items.push({
-        name: nodePlatform + '/',
+        name: p + '/',
         date: date,
         size: '-',
         type: 'dir',
         parent: dirParent,
       });
 
-      var fileParent = dirParent + nodePlatform + '/';
-      var downloadURL = this._storeUrl + fileParent + 'cypress.zip';
+      var fileParent = dirParent + p + '/';
+      var urlParent = dirParent + nodePlatform + '/';
+      var downloadURL = this._storeUrl + urlParent + 'cypress.zip';
       debug(downloadURL, fileParent, date);
       items.push({
         name: 'cypress.zip',
