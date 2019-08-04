@@ -63,7 +63,11 @@ proto.listdiff = function* (fullname, dirIndex) {
     throw new Error(util.format('get %s resposne %s', this._npmPackageUrl, result.status));
   }
 
-  var nodePlatforms = [ 'osx64', 'win64', 'linux64' ];
+  var nodePlatforms = [
+    'osx64', 'mac', 'darwin', 'darwin-x64',
+    'linux-x64', 'linux64', 'linux',
+    'win32-ia32', 'win32-x64', 'win32', 'win64', 'win',
+  ];
   var items = [];
   for (var i = 0; i < needs.length; i++) {
     var pkg = needs[i];
@@ -81,6 +85,16 @@ proto.listdiff = function* (fullname, dirIndex) {
     // https://cdn.cypress.io/desktop/3.0.1/osx64/cypress.zip
     // https://cdn.cypress.io/desktop/3.0.1/win64/cypress.zip
     // https://cdn.cypress.io/desktop/3.0.1/linux64/cypress.zip
+    // new format
+    // "mac": {
+    // "url": "https://cdn.cypress.io/desktop/3.4.1/darwin-x64/cypress.zip"
+    // },
+    // "win": {
+    // "url": "https://cdn.cypress.io/desktop/3.4.1/win32-ia32/cypress.zip"
+    // },
+    // "linux64": {
+    // "url": "https://cdn.cypress.io/desktop/3.4.1/linux-x64/cypress.zip"
+    // },
     for (var p = 0; p < nodePlatforms.length; p++) {
       var nodePlatform = nodePlatforms[p];
       // dir
