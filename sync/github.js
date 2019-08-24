@@ -23,6 +23,11 @@ function GithubSyncer(options) {
   if (config.githubProxy) {
     this.archiveUrl = this.archiveUrl.replace('https://github.com', config.githubProxy);
   }
+  // download tgz source or not, default is false
+  if (options.needSourceCode === undefined) {
+    options.needSourceCode = false;
+  }
+  this.needSourceCode = options.needSourceCode;
   this.authorization = utils.getGithubBasicAuth();
   this._retryOn403 = !!options.retryOn403;
   this.max = options.max;
@@ -98,28 +103,30 @@ proto.listdir = function* (fullname) {
 proto.parseRelease = function (fullname, release) {
   var items = [];
   var name;
-  if (release.tarball_url) {
-    name = release.tag_name + '.tar.gz';
-    items.push({
-      name: name,
-      date: release.created_at,
-      size: null,
-      type: 'file',
-      downloadURL: this.archiveUrl + name,
-      parent: fullname
-    });
-  }
+  if (this.needSourceCode) {
+    if (release.tarball_url) {
+      name = release.tag_name + '.tar.gz';
+      items.push({
+        name: name,
+        date: release.created_at,
+        size: null,
+        type: 'file',
+        downloadURL: this.archiveUrl + name,
+        parent: fullname
+      });
+    }
 
-  if (release.zipball_url) {
-    name = release.tag_name + '.zip';
-    items.push({
-      name: name,
-      date: release.created_at,
-      size: null,
-      type: 'file',
-      downloadURL: this.archiveUrl + name,
-      parent: fullname
-    });
+    if (release.zipball_url) {
+      name = release.tag_name + '.zip';
+      items.push({
+        name: name,
+        date: release.created_at,
+        size: null,
+        type: 'file',
+        downloadURL: this.archiveUrl + name,
+        parent: fullname
+      });
+    }
   }
 
   if (release.assets) {

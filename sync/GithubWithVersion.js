@@ -44,28 +44,30 @@ proto.parseRelease = function (fullname, release) {
     return items;
   }
 
-  if (release.tarball_url) {
-    name = release.tag_name + '.tar.gz';
-    items.push({
-      name: name,
-      date: release.created_at,
-      size: null,
-      type: 'file',
-      downloadURL: this.archiveUrl + name,
-      parent: fullname
-    });
-  }
+  if (this.needSourceCode) {
+    if (release.tarball_url) {
+      name = release.tag_name + '.tar.gz';
+      items.push({
+        name: name,
+        date: release.created_at,
+        size: null,
+        type: 'file',
+        downloadURL: this.archiveUrl + name,
+        parent: fullname
+      });
+    }
 
-  if (release.zipball_url) {
-    name = release.tag_name + '.zip';
-    items.push({
-      name: name,
-      date: release.created_at,
-      size: null,
-      type: 'file',
-      downloadURL: this.archiveUrl + name,
-      parent: fullname
-    });
+    if (release.zipball_url) {
+      name = release.tag_name + '.zip';
+      items.push({
+        name: name,
+        date: release.created_at,
+        size: null,
+        type: 'file',
+        downloadURL: this.archiveUrl + name,
+        parent: fullname
+      });
+    }
   }
 
   if (release.assets) {
