@@ -7,7 +7,9 @@
     "test": "make test",
     "start": "./bin/nodejsctl start",
     "status": "./bin/nodejsctl status",
-    "stop": "./bin/nodejsctl stop"
+    "stop": "./bin/nodejsctl stop",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "mirror",
@@ -49,7 +51,8 @@
     "thunkify-wrap": "^1.0.4",
     "urllib": "^2.5.0",
     "utility": "^1.5.0",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "autod": "2",
@@ -68,5 +71,6 @@
   },
   "engine": {
     "node": ">=8"
-  }
+  },
+  "snyk": true
 }
