@@ -957,6 +957,22 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'node-swc': {
+      name: 'node-swc',
+      category: 'node-swc',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/swc-project/node-swc/releases',
+      repo: 'swc-project/node-swc',
+      url: 'https://github.com/swc-project/node-swc',
+      description: 'nodejs binding for the swc project.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
