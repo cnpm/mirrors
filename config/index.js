@@ -109,6 +109,20 @@ var config = {
 
   // sync categories
   categories: {
+    // from github released
+    npm: {
+      name: 'NPM',
+      category: 'npm',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/npm/cli/releases',
+      repo: 'npm/cli',
+      url: 'https://npmjs.com',
+      description: 'a JavaScript package manager.',
+      syncerClass: 'github',
+      needSourceCode: true,
+    },
+
     node: {
       name: 'Node.js',
       category: 'node',
@@ -185,18 +199,6 @@ var config = {
       description: 'is a headless WebKit scriptable with a JavaScript API.',
       disturl: 'https://bitbucket.org/ariya/phantomjs/downloads',
       url: 'http://phantomjs.org'
-    },
-    // from github released
-    npm: {
-      name: 'NPM',
-      category: 'npm',
-      enable: true,
-      // interval: ms('5m'),
-      disturl: 'https://github.com/npm/cli/releases',
-      repo: 'npm/cli',
-      url: 'https://npmjs.com',
-      description: 'a JavaScript package manager.',
-      syncerClass: 'github',
     },
     electron: {
       name: 'electron',

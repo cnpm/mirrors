@@ -55,6 +55,8 @@ Object.keys(syncers).forEach(function (name) {
   }
 
   var syncInterval = item.interval || config.syncInterval;
+  // add random times
+  syncInterval += parseInt(Math.random() * 120000);
   logger.syncInfo('enable sync %s from %s every %dms',
   item.Syncer.name, item.disturl, syncInterval);
 
@@ -64,12 +66,13 @@ Object.keys(syncers).forEach(function (name) {
     }
     item.syncing = true;
     item.repo = item.repo || item.githubRepo;
-    logger.syncInfo('Start sync task for %s', item.category);
+    logger.syncInfo('[%s] Start sync task for %s', item.category, item.category);
     var syncer = new item.Syncer(item);
 
     try {
       yield syncer.start();
     } catch (err) {
+      logger.syncInfo('[%s] stop sync, error: %s', item.category, err);
       err.message += ' (sync ' + item.category + ' dist error)';
       logger.syncError(err);
       console.error(err.stack);
