@@ -66,12 +66,13 @@ Object.keys(syncers).forEach(function (name) {
     }
     item.syncing = true;
     item.repo = item.repo || item.githubRepo;
-    logger.syncInfo('Start sync task for %s', item.category);
+    logger.syncInfo('[%s] Start sync task for %s', item.category, item.category);
     var syncer = new item.Syncer(item);
 
     try {
       yield syncer.start();
     } catch (err) {
+      logger.syncInfo('[%s] stop sync, error: %s', item.category, err);
       err.message += ' (sync ' + item.category + ' dist error)';
       logger.syncError(err);
       console.error(err.stack);
