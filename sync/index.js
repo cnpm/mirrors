@@ -55,6 +55,8 @@ Object.keys(syncers).forEach(function (name) {
   }
 
   var syncInterval = item.interval || config.syncInterval;
+  // add random times
+  syncInterval += parseInt(Math.random() * 120000);
   logger.syncInfo('enable sync %s from %s every %dms',
   item.Syncer.name, item.disturl, syncInterval);
 

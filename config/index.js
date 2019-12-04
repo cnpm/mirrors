@@ -197,6 +197,7 @@ var config = {
       url: 'https://npmjs.com',
       description: 'a JavaScript package manager.',
       syncerClass: 'github',
+      needSourceCode: true,
     },
     electron: {
       name: 'electron',

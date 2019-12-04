@@ -116,6 +116,9 @@ proto.listdir = function* () {
       parent = '/' + parent;
     }
     // file
+    // [2019-12-04 20:27:46.926][16698] [node-inspector] download https://node-inspector.s3.amazonaws.com/AWSLogs/077447786745/CloudTrail/us-west-2/2015/12/10/077447786745_CloudTrail_us-west-2_20151210T1015Z_JNWlbeBTILiSzPCq.json.gz got status 403, headers: {"x-amz-request-id":"7A95FC5713F0E446","x-amz-id-2":"vXPN5jaCmaq2lxEPzsACF9dyzo1xM9ATZqEDKnv794tqlvXYATrBZd6Xol/KgXPN93feyx18ttU=","content-type":"application/xml","transfer-encoding":"chunked","date":"Wed, 04 Dec 2019 12:27:46 GMT","server":"AmazonS3"}
+    if (downloadURL.indexOf('/AWSLogs/') > 0) continue;
+
     items.push({
       name: name,
       size: size,
