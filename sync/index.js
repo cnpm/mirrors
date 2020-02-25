@@ -11,6 +11,8 @@ var syncers = config.categories;
 
 function onerror(err) {
   logger.error(err);
+  logger.syncError(err);
+  console.error(err.stack);
 }
 
 for (var key in syncers) {

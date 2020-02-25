@@ -34,4 +34,8 @@ logger.syncError =function () {
     delete args[0].data;
   }
   logger.dist_sync_error.apply(logger, arguments);
+  if (!process.env.NODE_ENV) {
+    // local env
+    console.log.apply(console, arguments);
+  }
 };

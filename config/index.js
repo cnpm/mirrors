@@ -543,6 +543,16 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    sqlcipher: {
+      name: 'sqlcipher',
+      category: 'sqlcipher',
+      enable: true,
+      disturl: 'https://journeyapps-node-binary.s3.amazonaws.com/@journeyapps/sqlcipher/',
+      url: 'https://github.com/journeyapps/node-sqlcipher',
+      description: 'SQLCipher bindings for Node https://journeyapps.com',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     'chromium-browser-snapshots': {
       name: 'chromium-browser-snapshots',
       category: 'chromium-browser-snapshots',
