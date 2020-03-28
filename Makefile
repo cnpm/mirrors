@@ -22,7 +22,7 @@ init-mysql:
 	@mysql -uroot -e 'DROP DATABASE IF EXISTS mirrors_test;'
 	@mysql -uroot -e 'CREATE DATABASE mirrors_test;'
 
-test: install init-database
+test: init-database
 	@NODE_ENV=test DB=${DB} node_modules/.bin/mocha \
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
