@@ -23,10 +23,22 @@ mirrors
 
 mirrors everything
 
-## Installation
+## Usage
+
+### electron-builder
 
 ```bash
-$ npm install mirrors
+# windows
+ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ \
+  ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --win
+
+# linux
+ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ \
+  ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --linux
+
+# macOS
+ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ \
+  ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --mac
 ```
 
 ## Contributing
