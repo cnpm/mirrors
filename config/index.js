@@ -217,21 +217,21 @@ var config = {
       // retry on 403 response
       retryOn403: true,
     },
-    // 'electron-builder-binaries': {
-    //   name: 'electron-builder-binaries',
-    //   category: 'electron-builder-binaries',
-    //   enable: true,
-    //   disturl: 'https://github.com/electron-userland/electron-builder-binaries/releases',
-    //   repo: 'electron-userland/electron-builder',
-    //   url: 'https://github.com/electron-userland/electron-builder',
-    //   description: 'A complete solution to package and build a ready for distribution Electron app with “auto update” support out of the box.',
-    //   syncerClass: 'GithubWithVersion',
-    //   needFormatTagName: false,
-    //   // for mirrors
-    //   alwayNewDirIndex: 0,
-    //   // retry on 403 response
-    //   retryOn403: true,
-    // },
+    'electron-builder-binaries': {
+      name: 'electron-builder-binaries',
+      category: 'electron-builder-binaries',
+      enable: true,
+      disturl: 'https://github.com/electron-userland/electron-builder-binaries/releases',
+      repo: 'electron-userland/electron-builder-binaries',
+      url: 'https://github.com/electron-userland/electron-builder-binaries',
+      description: 'A complete solution to package and build a ready for distribution Electron app with “auto update” support out of the box.',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+      // retry on 403 response
+      retryOn403: true,
+    },
     'atom-shell': {
       name: 'atom-shell',
       category: 'atom-shell',
