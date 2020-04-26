@@ -1,6 +1,7 @@
 'use strict';
 
 var debug = require('debug')('mirrors:sync:syncer');
+var sleep = require('mz-modules/sleep');
 var distService = require('../services/dist');
 var logger = require('../common/logger');
 var thunkify = require('thunkify-wrap');
@@ -159,6 +160,24 @@ proto.syncFile = function* (info) {
       logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
       debug('%s %s', statusCode, downurl);
       return;
+    }
+
+    if (statusCode === 429) {
+      // too many requests
+      logger.syncInfo('[%s] status 429, retry after 20s, headers: %j',
+        this.category, statusCode, r.headers);
+      yield sleep(20000);
+      r = yield urllib.request(downurl, options);
+      statusCode = r.status || -1;
+      logger.syncInfo('[%s] download %s got status %s, headers: %j',
+        this.category, downurl, statusCode, r.headers);
+
+      if (statusCode === 404 || statusCode === 403) {
+        // 403: https://iojs.org/dist/v1.0.2/doc/doc
+        logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
+        debug('%s %s', statusCode, downurl);
+        return;
+      }
     }
 
     if (statusCode !== 200) {
