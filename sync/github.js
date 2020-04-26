@@ -74,7 +74,7 @@ proto.listdir = function* (fullname) {
       this.url, result.status, result.headers, result.data.length || '-');
 
     if ((result.status === 403 || result.status === 429) && this._retryOn403) {
-      logger.syncInfo('[%s] request %s status: %s, retry after 20s, headers: %j',
+      this.logger.syncInfo('[%s] request %s status: %s, retry after 20s, headers: %j',
         this.category, this.url, result.status, result.headers);
       yield sleep(20000);
       result = yield urllib.request(this.url, {
