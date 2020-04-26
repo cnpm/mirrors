@@ -97,7 +97,7 @@ proto.syncDir = function* (fullname, dirIndex) {
  * @param {Object} info
  */
 
-proto.syncFile = function* (info) {
+proto.syncFile = function* (info, retry) {
   debug('start sync file %j', info);
   var name = '/' + this.category + info.parent + info.name;
   name = process.pid + name.replace(/\//g, '_'); // make sure no parent dir
@@ -162,22 +162,12 @@ proto.syncFile = function* (info) {
       return;
     }
 
-    if (statusCode === 429) {
+    if (statusCode === 429 && !retry) {
       // too many requests
       logger.syncInfo('[%s] status 429, retry after 20s, headers: %j',
         this.category, statusCode, r.headers);
       yield sleep(20000);
-      r = yield urllib.request(downurl, options);
-      statusCode = r.status || -1;
-      logger.syncInfo('[%s] download %s got status %s, headers: %j',
-        this.category, downurl, statusCode, r.headers);
-
-      if (statusCode === 404 || statusCode === 403) {
-        // 403: https://iojs.org/dist/v1.0.2/doc/doc
-        logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
-        debug('%s %s', statusCode, downurl);
-        return;
-      }
+      return yield this.syncFile(info, true);
     }
 
     if (statusCode !== 200) {
