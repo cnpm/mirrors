@@ -36,10 +36,11 @@ proto.listdir = function* (fullname, dirIndex) {
   }
   var url = this.disturl + fullname;
 
-  var res = yield urllib.requestThunk(url, {
+  var res = yield urllib.request(url, {
     timeout: 60000,
     dataType: 'json',
     followRedirect: true,
+    gzip: true,
   });
   debug('listdir %s got %s, %j', url, res.status, res.headers);
   if (res.status !== 200) {
