@@ -985,6 +985,23 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+
+    'xprofiler': {
+      name: 'xprofiler',
+      category: 'xprofiler',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/X-Profiler/xprofiler/releases',
+      repo: 'X-Profiler/xprofiler',
+      url: 'https://github.com/X-Profiler/xprofiler',
+      description: '🌀An addon for node.js, which supporting output performance log and real-time profiling through sampling.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+      needSourceCode: false,
+    },
   },
 };
 
