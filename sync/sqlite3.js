@@ -104,7 +104,6 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
             name: downloadItem.name,
           });
         }
-      }
         continue;
       }
       for (var a = 0; a < nodeAbiVersions.length; a++) {
