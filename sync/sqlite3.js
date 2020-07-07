@@ -86,8 +86,27 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
 
     var fileParent = fullname + pkg.dirname + '/';
     fileParent = fileParent.replace('//', '/');
+    var napiVersions = pkg.binary && pkg.binary.napi_versions || [];
     for (var p = 0; p < nodePlatforms.length; p++) {
       var nodePlatform = nodePlatforms[p];
+      if (napiVersions.length > 0) {
+        for (var a = 0; a < napiVersions.length; a++) {
+          var napiVersion = napiVersions[a];
+          var downloadItem = this.formatDownloadItemWithNAPI(fileParent, pkg, napiVersion, nodePlatform);
+          debug(downloadItem);
+          if (!downloadItem) continue;
+          items.push({
+            date: date,
+            size: null,
+            type: 'file',
+            parent: fileParent,
+            downloadURL: downloadItem.downloadURL,
+            name: downloadItem.name,
+          });
+        }
+      }
+        continue;
+      }
       for (var a = 0; a < nodeAbiVersions.length; a++) {
         var nodeAbiVersion = nodeAbiVersions[a];
         var downloadItem = this.formatDownloadItem(fileParent, pkg, nodeAbiVersion, nodePlatform);
@@ -123,6 +142,27 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
 
 proto.formatDownloadItem = function(fileParent, pkg, nodeAbiVersion, nodePlatform) {
   var name = 'node-' + nodeAbiVersion + '-' + nodePlatform + '-x64.tar.gz';
+  var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
+  if (this.formatDownloadUrl) {
+    downloadURL = this.formatDownloadUrl(pkg, nodeAbiVersion, nodePlatform, name);
+  }
+
+  return {
+    name: name,
+    // size: null,
+    downloadURL: downloadURL,
+  };
+};
+
+proto.formatDownloadItemWithNAPI = function(fileParent, pkg, napiVersion, nodePlatform) {
+  // >= 5.0.0
+  // "package_name": "napi-v{napi_build_version}-{platform}-{arch}.tar.gz",
+  // https://cdn.npm.taobao.org/dist/sqlite3/v5.0.0/napi-v3-linux-x64.tar.gz
+  // https://github.com/mapbox/node-sqlite3/blob/29debf3ad7d052427541503d871d6c69ed8588a7/package.json#L16
+  // "napi_versions": [
+  //   3
+  // ]
+  var name = 'napi-v' + napiVersion + '-' + nodePlatform + '-x64.tar.gz';
   var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
   if (this.formatDownloadUrl) {
     downloadURL = this.formatDownloadUrl(pkg, nodeAbiVersion, nodePlatform, name);
