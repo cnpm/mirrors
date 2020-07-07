@@ -165,7 +165,7 @@ proto.formatDownloadItemWithNAPI = function(fileParent, pkg, napiVersion, nodePl
   var name = 'napi-v' + napiVersion + '-' + nodePlatform + '-x64.tar.gz';
   var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
   if (this.formatDownloadUrl) {
-    downloadURL = this.formatDownloadUrl(pkg, nodeAbiVersion, nodePlatform, name);
+    downloadURL = this.formatDownloadUrl(pkg, napiVersion, nodePlatform, name);
   }
 
   return {
