@@ -945,6 +945,20 @@ var config = {
       alwayNewDirIndex: 0,
     },
 
+    'looksgood-s2': {
+      name: 'looksgood-s2',
+      category: 'looksgood-s2',
+      enable: true,
+      disturl: 'https://github.com/looksgood/s2/releases',
+      repo: 'looksgood/s2',
+      url: 'https://github.com/looksgood/s2',
+      description: 'Node.js JavaScript & TypeScript bindings for Google S2.',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
     'tfjs-models': {
       alwayNewDirIndex: 0,
       name: 'tfjs-models',
