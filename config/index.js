@@ -970,6 +970,17 @@ var config = {
       description: 'Pretrained models for TensorFlow.js https://js.tensorflow.org'
     },
 
+    tensorflow: {
+      alwayNewDirIndex: 0,
+      name: 'tensorflow',
+      category: 'tensorflow',
+      enable: true,
+      disturl: 'https://storage.googleapis.com/tensorflow/',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/tensorflow/tfjs/blob/master/tfjs-node/scripts/install.js#L45',
+      description: 'tensorflow binaries'
+    },
+
     'node-canvas-prebuilt': {
       name: 'node-canvas-prebuilt',
       category: 'node-canvas-prebuilt',
