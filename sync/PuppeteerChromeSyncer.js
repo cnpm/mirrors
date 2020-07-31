@@ -71,12 +71,12 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
     chromium_revisions[puppeteerInfo.chromium_revision] = publish_time;
   }
   // https://unpkg.com/puppeteer@5.1.0/lib/cjs/revisions.js
-  // https://unpkg.com/puppeteer@latest/lib/cjs/revisions.js
+  // https://unpkg.com/puppeteer@latest/lib/cjs/puppeteer/revisions.js
   // exports.PUPPETEER_REVISIONS = {
   //   chromium: '768783',
   //   firefox: 'latest',
   // };
-  const unpkgURL = 'https://unpkg.com/puppeteer@latest/lib/cjs/revisions.js';
+  const unpkgURL = 'https://unpkg.com/puppeteer@latest/lib/cjs/puppeteer/revisions.js';
   const unpkgResult = yield urllib.request(unpkgURL, {
     timeout: 60000,
     gzip: true,
