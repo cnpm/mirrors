@@ -84,7 +84,7 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
   });
   const m = /chromium:\s+\'(\d+)\'\,/.exec(unpkgResult.data.toString());
   if (m && !chromium_revisions[m[1]]) {
-    chromium_revisions[m[1]] = JSON.stringify(new Date());
+    chromium_revisions[m[1]] = new Date();
   }
 
   const needs = [];
