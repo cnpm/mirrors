@@ -618,6 +618,20 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    robotjs: {
+      name: 'robotjs',
+      category: 'robotjs',
+      enable: true,
+      disturl: 'https://github.com/octalmage/robotjs/releases',
+      repo: 'octalmage/robotjs',
+      url: 'https://github.com/octalmage/robotjs',
+      description: 'Node.js Desktop Automation.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     poi: {
       name: 'poi',
       category: 'poi',
