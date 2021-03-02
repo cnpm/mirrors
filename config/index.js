@@ -1020,6 +1020,20 @@ var config = {
       alwayNewDirIndex: 0,
     },
 
+    'canvas': {
+      name: 'canvas',
+      category: 'node-canvas-prebuilt',
+      enable: true,
+      disturl: 'https://github.com/Automattic/node-canvas/releases',
+      repo: 'Automattic/node-canvas',
+      url: 'https://github.com/Automattic/node-canvas',
+      description: 'Repo used to build binaries for node-canvas on CI',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
     'node-swc': {
       name: 'node-swc',
       category: 'node-swc',
