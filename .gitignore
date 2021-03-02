@@ -12,6 +12,7 @@ node_modules
 
 dump.rdb
 .DS_Store
+.idea
 
 .dist
 .tmp
