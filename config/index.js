@@ -256,6 +256,21 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'nodejieba': {
+      name: 'nodejieba',
+      category: 'nodejieba',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/yanyiwu/nodejieba/releases',
+      repo: 'yanyiwu/nodejieba',
+      url: 'https://github.com/yanyiwu/nodejieba',
+      description: 'chinese word segmentation for node',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     'git-for-windows': {
       name: 'git-for-windows',
       category: 'git-for-windows',
