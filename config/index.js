@@ -1066,6 +1066,18 @@ var config = {
       alwayNewDirIndex: 0,
       needSourceCode: false,
     },
+
+    prisma: {
+      name: 'prisma',
+      category: 'prisma',
+      enable: true,
+      disturl: 'https://binaries.prisma.sh',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/prisma/prisma',
+      description: 'Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server & SQLite',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
