@@ -1093,6 +1093,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'argon2': {
+      name: 'argon2',
+      category: 'argon2',
+      enable: true,
+      disturl: 'https://github.com/ranisalt/node-argon2/releases',
+      repo: 'ranisalt/node-argon2',
+      url: 'https://github.com/ranisalt/node-argon2',
+      description: 'Node.js bindings for Argon2 hashing algorithm',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
