@@ -1106,6 +1106,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    'ali-zeromq': {
+      name: 'ali-zeromq',
+      category: 'ali-zeromq',
+      enable: true,
+      disturl: 'https://github.com/looksgood/zeromq.js/releases',
+      repo: 'looksgood/zeromq.js',
+      url: 'https://github.com/looksgood/zeromq.js',
+      description: 'Node.js bindings for zeromp',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
