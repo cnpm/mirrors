@@ -81,6 +81,7 @@ proto.listdir = function* (fullname) {
         timeout: 60000,
         dataType: 'json',
         gzip: true,
+        headers: { authorization: this.authorization },
         followRedirect: true,
         formatRedirectUrl: formatRedirectUrl,
       });
