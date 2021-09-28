@@ -1119,6 +1119,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    iohook: {
+      name: 'iohook',
+      category: 'iohook',
+      enable: false,
+      disturl: 'https://github.com/wilix-team/iohook/releases',
+      repo: 'wilix-team/iohook',
+      url: 'https://github.com/wilix-team/iohook',
+      description: 'Node.js global native keyboard and mouse listener.',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
