@@ -50,14 +50,17 @@ proto.listdir = function* (fullname) {
     }
 
     if (!this.versionsMap) {
-      // make sure version exists on https://registry.npmjs.com/electron
-      var pkgUrl = 'https://registry.npmjs.com/electron';
-      var pkgRes = yield urllib.request(pkgUrl, {
+      // make sure version exists on https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json
+      var indexJSONUrl = 'https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist/index.json';
+      var versions = yield urllib.request(indexJSONUrl, {
         dataType: 'json',
         timeout: 20000,
       });
-      var pkg = pkgRes.data;
-      this.versionsMap = pkg.versions;
+      this.versionsMap = {};
+      for (var i = 0; i < versions.length; i++) {
+        var item = versions[i];
+        this.versionsMap[item.version] = item;
+      }
     }
 
     // skip not finished version, wait for all files upload success
