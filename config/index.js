@@ -217,21 +217,21 @@ var config = {
       // retry on 403 response
       retryOn403: true,
     },
-    // 'electron-builder-binaries': {
-    //   name: 'electron-builder-binaries',
-    //   category: 'electron-builder-binaries',
-    //   enable: true,
-    //   disturl: 'https://github.com/electron-userland/electron-builder-binaries/releases',
-    //   repo: 'electron-userland/electron-builder',
-    //   url: 'https://github.com/electron-userland/electron-builder',
-    //   description: 'A complete solution to package and build a ready for distribution Electron app with “auto update” support out of the box.',
-    //   syncerClass: 'GithubWithVersion',
-    //   needFormatTagName: false,
-    //   // for mirrors
-    //   alwayNewDirIndex: 0,
-    //   // retry on 403 response
-    //   retryOn403: true,
-    // },
+    'electron-builder-binaries': {
+      name: 'electron-builder-binaries',
+      category: 'electron-builder-binaries',
+      enable: true,
+      disturl: 'https://github.com/electron-userland/electron-builder-binaries/releases',
+      repo: 'electron-userland/electron-builder-binaries',
+      url: 'https://github.com/electron-userland/electron-builder-binaries',
+      description: 'A complete solution to package and build a ready for distribution Electron app with “auto update” support out of the box.',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+      // retry on 403 response
+      retryOn403: true,
+    },
     'atom-shell': {
       name: 'atom-shell',
       category: 'atom-shell',
@@ -253,6 +253,21 @@ var config = {
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
       needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+    'nodejieba': {
+      name: 'nodejieba',
+      category: 'nodejieba',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/yanyiwu/nodejieba/releases',
+      repo: 'yanyiwu/nodejieba',
+      url: 'https://github.com/yanyiwu/nodejieba',
+      description: 'chinese word segmentation for node',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
       // for mirrors
       alwayNewDirIndex: 0,
     },
@@ -618,6 +633,20 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    robotjs: {
+      name: 'robotjs',
+      category: 'robotjs',
+      enable: true,
+      disturl: 'https://github.com/octalmage/robotjs/releases',
+      repo: 'octalmage/robotjs',
+      url: 'https://github.com/octalmage/robotjs',
+      description: 'Node.js Desktop Automation.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
     poi: {
       name: 'poi',
       category: 'poi',
@@ -945,6 +974,20 @@ var config = {
       alwayNewDirIndex: 0,
     },
 
+    'looksgood-s2': {
+      name: 'looksgood-s2',
+      category: 'looksgood-s2',
+      enable: true,
+      disturl: 'https://github.com/looksgood/s2/releases',
+      repo: 'looksgood/s2',
+      url: 'https://github.com/looksgood/s2',
+      description: 'Node.js JavaScript & TypeScript bindings for Google S2.',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
     'tfjs-models': {
       alwayNewDirIndex: 0,
       name: 'tfjs-models',
@@ -956,6 +999,28 @@ var config = {
       description: 'Pretrained models for TensorFlow.js https://js.tensorflow.org'
     },
 
+    tensorflow: {
+      alwayNewDirIndex: 0,
+      name: 'tensorflow',
+      category: 'tensorflow',
+      enable: true,
+      disturl: 'https://storage.googleapis.com/tensorflow/',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/tensorflow/tfjs/blob/master/tfjs-node/scripts/install.js#L45',
+      description: 'tensorflow binaries'
+    },
+
+    'tf-builds': {
+      alwayNewDirIndex: 0,
+      name: 'tf-builds',
+      category: 'tf-builds',
+      enable: true,
+      disturl: 'https://storage.googleapis.com/tf-builds/',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/tensorflow/tfjs/blob/master/tfjs-node/scripts/install.js#L95',
+      description: 'tensorflow binaries: tf-builds'
+    },
+
     'node-canvas-prebuilt': {
       name: 'node-canvas-prebuilt',
       category: 'node-canvas-prebuilt',
@@ -963,6 +1028,20 @@ var config = {
       disturl: 'https://github.com/node-gfx/node-canvas-prebuilt/releases',
       repo: 'node-gfx/node-canvas-prebuilt',
       url: 'https://github.com/node-gfx/node-canvas-prebuilt',
+      description: 'Repo used to build binaries for node-canvas on CI',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'canvas': {
+      name: 'canvas',
+      category: 'node-canvas-prebuilt',
+      enable: true,
+      disturl: 'https://github.com/Automattic/node-canvas/releases',
+      repo: 'Automattic/node-canvas',
+      url: 'https://github.com/Automattic/node-canvas',
       description: 'Repo used to build binaries for node-canvas on CI',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
@@ -980,6 +1059,74 @@ var config = {
       url: 'https://github.com/swc-project/node-swc',
       description: 'nodejs binding for the swc project.',
       max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+
+    'xprofiler': {
+      name: 'xprofiler',
+      category: 'xprofiler',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/X-Profiler/xprofiler/releases',
+      repo: 'X-Profiler/xprofiler',
+      url: 'https://github.com/X-Profiler/xprofiler',
+      description: '🌀An addon for node.js, which supporting output performance log and real-time profiling through sampling.',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+      needSourceCode: false,
+    },
+
+    prisma: {
+      name: 'prisma',
+      category: 'prisma',
+      enable: true,
+      disturl: 'https://binaries.prisma.sh',
+      syncerClass: 'ListBucketResult',
+      url: 'https://github.com/prisma/prisma',
+      description: 'Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server & SQLite',
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+    'argon2': {
+      name: 'argon2',
+      category: 'argon2',
+      enable: true,
+      disturl: 'https://github.com/ranisalt/node-argon2/releases',
+      repo: 'ranisalt/node-argon2',
+      url: 'https://github.com/ranisalt/node-argon2',
+      description: 'Node.js bindings for Argon2 hashing algorithm',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+    'ali-zeromq': {
+      name: 'ali-zeromq',
+      category: 'ali-zeromq',
+      enable: true,
+      disturl: 'https://github.com/looksgood/zeromq.js/releases',
+      repo: 'looksgood/zeromq.js',
+      url: 'https://github.com/looksgood/zeromq.js',
+      description: 'Node.js bindings for zeromp',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
+    iohook: {
+      name: 'iohook',
+      category: 'iohook',
+      enable: true,
+      disturl: 'https://github.com/wilix-team/iohook/releases',
+      repo: 'wilix-team/iohook',
+      url: 'https://github.com/wilix-team/iohook',
+      description: 'Node.js global native keyboard and mouse listener.',
       syncerClass: 'GithubWithVersion',
       needFormatTagName: false,
       // for mirrors

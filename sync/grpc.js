@@ -47,6 +47,7 @@ class GRPCSyncer extends Sqlite3Syncer {
   // https://node-precompiled-binaries.grpc.io/grpc/v1.14.0/node-v57-darwin-x64-unknown.tar.gz
   // https://node-precompiled-binaries.grpc.io/grpc/v1.14.0/node-v57-linux-x64-glibc.tar.gz
   // https://node-precompiled-binaries.grpc.io/grpc/v1.14.0/node-v64-linux-x64-glibc.tar.gz
+  // https://node-precompiled-binaries.grpc.io/grpc/v1.14.0/node-v64-linux-x64-musl.tar.gz
 
   formatDownloadItem(fileParent, pkg, nodeAbiVersion, nodePlatform) {
     if (semver.satisfies(pkg.version, '<1.0.0')) {
@@ -60,7 +61,22 @@ class GRPCSyncer extends Sqlite3Syncer {
     var downloadURL = `${this._storeUrl}grpc-precompiled-binaries/node/grpc/v${pkg.version}/${name}`;
     if (semver.satisfies(pkg.version, '>=1.14.0')) {
       downloadURL = `https://node-precompiled-binaries.grpc.io/grpc/v${pkg.version}/${name}`;
+      if (nodePlatform === 'linux') {
+        // https://github.com/lovell/detect-libc/blob/master/lib/detect-libc.js#L7
+        // glibc, musl
+        return [
+          {
+            name: `node-${nodeAbiVersion}-${nodePlatform}-x64-glibc.tar.gz`,
+            downloadURL: `https://node-precompiled-binaries.grpc.io/grpc/v${pkg.version}/node-${nodeAbiVersion}-${nodePlatform}-x64-glibc.tar.gz`,
+          },
+          {
+            name: `node-${nodeAbiVersion}-${nodePlatform}-x64-musl.tar.gz`,
+            downloadURL: `https://node-precompiled-binaries.grpc.io/grpc/v${pkg.version}/node-${nodeAbiVersion}-${nodePlatform}-x64-musl.tar.gz`,
+          },
+        ];
+      }
     }
+
     return {
       name: name,
       // size: null,

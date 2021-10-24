@@ -4,6 +4,7 @@ var debug = require('debug')('mirrors:sync:github');
 var util = require('util');
 var urllib = require('urllib');
 var urlutil = require('url');
+var sleep = require('mz-modules/sleep');
 var config = require('../config');
 var utils = require('../lib/utils');
 var Syncer = require('./syncer');
@@ -72,11 +73,15 @@ proto.listdir = function* (fullname) {
     debug('listdir %s got %s, %j, releases: %s',
       this.url, result.status, result.headers, result.data.length || '-');
 
-    if (result.status === 403 && this._retryOn403) {
+    if ((result.status === 403 || result.status === 429) && this._retryOn403) {
+      this.logger.syncInfo('[%s] request %s status: %s, retry after 20s, headers: %j',
+        this.category, this.url, result.status, result.headers);
+      yield sleep(20000);
       result = yield urllib.request(this.url, {
         timeout: 60000,
         dataType: 'json',
         gzip: true,
+        headers: { authorization: this.authorization },
         followRedirect: true,
         formatRedirectUrl: formatRedirectUrl,
       });

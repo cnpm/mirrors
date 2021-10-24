@@ -1,6 +1,7 @@
 'use strict';
 
 var debug = require('debug')('mirrors:sync:syncer');
+var sleep = require('mz-modules/sleep');
 var distService = require('../services/dist');
 var logger = require('../common/logger');
 var thunkify = require('thunkify-wrap');
@@ -96,7 +97,7 @@ proto.syncDir = function* (fullname, dirIndex) {
  * @param {Object} info
  */
 
-proto.syncFile = function* (info) {
+proto.syncFile = function* (info, retry) {
   debug('start sync file %j', info);
   var name = '/' + this.category + info.parent + info.name;
   name = process.pid + name.replace(/\//g, '_'); // make sure no parent dir
@@ -159,6 +160,14 @@ proto.syncFile = function* (info) {
       logger.syncInfo('download %s fail, status: %s', downurl, statusCode);
       debug('%s %s', statusCode, downurl);
       return;
+    }
+
+    if (statusCode === 429 && !retry) {
+      // too many requests
+      logger.syncInfo('[%s] status 429, retry after 20s, headers: %j',
+        this.category, statusCode, r.headers);
+      yield sleep(20000);
+      return yield this.syncFile(info, true);
     }
 
     if (statusCode !== 200) {
