@@ -1142,6 +1142,19 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
+    saucectl: {
+      name: 'saucectl',
+      category: 'saucectl',
+      enable: true,
+      disturl: 'https://github.com/saucelabs/saucectl/releases',
+      repo: 'saucelabs/saucectl',
+      url: 'https://github.com/saucelabs/saucectl',
+      description: 'A command line interface for the Sauce Labs Testrunner Toolkit.',
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+    },
   },
 };
 
