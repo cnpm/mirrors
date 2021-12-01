@@ -29,16 +29,16 @@ mirrors everything
 
 ```bash
 # windows
-ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ \
-  ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --win
+ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ \
+  ELECTRON_MIRROR=http://npmmirror.com/mirrors/electron/ electron-builder build --win
 
 # linux
-ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ \
-  ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --linux
+ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ \
+  ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ electron-builder build --linux
 
 # macOS
-ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ \
-  ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --mac
+ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ \
+  ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ electron-builder build --mac
 ```
 
 ## Contributing
@@ -55,8 +55,10 @@ For more information about how to run the project, see Makefile.
 3. You can alternatively choose which one you wanna sync in `config.categories` in `config/index.js`
 4. If you wanna visit 7001 port, change `bindingHost` to `0.0.0.0` in `config/index.js`
 
-## Usage
+## License
 
-### License
+[MIT](LICENSE.txt)
 
-MIT
+## Contributors
+
+[![](https://badges.implements.io/api/contributors?org=cnpm&repo=mirrors&width=1250&size=96&padding=6)](https://github.com/cnpm/mirrors/graphs/contributors)

@@ -156,7 +156,7 @@ proto.formatDownloadItem = function(fileParent, pkg, nodeAbiVersion, nodePlatfor
 proto.formatDownloadItemWithNAPI = function(fileParent, pkg, napiVersion, nodePlatform) {
   // >= 5.0.0
   // "package_name": "napi-v{napi_build_version}-{platform}-{arch}.tar.gz",
-  // https://cdn.npm.taobao.org/dist/sqlite3/v5.0.0/napi-v3-linux-x64.tar.gz
+  // https://oss.npmmirror.com/dist/sqlite3/v5.0.0/napi-v3-linux-x64.tar.gz
   // https://github.com/mapbox/node-sqlite3/blob/29debf3ad7d052427541503d871d6c69ed8588a7/package.json#L16
   // "napi_versions": [
   //   3

@@ -2,12 +2,12 @@ TESTS = $(shell ls -S `find test -type f -name "*.test.js" -print`)
 REPORTER = spec
 TIMEOUT = 30000
 MOCHA_OPTS =
-REGISTRY = --registry=https://registry.npm.taobao.org
+REGISTRY = --registry=https://registry.npmmirror.com
 DB = sqlite
 
 install:
 	@npm install --build-from-source $(REGISTRY) \
-		--disturl=https://npm.taobao.org/mirrors/node
+		--disturl=https://npmmirror.com/mirrors/node
 
 install-production production:
 	@NODE_ENV=production $(MAKE) install
