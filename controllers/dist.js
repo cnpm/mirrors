@@ -67,8 +67,8 @@ function* download(category, name) {
   var info = yield Dist.getfile(category, name);
   if (!info || !info.url) {
     // auto fix /vX.X.X => /X.X.X
-    // HTTPError: Response code 404 (Not Found) for http://npm.taobao.org/mirrors/electron/v8.2.0/electron-v8.2.0-darwin-x64.zip
-    // fix to => http://npm.taobao.org/mirrors/electron/8.2.0/electron-v8.2.0-darwin-x64.zip
+    // HTTPError: Response code 404 (Not Found) for http://npmmirror.com/mirrors/electron/v8.2.0/electron-v8.2.0-darwin-x64.zip
+    // fix to => http://npmmirror.com/mirrors/electron/8.2.0/electron-v8.2.0-darwin-x64.zip
     if (/^\/v\d+\.\d+\.\d+/.test(name)) {
       info = yield Dist.getfile(category, name.replace('/v', '/'));
     } else if (/^\/\d+\.\d+\.\d+/.test(name)) {

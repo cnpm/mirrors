@@ -98,7 +98,7 @@ var config = {
 
   // sync by clone from other mirrors
   cloneMode: false,
-  cloneUrl: 'https://npm.taobao.org/mirrors/apis',
+  cloneUrl: 'https://npmmirror.com/mirrors/apis',
 
   // proxy nodesecurity advisories
   nodesecurity: {
