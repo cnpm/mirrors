@@ -49,4 +49,4 @@ For more information about how to run the project, see Makefile.
 
 ## Contributors
 
-[![](https://badges.implements.io/api/contributors?org=cnpm&repo=mirrors&width=1250&size=96&padding=6)](https://github.com/cnpm/mirrors/graphs/contributors)
+[![](https://ergatejs.implements.io/badges/contributors/cnpm/mirrors.svg?width=1250&size=96&padding=6)](https://github.com/cnpm/mirrors/graphs/contributors)
