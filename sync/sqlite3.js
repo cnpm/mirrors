@@ -161,6 +161,10 @@ proto.formatDownloadItemWithNAPI = function(fileParent, pkg, napiVersion, nodePl
   // "napi_versions": [
   //   3
   // ]
+  // https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v5.0.0/napi-v3-linux-x64.tar.gz
+  // https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v5.0.0/napi-v3-darwin-x64.tar.gz
+  // https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v5.0.0/napi-v3-win32-x64.tar.gz
+
   var name = 'napi-v' + napiVersion + '-' + nodePlatform + '-x64.tar.gz';
   var downloadURL = this._storeUrl + '/sqlite3' + fileParent + name;
   if (this.formatDownloadUrl) {

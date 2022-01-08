@@ -568,8 +568,8 @@ var config = {
       // for mirrors
       alwayNewDirIndex: 0,
     },
-    sqlcipher: {
-      name: 'sqlcipher',
+    '@journeyapps/sqlcipher': {
+      name: '@journeyapps/sqlcipher',
       category: 'sqlcipher',
       enable: true,
       disturl: 'https://journeyapps-node-binary.s3.amazonaws.com/@journeyapps/sqlcipher/',
