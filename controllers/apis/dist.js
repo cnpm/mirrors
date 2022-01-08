@@ -15,6 +15,10 @@ module.exports = function* () {
   paths.shift();
 
   var category = paths.shift();
+  if (category.startsWith('@')) {
+    // @journeyapps/sqlcipher
+    category = `${category}/${paths.shift()}`;
+  }
   var name = paths.join('/').replace(/^\/?/, '/').replace(/\/?$/, '/');
   debug('request %s, normalize to %s, got category: %s, name: %s', this.path, p, category, name);
 
