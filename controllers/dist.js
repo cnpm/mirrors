@@ -14,12 +14,16 @@ var fs = require('fs');
 var urlparse = require('url').parse;
 
 module.exports = function* () {
-  //TODO will error in windows
+  // TODO will error in windows
   var p = path.normalize(this.path);
   var paths = p.split('/');
   paths.shift();
 
   var category = paths.shift();
+  if (category.startsWith('@')) {
+    // @journeyapps/sqlcipher
+    category = `${category}/${paths.shift()}`;
+  }
   var name = paths.join('/').replace(/^\/?/, '/');
 
   debug('request %s, normalize to %s, got category: %s, name: %s', this.path, p, category, name);
