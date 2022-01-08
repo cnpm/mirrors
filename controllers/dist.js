@@ -83,6 +83,12 @@ function* download(category, name) {
     debug('file %s:%s not exist', category, name);
     return this.status = 404;
   }
+  // fix http://cnpmjs.oss-ap-southeast-1-internal.aliyuncs.com/dist/%40journeyapps/sqlcipher/v5.3.1/napi-v6-win32-ia32.tar.gz
+  // to
+  // http://cnpmjs.oss-ap-southeast-1-internal.aliyuncs.com/dist/@journeyapps/sqlcipher/v5.3.1/napi-v6-win32-ia32.tar.gz
+  if (info.url && info.url.includes('/%40')) {
+    info.url = info.url.replace('/%40', '/@');
+  }
 
   if (config.pipeAll) {
     if (info.url.indexOf('http') === 0) {
