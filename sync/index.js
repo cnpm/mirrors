@@ -28,7 +28,9 @@ for (var key in syncers) {
   syncer.syncing = false;
 
   if (config.cloneMode) {
-    var baseUrl = config.cloneUrl.replace(/\/?$/, '/');
+    // support custom cloneUrl
+    const cloneUrl = syncer.cloneUrl || config.cloneUrl;
+    var baseUrl = cloneUrl.replace(/\/?$/, '/');
     MirrorsSyncer = MirrorsSyncer || require('./mirrors');
     syncer.Syncer = MirrorsSyncer;
     syncer.disturl = baseUrl + syncer.category;

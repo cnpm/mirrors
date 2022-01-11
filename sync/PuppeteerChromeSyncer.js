@@ -31,6 +31,7 @@ proto.listdiff = function* listdiff(fullname, dirIndex) {
   }
 
   // https://github.com/GoogleChrome/puppeteer/blob/7f00860abd3c1efbca21351a8bdb12422dbe7aa2/lib/BrowserFetcher.js#L32
+  // https://github.com/puppeteer/puppeteer/blob/eebf452d38b79bb2ea1a1ba84c3d2ea6f2f9f899/src/node/BrowserFetcher.ts#L40
   const parentDirs = [
     'Linux_x64',
     'Mac',
