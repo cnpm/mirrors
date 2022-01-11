@@ -132,7 +132,7 @@ var config = {
       url: 'https://nodejs.org',
       description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.',
       syncDocument: true,
-      cloneUrl: 'https://r.cnpmjs.org/-/binary/node',
+      cloneUrl: 'https://r.cnpmjs.org/-/binary',
     },
     'node-rc': {
       name: 'Node.js RC',
