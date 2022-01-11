@@ -16,6 +16,11 @@ var urllib = require('urllib');
 var bytes = require('bytes');
 var fs = require('fs');
 var urlutil = require('url');
+const HttpsAgent = require('agentkeepalive').HttpsAgent;
+const HttpAgent = require('agentkeepalive');
+
+const httpAgent = new HttpAgent();
+const httpsAgent = new HttpsAgent();
 
 module.exports = Syncer;
 
@@ -127,6 +132,8 @@ proto.syncFile = function* (info, retry) {
     writeStream: ws,
     followRedirect: true,
     timeout: 6000000, // 100 minutes download
+    agent: httpAgent,
+    httpsAgent: httpsAgent,
     headers: {
       'user-agent': config.ua
     },
@@ -321,6 +328,8 @@ proto.getNodeAbiVersions = function* getNodeAbiVersions() {
     dataType: 'json',
     timeout: 10000,
     gzip: true,
+    agent: httpAgent,
+    httpsAgent: httpsAgent,
   });
   const versions = result.data;
   for (const version of versions) {
