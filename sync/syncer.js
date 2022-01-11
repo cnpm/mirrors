@@ -242,14 +242,12 @@ proto.syncFile = function* (info, retry) {
     info.sha1 = sha1sum;
     info.md5 = md5sum;
     info.category = this.category;
-
     logger.syncInfo('[%s] upload %s to nfs:%s with size:%s, sha1:%s, md5: %s',
       this.category, args.key, info.url, bytes(info.size), info.sha1, info.md5);
   } catch (err) {
-    // Error: connect ECONNREFUSED 116.0.89.227:443
-    if (err.message.includes('ECONNREFUSED')) {
-      logger.syncInfo('[%s] ECONNREFUSED error, retry after 10s, %s',
-        this.category, err);
+    // Error: connect ECONNREFUSED / ETIMEDOUT
+    if (err.message.includes('ECONNREFUSED') || err.message.includes('ETIMEDOUT')) {
+      logger.syncInfo('[%s] %s, retry after 10s', this.category, err);
       yield sleep(10000);
       return yield this.syncFile(info, true);
     }
