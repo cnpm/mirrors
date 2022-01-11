@@ -245,6 +245,15 @@ proto.syncFile = function* (info, retry) {
 
     logger.syncInfo('[%s] upload %s to nfs:%s with size:%s, sha1:%s, md5: %s',
       this.category, args.key, info.url, bytes(info.size), info.sha1, info.md5);
+  } catch (err) {
+    // Error: connect ECONNREFUSED 116.0.89.227:443
+    if (err.message.includes('ECONNREFUSED')) {
+      logger.syncInfo('[%s] ECONNREFUSED error, retry after 10s, %s',
+        this.category, err);
+      yield sleep(10000);
+      return yield this.syncFile(info, true);
+    }
+    throw err;
   } finally {
     // remove tmp file whatever
     fs.unlink(filepath, utility.noop);
