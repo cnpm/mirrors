@@ -716,6 +716,22 @@ var config = {
       alwayNewDirIndex: 0,
     },
 
+    'node-gdal-async': {
+      name: 'node-gdal-async',
+      category: 'node-gdal-async',
+      enable: true,
+      disturl: 'https://github.com/mmomtchev/node-gdal-async/releases',
+      repo: 'mmomtchev/node-gdal-async',
+      url: 'https://github.com/mmomtchev/node-gdal-async',
+      description: 'Node.js bindings for GDAL (Geospatial Data Abstraction Library) with full async support',
+      max: 10, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: false,
+      // for mirrors
+      alwayNewDirIndex: 0,
+      cloneUrl: 'https://r.cnpmjs.org/-/binary',
+    },
+
     'utf-8-validate': {
       name: 'utf-8-validate',
       category: 'utf-8-validate',
