@@ -132,8 +132,8 @@ proto.syncFile = function* (info, retry) {
     writeStream: ws,
     followRedirect: true,
     timeout: 6000000, // 100 minutes download
-    // agent: httpAgent,
-    // httpsAgent: httpsAgent,
+    agent: httpAgent,
+    httpsAgent: httpsAgent,
     headers: {
       'user-agent': config.ua
     },
@@ -328,8 +328,8 @@ proto.getNodeAbiVersions = function* getNodeAbiVersions() {
     dataType: 'json',
     timeout: 10000,
     gzip: true,
-    // agent: httpAgent,
-    // httpsAgent: httpsAgent,
+    agent: httpAgent,
+    httpsAgent: httpsAgent,
   });
   const versions = result.data;
   for (const version of versions) {
