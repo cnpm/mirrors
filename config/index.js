@@ -227,6 +227,7 @@ var config = {
       alwayNewDirIndex: 0,
       // retry on 403 response
       retryOn403: true,
+      cloneUrl: 'https://r.cnpmjs.org/-/binary',
     },
     'electron-builder-binaries': {
       name: 'electron-builder-binaries',
