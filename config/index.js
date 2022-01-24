@@ -223,8 +223,6 @@ var config = {
       max: 10, // sync the latest 10 releases
       syncerClass: 'GithubWithVersion',
       needFormatTagName: true,
-      // for mirrors
-      alwayNewDirIndex: 0,
       // retry on 403 response
       retryOn403: true,
       cloneUrl: 'https://r.cnpmjs.org/-/binary',
