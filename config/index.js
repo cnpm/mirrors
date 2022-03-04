@@ -227,6 +227,22 @@ var config = {
       retryOn403: true,
       cloneUrl: 'https://r.cnpmjs.org/-/binary',
     },
+    'electron-nightly': {
+      name: 'electron-nightly',
+      category: 'electron',
+      enable: true,
+      // interval: ms('5m'),
+      disturl: 'https://github.com/electron/nightlies/releases',
+      repo: 'electron/nightlies',
+      url: 'https://github.com/electron/nightlies',
+      description: ':electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS https://electronjs.org',
+      max: 30, // sync the latest 10 releases
+      syncerClass: 'GithubWithVersion',
+      needFormatTagName: true,
+      // retry on 403 response
+      retryOn403: true,
+      cloneUrl: 'https://r.cnpmjs.org/-/binary',
+    },
     'electron-builder-binaries': {
       name: 'electron-builder-binaries',
       category: 'electron-builder-binaries',
