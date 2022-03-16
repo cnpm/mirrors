@@ -128,7 +128,7 @@ var config = {
       category: 'node',
       enable: true,
       // interval: ms('5m'),
-      disturl: 'https://nodejs.org/dist',
+      disturl: 'https://nodejs.org/download/release',
       url: 'https://nodejs.org',
       description: 'is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications.',
       syncDocument: true,
